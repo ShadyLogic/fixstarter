@@ -7,5 +7,5 @@ class Issue < ActiveRecord::Base
   belongs_to :user
   belongs_to :community
   has_many :categories_issues
-  has_many :categories, through :categories_issues
+  has_many :categories, through: :categories_issues
 end

@@ -9,5 +9,5 @@ class User < ActiveRecord::Base
   has_many :issue_comments
   has_many :users_bumps
   has_many :issues
-  has_many :communities, through :issues
+  has_many :communities, through: :issues
 end
