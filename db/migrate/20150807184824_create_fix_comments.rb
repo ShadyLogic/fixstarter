@@ -1,6 +1,6 @@
-class CreateFixesComments < ActiveRecord::Migration
+class CreateFixComments < ActiveRecord::Migration
   def change
-    create_table :fixes_comments do |t|
+    create_table :fix_comments do |t|
       t.integer :fix_id
       t.integer :user_id
       t.text :content
