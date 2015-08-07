@@ -18,6 +18,8 @@ Crowdsourced Community Upkeep
 * Ruby
 * Postgresql
 * Rails
+* Node & Socket.io
+* Redis
 
 **Testing:**
 * Rspec
