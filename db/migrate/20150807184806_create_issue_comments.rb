@@ -1,6 +1,6 @@
-class CreateIssuesComments < ActiveRecord::Migration
+class CreateIssueComments < ActiveRecord::Migration
   def change
-    create_table :issues_comments do |t|
+    create_table :issue_comments do |t|
       t.integer :issue_id
       t.integer :user_id
       t.text :content
