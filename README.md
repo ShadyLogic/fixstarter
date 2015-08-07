@@ -1,2 +1,2 @@
 # fixstarter
-Crowd Sourced Community Upkeep
+Crowdsourced Community Upkeep
