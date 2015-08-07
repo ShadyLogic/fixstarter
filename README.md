@@ -8,37 +8,29 @@ Crowdsourced Community Upkeep
 
 ## Technologies
 
-Frontend:
+**Frontend:**
 * HTML + CSS
 * JavaScript
 * jQuery + Ajax
 * React
 
-Backend:
+**Backend:**
 * Ruby
 * Postgresql
 * Rails
 
-Testing:
+**Testing:**
 * Rspec
 
 ## How it Works
 
 1)
-
-2)
   * Collection (the scraped art)
   * Installation (an individual art installation)
   * Tour (a user-generated tour)
   * Tour_Installation (a join table between the many-to-many Tour <-> Installation relationship)
 
-3)
-
-4)
-
-5)
-
-5)
+2)
 
 ## Invitation
 
@@ -60,15 +52,15 @@ To setup locally:
 
 **General app structure:**
 
-![Appstructure]()
+<!-- ![Appstructure]() -->
 
 **React tree:**
 
-![Reacttree]()
+<!-- ![Reacttree]() -->
 
 **Homepage wireframe:**
 
-![Wireframe]()
+<!-- ![Wireframe]() -->
 
 **Docs**
 
