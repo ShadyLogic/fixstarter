@@ -24,11 +24,12 @@ Crowdsourced Community Upkeep
 
 ## How it Works
 
-1)
-  * Collection (the scraped art)
-  * Installation (an individual art installation)
-  * Tour (a user-generated tour)
-  * Tour_Installation (a join table between the many-to-many Tour <-> Installation relationship)
+1) Models:
+  * User
+  * Issue
+  * Fix
+  * FixComment
+  * IssueSomment
 
 2)
 
