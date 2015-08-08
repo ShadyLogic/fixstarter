@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   has_many :users_bumps
   has_many :issues
   has_many :communities, through: :issues
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
 end
