@@ -4,7 +4,7 @@ var SplashPage = React.createClass({
     return (
       <div>
         <SplashHeader />
-        <Stream issues={this.props.issues} />
+        <Stream streamIssues={this.props.streamIssues} />
       </div>
       )
   }

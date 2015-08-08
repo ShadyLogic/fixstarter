@@ -1,15 +1,15 @@
 var Stream = React.createClass({
 
   getInitialState: function(){
-    return {issues: this.props.issues}
+    return {streamIssues: this.props.streamIssues}
   },
 
   render: function(){
-    var issues = this.props.issues.map(function(issue) {
+    var streamIssues = this.props.streamIssues.map(function(issue) {
       return (
         // TODO: Call issues in Stream Item
         <div>
-          <StreamItem title={issue.title} />
+          <StreamItem title={issue.title} description={issue.description} username={issue.username} image_url={issue.imageUrl} />
         </div>
         )
     });
