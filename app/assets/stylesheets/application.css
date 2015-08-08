@@ -107,7 +107,12 @@
 }
 
 .result_list_wrapper{
-
+  margin-top: 100px;
+  height: 600px;
+  width: 65%;
+  border: 1px solid lightgrey;
+  background-color: lightgrey;
+  float: left;
 }
 
 .result_item_wrapper{
@@ -115,7 +120,10 @@
 }
 
 .discover_map_wrapper{
-  height: 300px;
+  margin-top: 100px;
+  height: 600px;
+  width: 30%;
+  float: right;
   background-image: url(http://i.imgur.com/ziM5W14.png);
   background-size: 100%;
   border: 3px solid lightgrey;
@@ -125,6 +133,15 @@
 
 
 
+/*---------------FIX SHOW PAGE--------------*/
+.fix_show_page{
+
+}
+
+.fix_header{
+
+}
+/*----------------------------------------------*/
 
 
 /*----------------------STREAM-------------------*/

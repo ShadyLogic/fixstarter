@@ -5,7 +5,7 @@ var DashboardNav = React.createClass({
       <div className="dashboard_nav_wrapper">
 
         <div className="dashboard_nav_link">
-          <a href="/discover"> Fix an Issue </a>
+          <a href="/discover"> Find an Issue </a>
         </div>
 
         <div className="dashboard_nav_link">
