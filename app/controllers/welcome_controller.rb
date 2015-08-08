@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
   end
 
   def show
+    @stream_issues = Issue.package_stream_issues
   end
 
   def discover

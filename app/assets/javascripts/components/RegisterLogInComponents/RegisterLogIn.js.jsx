@@ -7,6 +7,7 @@ var RegisterLogin = React.createClass({
         <h1> Welcome to the Register Login Page U Suck Keke </h1>
         <RegisterForm />
         <LoginForm />
+        <Stream streamIssues={this.props.streamIssues} />
       </div>
       )
   }
