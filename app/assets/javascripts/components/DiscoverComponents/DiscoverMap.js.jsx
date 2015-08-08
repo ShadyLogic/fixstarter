@@ -1,8 +1,7 @@
 var DiscoverMap = React.createClass({
   render: function(){
     return (
-      <div className="disover_map_wrapper">
-       discover map
+      <div className="discover_map_wrapper">
       </div>
       )
   }

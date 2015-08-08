@@ -94,7 +94,7 @@
 
 /*---------------DISCOVER  PAGE--------------*/
 .discover_page{
-
+  text-align: center;
 }
 
 
@@ -115,7 +115,10 @@
 }
 
 .discover_map_wrapper{
-
+  height: 300px;
+  background-image: url(http://i.imgur.com/ziM5W14.png);
+  background-size: 100%;
+  border: 3px solid lightgrey;
 }
 /*----------------------------------------------*/
 

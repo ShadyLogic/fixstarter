@@ -3,7 +3,11 @@ var SearchBar = React.createClass({
   render: function(){
     return (
       <div className="search_bar_wrapper">
-        search bar
+        keyword search:
+        <input type="search" placeholder="searchbar"/>
+        <br/>
+        zip search:
+        <input type="search" placeholder="searchbar"/>
       </div>
       )
   }
