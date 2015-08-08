@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   post '/users_bumps', to: 'users#create_bump'
   delete '/users_bumps/:id', to: 'users#delete_bump'
 
+  get '/dashboard', to: 'welcome#show', as: :dashboard
+  get '/discover', to: 'welcome#discover', as: :discover
+
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
