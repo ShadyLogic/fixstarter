@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+
+.header_wrapper {
+  border: 1px solid skyblue;
+}
+
+
+.stream_wrapper {
+  border: 1px solid skyblue;
+}
+
+.splash_page {
+  text-align: center;
+}

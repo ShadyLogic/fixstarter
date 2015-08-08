@@ -1,9 +1,13 @@
 var SplashHeader = React.createClass({
+
   render: function(){
-    <div>
-      <h1>Fixstarter</h2>
-      <h3>Fuck yeah fixstarter</h3>
-      <a href="/welcome/authentication">Get Started</a>
-    </div>
+
+    return (
+      <div className="header_wrapper">
+        <h1> FIXSTART </h1>
+        <h3> Where you can fix all the shits </h3>
+        <a href="/welcome/authentication"> Get Started </a>
+      </div>
+    )
   }
 })
