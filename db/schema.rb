@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20150808025509) do
 
   # These are extensions that must be enabled in order to support this database
@@ -46,11 +45,11 @@ ActiveRecord::Schema.define(version: 20150808025509) do
   end
 
   create_table "fixes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "issue_id"
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.integer  "user_id"
-    t.integer  "issue_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
