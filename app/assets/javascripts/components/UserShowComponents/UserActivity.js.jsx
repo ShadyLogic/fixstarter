@@ -5,7 +5,6 @@ var UserActivity = React.createClass({
       < UserFixedList />
       < UserIssuesList />
       < UserWatchingList />
-      < UserBio />
       </div>
       )
   }

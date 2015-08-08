@@ -1,8 +1,9 @@
-var UserFixedList = React.createClass({
+var UserIssuesList = React.createClass({
   render: function(){
     return (
       <div className="user_fixed_list_wrapper">
-      <p> This is the list of items the user has fixed. </p>
+      <h2> This is a list of issues you have submitted. </h2>
+      < UserIssuesItem />
       </div>
       )
   }
