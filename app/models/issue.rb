@@ -15,7 +15,7 @@ class Issue < ActiveRecord::Base
       stream_items << {title: issue.title,
                       description: issue.description,
                       username: issue.user.full_name,
-                      imageUrl: image_url }
+                      imageUrl: issue.image_url }
     end
     stream_items
   end

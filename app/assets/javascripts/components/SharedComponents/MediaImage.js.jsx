@@ -1,1 +1,0 @@
-MediaImage.js.jsx

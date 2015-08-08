@@ -1,9 +1,10 @@
-var StreamItem = react.createClass({
-  render: function(){
-    return(
-      <div>
-      </div>
-      )
-  }
+// var StreamItem = react.createClass({
+//   render: function(){
+//     return(
+//       <div>
+//         stream item!!
+//       </div>
+//       )
+//   }
 
-})
+// })
