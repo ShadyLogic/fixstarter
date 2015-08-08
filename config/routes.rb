@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  get 'welcome/index'
+
+  get '/users/:id', to: 'users#show', as: :user
+
+  post '/issues_watches', to: 'users#create_watch'
+  delete '/issues_watches/:id', to: 'users#delete_watch'
+
+  post '/users_bumps', to: 'users#create_bump'
+  delete '/users_bumps/:id', to: 'users#delete_bump'
 
   resources :issues do
     resources :fixes
@@ -13,12 +20,7 @@ Rails.application.routes.draw do
   post '/issues/:issue_id/fixes/:fix_id/comments', to: 'comments#fix_create', as: :fix_comments
   delete '/issues/:issue_id/fixes/:fix_id/comments/:id', to: 'comments#fix_destroy', as: :fix_comment
 
-  post '/issues_watches', to: 'users#create_watch'
-  delete '/issues_watches/:id', to: 'users#delete_watch'
-
-  post '/users_bumps', to: 'users#create_bump'
-  delete '/users_bumps/:id', to: 'users#delete_bump'
-
+  get 'welcome/index'
   get '/dashboard', to: 'welcome#show', as: :dashboard
   get '/discover', to: 'welcome#discover', as: :discover
   get '/registerlogin', to: 'welcome#register_login', as: :register_login
