@@ -14,16 +14,90 @@
  *= require_self
  */
 
+/* * {
+  border: 1px dashed black;
+ }
+*/
 
-.header_wrapper {
-  border: 1px solid skyblue;
-}
-
-
-.stream_wrapper {
-  border: 1px solid skyblue;
-}
-
+/*---------------SPLASH PAGE----------------*/
 .splash_page {
   text-align: center;
 }
+
+.header_wrapper {
+  /*border: 1px solid skyblue;*/
+}
+
+/*--------------------------------------------*/
+
+
+
+
+/*---------------REGISTER/LOGIN PAGE--------------*/
+.register_login_page{
+  width: 100%;
+  text-align: center;
+  /*border: 1px solid black;*/
+}
+
+.register_form{
+  text-align: left;
+  display: inline-block;
+  width: 20%;
+  font-size: 20px;
+  /*border: 1px solid skyblue;*/
+}
+
+.login_form{
+  text-align: left;
+  display: inline-block;
+  width: 20%;
+  font-size: 20px;
+  /*border: 1px solid skyblue;*/
+}
+/*----------------------------------------------*/
+
+
+
+
+/*---------------DASHBOARD  PAGE--------------*/
+.dashboard_page{
+  text-align: center;
+  /*border: 1px solid black;*/
+}
+
+.dashboard_nav_wrapper{
+  height: 200px;
+  /*border: 1px solid skyblue;*/
+}
+
+.dashboard_map_wrapper{
+  height: 300px;
+  background-image: url(http://i.imgur.com/ziM5W14.png);
+  background-size: 100%;
+  border: 3px solid lightgrey;
+}
+
+.issue_new_wrapper{
+  /*border: 1px solid skyblue;*/
+}
+
+.dashboard_nav_button{
+  font-size: 24px;
+  margin: 2%;
+}
+/*----------------------------------------------*/
+
+
+
+
+/*----------------------STREAM-------------------*/
+.stream_wrapper {
+  display: inline-block;
+  border: 3px solid lightgrey;
+  height: 300px;
+  overflow: scroll;
+  width: 80%;
+  margin-top: 100px;
+}
+/*----------------------------------------------*/
