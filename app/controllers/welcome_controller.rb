@@ -10,7 +10,7 @@ class WelcomeController < ApplicationController
     # if current_user
       render 'welcome/show'
     # else
-    #   redirect_to register_login_path
+      # redirect_to register_login_path
     # end
   end
 
