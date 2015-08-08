@@ -3,7 +3,8 @@ var RegisterLogin = React.createClass({
   render: function(){
 
     return (
-      <div>
+      <div className="register_login_page">
+        <h1> Welcome to the Register Login Page U Suck Keke </h1>
         <RegisterForm />
         <LoginForm />
       </div>

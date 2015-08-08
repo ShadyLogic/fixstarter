@@ -15,15 +15,42 @@
  */
 
 
+/*---------------SPLASH PAGE--------------*/
+.splash_page {
+  text-align: center;
+}
+
 .header_wrapper {
   border: 1px solid skyblue;
 }
 
-
 .stream_wrapper {
   border: 1px solid skyblue;
 }
+/*---------------SPLASH PAGE--------------*/
 
-.splash_page {
+/*---------------REGISTER/LOGIN PAGE--------------*/
+
+.register_login_page{
+  /*border: 1px solid black;*/
+  width: 100%;
   text-align: center;
 }
+
+.register_form{
+  text-align: left;
+  display: inline-block;
+  /*border: 1px solid green;*/
+  width: 40%;
+  font-size: 20px;
+}
+
+.login_form{
+  text-align: left;
+  display: inline-block;
+  /*border: 1px solid skyblue;*/
+  width: 40%;
+  font-size: 20px;
+}
+/*---------------REGISTER/LOGIN PAGE--------------*/
+
