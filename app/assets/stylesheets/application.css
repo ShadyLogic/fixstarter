@@ -14,6 +14,10 @@
  *= require_self
  */
 
+/* * {
+  border: 1px dashed black;
+ }
+*/
 
 /*---------------SPLASH PAGE----------------*/
 .splash_page {
@@ -24,9 +28,6 @@
   border: 1px solid skyblue;
 }
 
-.stream_wrapper {
-  border: 1px solid skyblue;
-}
 /*--------------------------------------------*/
 
 
@@ -34,25 +35,36 @@
 
 /*---------------REGISTER/LOGIN PAGE--------------*/
 .register_login_page{
-  /*border: 1px solid black;*/
   width: 100%;
   text-align: center;
+  /*border: 1px solid black;*/
 }
 
 .register_form{
   text-align: left;
   display: inline-block;
-  /*border: 1px solid green;*/
-  width: 40%;
+  width: 20%;
   font-size: 20px;
+  /*border: 1px solid skyblue;*/
 }
 
 .login_form{
   text-align: left;
   display: inline-block;
-  /*border: 1px solid skyblue;*/
-  width: 40%;
+  width: 20%;
   font-size: 20px;
+  /*border: 1px solid skyblue;*/
 }
 /*----------------------------------------------*/
 
+
+/*----------------------STREAM-------------------*/
+.stream_wrapper {
+  display: inline-block;
+  border: 3px solid lightgrey;
+  height: 300px;
+  overflow: scroll;
+  width: 80%;
+  margin-top: 100px;
+}
+/*----------------------------------------------*/
