@@ -1,7 +1,7 @@
 var FixShow = React.createClass({
   render: function(){
     return (
-      <div>
+      <div className="fix_show_page">
         < FixHeader />
          {/* < MediaCard/> */}
          {/* < CommentList /> */}
