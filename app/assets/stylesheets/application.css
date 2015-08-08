@@ -15,7 +15,7 @@
  */
 
 
-/*---------------SPLASH PAGE--------------*/
+/*---------------SPLASH PAGE----------------*/
 .splash_page {
   text-align: center;
 }
@@ -27,10 +27,12 @@
 .stream_wrapper {
   border: 1px solid skyblue;
 }
-/*---------------SPLASH PAGE--------------*/
+/*--------------------------------------------*/
+
+
+
 
 /*---------------REGISTER/LOGIN PAGE--------------*/
-
 .register_login_page{
   /*border: 1px solid black;*/
   width: 100%;
@@ -52,5 +54,5 @@
   width: 40%;
   font-size: 20px;
 }
-/*---------------REGISTER/LOGIN PAGE--------------*/
+/*----------------------------------------------*/
 
