@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
 
+  def show
+  end
+
   def issue_create
 
   end

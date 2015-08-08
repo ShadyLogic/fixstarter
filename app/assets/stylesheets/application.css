@@ -78,10 +78,6 @@
   border: 3px solid lightgrey;
 }
 
-.issue_new_wrapper{
-  /*border: 1px solid skyblue;*/
-}
-
 .dashboard_nav_link{
   font-size: 24px;
   margin: 2%;
@@ -130,8 +126,54 @@
 }
 /*----------------------------------------------*/
 
+/*---------------USER PROFILE--------------*/
 
+.user_show_wrapper {
 
+}
+
+.user_header_wrapper {
+
+}
+
+.user_activity_wrapper {
+
+}
+
+.profile_pic_wrapper {
+
+}
+
+.user_title_wrapper {
+}
+
+.user_fixed_list_wrapper {
+
+}
+
+.user_issues_list_wrapper {
+
+}
+
+.user_watching_list_wrapper {
+
+}
+
+.user_bio_wrapper {
+
+}
+
+.user_fixed_item_wrapper {
+
+}
+
+.user_issues_item_wrapper {
+
+}
+
+.user_watching_item_wrapper {
+
+}
 
 /*---------------FIX SHOW PAGE--------------*/
 .fix_show_page{
@@ -142,6 +184,27 @@
 
 }
 /*----------------------------------------------*/
+
+
+
+/*---------------ISSUE NEW FORM --------------*/
+.issue_new_wrapper{
+  /*border: 1px solid skyblue;*/
+}
+
+.issue_map_wrapper{
+
+}
+
+.issue_image_wrapper{
+
+}
+
+.issue_form_wrapper{
+
+}
+/*----------------------------------------------*/
+
 
 
 /*----------------------STREAM-------------------*/
