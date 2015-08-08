@@ -1,7 +1,7 @@
 var IssueImage = React.createClass({
   render: function(){
     return (
-      <div>
+      <div className="issue_image_wrapper">
         Issue Image
       </div>
     )
