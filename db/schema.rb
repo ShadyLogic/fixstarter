@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807183845) do
+ActiveRecord::Schema.define(version: 20150807184824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,18 +36,26 @@ ActiveRecord::Schema.define(version: 20150807183845) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "fix_comments", force: :cascade do |t|
+    t.integer  "fix_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "fixes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "issue_id"
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.integer  "user_id"
-    t.integer  "issue_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "fixes_comments", force: :cascade do |t|
-    t.integer  "fix_id"
+  create_table "issue_comments", force: :cascade do |t|
+    t.integer  "issue_id"
     t.integer  "user_id"
     t.text     "content"
     t.datetime "created_at", null: false
@@ -60,18 +68,11 @@ ActiveRecord::Schema.define(version: 20150807183845) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.string   "location"
+    t.string   "latitude"
+    t.string   "longitude"
     t.string   "status"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "issues_comments", force: :cascade do |t|
-    t.integer  "issue_id"
-    t.integer  "user_id"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "issues_watches", force: :cascade do |t|
