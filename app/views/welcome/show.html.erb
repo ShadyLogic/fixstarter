@@ -1,6 +1,2 @@
 
-<% if current_user %>
   <%= react_component('Dashboard', {}) %>
-<% else %>
-  <%= react_component('RegisterLogin', {streamIssues: @stream_issues}) %>
-<% end %>

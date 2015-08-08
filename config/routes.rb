@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'welcome#show', as: :dashboard
   get '/discover', to: 'welcome#discover', as: :discover
+  get '/registerlogin', to: 'welcome#register_login', as: :registerlogin
 
   root 'welcome#index'
 
