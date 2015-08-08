@@ -2,9 +2,10 @@ var DashboardNav = React.createClass({
 
   render: function(){
     return(
-      <div>
-        Dashboard nav
-    </div>
+      <div className="dashboard_nav_wrapper">
+        <button className="dashboard_nav_button"> Fix an Issue </button>
+        <button className="dashboard_nav_button"> Submit an Issue </button>
+      </div>
       )
   }
 })

@@ -2,8 +2,7 @@ var DashboardMap = React.createClass({
 
   render: function(){
     return (
-      <div>
-        dashboard map
+      <div className="dashboard_map_wrapper">
       </div>
       )
   }

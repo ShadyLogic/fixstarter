@@ -2,8 +2,7 @@ var IssueNew = React.createClass({
 
   render: function(){
     return (
-      <div>
-        issue new
+      <div className="issue_new_wrapper">
       </div>
       )
   }

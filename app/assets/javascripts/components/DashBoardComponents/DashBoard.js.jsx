@@ -2,8 +2,8 @@ var Dashboard = React.createClass({
 
   render: function(){
     return (
-      <div>
-        <h3> Dashboard </h3>
+      <div className="dashboard_page">
+        <h1> Dashboard </h1>
         < DashboardNav />
         < DashboardMap />
         < IssueNew />

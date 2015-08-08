@@ -60,6 +60,37 @@
 
 
 
+/*---------------DASHBOARD  PAGE--------------*/
+.dashboard_page{
+  text-align: center;
+  /*border: 1px solid black;*/
+}
+
+.dashboard_nav_wrapper{
+  height: 200px;
+  /*border: 1px solid skyblue;*/
+}
+
+.dashboard_map_wrapper{
+  height: 300px;
+  background-image: url(http://i.imgur.com/ziM5W14.png);
+  background-size: 100%;
+  border: 3px solid lightgrey;
+}
+
+.issue_new_wrapper{
+  /*border: 1px solid skyblue;*/
+}
+
+.dashboard_nav_button{
+  font-size: 24px;
+  margin: 2%;
+}
+/*----------------------------------------------*/
+
+
+
+
 /*----------------------STREAM-------------------*/
 .stream_wrapper {
   display: inline-block;
