@@ -3,8 +3,24 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
+  resources :issues do
+    resources :fixes
+  end
+
+  post '/issues/:issue_id/comments', to: 'comments#issue_create', as: :issue_comments
+  delete '/issues/:issue_id/comments/:id', to: 'comments#issue_destroy', as: :issue_comment
+
+  post '/issues/:issue_id/fixes/:fix_id/comments', to: 'comments#fix_create', as: :fix_comments
+  delete '/issues/:issue_id/fixes/:fix_id/comments/:id', to: 'comments#fix_destroy', as: :fix_comment
+
+  post '/issues_watches', to: 'users#create_watch'
+  delete '/issues_watches/:id', to: 'users#delete_watch'
+
+  post '/users_bumps', to: 'users#create_bump'
+  delete '/users_bumps/:id', to: 'users#delete_bump'
+
   root 'welcome#index'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
