@@ -20,7 +20,7 @@ class FixesController < ApplicationController
     # p current_user
     # current_user.fixes << @fix
     if @fix.save
-      issue.status = "completed"
+      issue.status = "closed"
       issue.save
     end
     redirect_to issue_path(id: issue.id)
