@@ -3,6 +3,6 @@ class IssuesWatch < ActiveRecord::Base
   belongs_to :user
 
   def package_info
-    {id: self.id, issue_id: self.issue_id}
+    {id: self.id, issue_id: self.issue_id, issue: self.issue}
   end
 end
