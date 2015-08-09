@@ -24,6 +24,7 @@ var IssueForm = React.createClass({
   render: function(){
     return (
       <div className="issue_form_wrapper">
+      < IssueMap />
         <form ref="form" onSubmit={this.handleSubmit} >
           Title
           <input ref="title" name="issue[title]" type="text" />
