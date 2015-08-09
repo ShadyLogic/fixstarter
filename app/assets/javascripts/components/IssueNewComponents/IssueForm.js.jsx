@@ -1,19 +1,31 @@
 var IssueForm = React.createClass({
+
+  handleSubmit: function(event){
+    event.preventDefault()
+
+    var issue = {
+      title: title,
+      description: description,
+      zip: zip,
+      image: image
+    }
+  },
+
   render: function(){
     return (
       <div className="issue_form_wrapper">
-        <form>
+        <form ref="form" onSubmit={this.handleSubmit} >
           Title
-          <input type="text" />
+          <input ref="title" name="issue[title]" type="text" />
           <br/>
           Description
-          <input type="text" />
+          <input ref="description" name="issue[description]" type="text" />
           <br/>
-          Zip Code:
-          <input type="text" />
+          Zip:
+          <input ref="zip" name="issue[zip]" type="text" />
           <br/>
           Image:
-          <input type="file" />
+          <input ref="image" name="issue[image]" type="file" />
           <input type="submit" />
         </form>
       </div>
