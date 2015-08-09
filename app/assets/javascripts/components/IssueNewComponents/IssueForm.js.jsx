@@ -24,6 +24,8 @@ var IssueForm = React.createClass({
   render: function(){
     return (
       <div className="issue_form_wrapper">
+      < IssueMap />
+
         <form ref="form" onSubmit={this.handleSubmit} >
           Title
           <input ref="title" name="issue[title]" type="text" />
@@ -36,6 +38,10 @@ var IssueForm = React.createClass({
           <br/>
           Image:
           <input ref="image" name="issue[image]" type="file" />
+
+          <input ref="lat" name="issue[lat]" type="hidden" />
+          <input ref="long" name="issue[long]" type="hidden" />
+
           <input type="submit" />
         </form>
       </div>
