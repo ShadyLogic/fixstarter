@@ -12,4 +12,16 @@ class FixesController < ApplicationController
   def new
   end
 
+  def create
+    @fix = Fix.new(fix_params)
+    User.first.fixes << @fix
+    # current_user.fixes << @fix  #for when Current_User is working
+    @fix.save
+  end
+
+  def fix_params
+    params.permit(:title, :description)
+    # params.permit(:title, :description, :zip, :image)
+  end
+
 end
