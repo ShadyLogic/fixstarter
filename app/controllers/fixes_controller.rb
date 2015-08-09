@@ -15,9 +15,9 @@ class FixesController < ApplicationController
 
   def create
     id = params[:issue_id]
-    p "*************"
-    p params
     @fix = Fix.new(fix_params)
+    p "************"
+    p current_user
     # current_user.fixes << @fix
     @fix.save
     redirect_to issue_path(id: id)
