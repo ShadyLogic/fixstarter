@@ -14,13 +14,16 @@ class FixesController < ApplicationController
   end
 
   def create
-    id = params[:issue_id]
+    issue = Issue.find(params[:issue_id])
     @fix = Fix.new(fix_params)
-    p "************"
-    p current_user
+    # p "************"
+    # p current_user
     # current_user.fixes << @fix
-    @fix.save
-    redirect_to issue_path(id: id)
+    if @fix.save
+      issue.status = "closed"
+      issue.save
+    end
+    redirect_to issue_path(id: issue.id)
   end
 
   def fix_params
