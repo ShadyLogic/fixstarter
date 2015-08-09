@@ -18,7 +18,6 @@ class IssuesController < ApplicationController
   end
 
   def create
-
     @issue = Issue.new(issue_params)
     @issue.save
     @issue.update_attributes(user_id: current_user.id)

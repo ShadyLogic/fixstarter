@@ -1,6 +1,7 @@
-
+<script src='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
 <%= react_component('SplashPage',
-                    {prerender: true, streamIssues: @stream_issues}) %>
+                    {prerender: true, streamIssues: @stream_issues, allIssues: @allIssues, zip: @zip}) %>
 
 
 <!-- removed prerender:true to troubleshoot other stuff -->

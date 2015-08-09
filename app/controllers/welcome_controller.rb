@@ -7,7 +7,9 @@ class WelcomeController < ApplicationController
 
   def show  # dashboard
     @stream_issues = Issue.package_stream_issues
+    @all_open_issues = Issue.package_open_issues
     if current_user
+      @zip = current_user.zip
       render 'welcome/show'
     else
       redirect_to root_path
