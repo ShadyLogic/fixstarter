@@ -10,6 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+
     new_user = User.find_by(email: params[:user][:email])
     new_user.first_name = "Good"
     new_user.last_name = "Samaritan"
