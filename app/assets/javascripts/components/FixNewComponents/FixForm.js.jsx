@@ -1,7 +1,9 @@
 var FixForm = React.createClass({
 
-  handleSubmit: function(event){
-    event.preventDefault()
+
+  /*  handleSubmit: function(event){
+
+   event.preventDefault()
 
     var titleNode = this.refs.title.getDOMNode();
     var descriptionNode = this.refs.description.getDOMNode();
@@ -18,20 +20,21 @@ var FixForm = React.createClass({
 
     // submit
     this.props.onFixSubmit(fix)
-  },
+
+  }, */
 
   render: function(){
     return (
       <div className="fix_form_wrapper">
-        <form ref="form" onSubmit={this.handleSubmit} >
+        <form action={'/issues/' + this.props.issue.id + '/fixes'} method="post"  /* onSubmit={this.handleSubmit} */  ref="form" >
           Name The Fix:
-          <input ref="title" name="fix[title]" type="text" />
+          <input ref="title" name="title" type="text" />
           <br/>
           Describe the Fix:
-          <input ref="description" name="fix[description]" type="text" />
+          <input ref="description" name="description" type="text" />
           <br/>
           Upload an Image of Showing the Fix:
-          <input ref="image" name="fix[image]" type="file" />
+          <input ref="image_url" name="image_url" type="file" />
           <input type="submit" />
         </form>
       </div>
