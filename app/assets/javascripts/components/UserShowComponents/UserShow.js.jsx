@@ -7,7 +7,7 @@ var UserShow = React.createClass({
       < UserBio user={this.props.user} />
       < UserBadges user={this.props.user} />
       <h1> This is your activity. </h1>
-      < UserActivity user={this.props.user} />
+      < UserActivity user={this.props.user} issues={this.props.issues} fixes={this.props.fixes} watches={this.props.watches} />
       </div>
       )
   }

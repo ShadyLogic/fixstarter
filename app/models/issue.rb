@@ -20,4 +20,8 @@ class Issue < ActiveRecord::Base
     stream_items
   end
 
+  def package_info
+    {id: self.id, user_id: self.user_id, title: self.title, image_url: self.image_url}
+  end
+
 end
