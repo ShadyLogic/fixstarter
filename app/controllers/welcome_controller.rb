@@ -26,23 +26,26 @@ class WelcomeController < ApplicationController
     p "*"*100
     p params
     p "*"*100
-    p params[:image].tempfile.open
+    p params[:image].tempfile
     p "*"*100
 
-    file = params[:image].tempfile.open
+    file = Base64.encode64(open(params[:image].tempfile) { |io| io.read })
 
-    query = { 'image' => params[:image].tempfile.open }
+    body = { 'image' => file }
     headers = { "Authorization" => "Client-ID 3deb91dad34b579"}
 
     response = HTTParty.post('https://api.imgur.com/3/image',
-                        :query => query,
+                        :body => body,
                         :headers => headers)
 
-    p "*"*100
-    p response
+    p "RESPONSE: #{response}"
     p "*"*100
 
-    redirect_to user_path(1)
+    image_url = response["data"]["link"]
+
+    p image_url
+
+    redirect_to image_url
   end
 
 end
