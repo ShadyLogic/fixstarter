@@ -29,6 +29,8 @@ class WelcomeController < ApplicationController
     p params[:image].tempfile
     p "*"*100
 
+    image_url = upload_image
+
     redirect_to image_url
   end
 

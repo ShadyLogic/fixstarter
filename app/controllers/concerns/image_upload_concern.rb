@@ -17,3 +17,5 @@ module ImageUploadConcern
 
     return image_url
   end
+
+end
