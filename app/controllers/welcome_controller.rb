@@ -24,4 +24,16 @@ class WelcomeController < ApplicationController
     @stream_issues = Issue.package_stream_issues
   end
 
+  def image
+    p "*"*100
+    p params
+    p "*"*100
+    p params[:image].tempfile
+    p "*"*100
+
+    image_url = upload_image
+
+    redirect_to image_url
+  end
+
 end
