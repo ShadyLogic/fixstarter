@@ -9,7 +9,6 @@ class CreateIssues < ActiveRecord::Migration
       t.string   :latitude
       t.string   :longitude
       t.string   :status
-
       t.timestamps null: false
     end
   end

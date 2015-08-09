@@ -14,6 +14,8 @@ class IssuesController < ApplicationController
 
   def create
     @issue = Issue.new(issue_params)
+    User.first.issues << @issue
+    # current_user.issues << @issue  #for when Current_User is working
     @issue.save
   end
 
