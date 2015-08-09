@@ -5,7 +5,7 @@ var IssueHeader = React.createClass({
         <h3>{this.props.issue.title}</h3>
         < IssueCheckbox />
         < IssueStatus status={this.props.issue.status} />
-        < SubmitFixButton />
+        < SubmitFixButton issueID={this.props.issue.id} />
       </div>
       )
   }
