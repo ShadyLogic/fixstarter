@@ -6,7 +6,6 @@ var Dashboard = React.createClass({
         <h1> Dashboard </h1>
         < DashboardNav />
         < DashboardMap />
-        < IssueNew />
       </div>
       )
   }
