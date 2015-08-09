@@ -1,9 +1,68 @@
 var IssueMap = React.createClass({
-  render: function(){
+
+	componentDidMount: function() {
+		this.renderMap();
+				// map needs acceess to other functions
+	},
+
+	renderMap: function() {
+		L.mapbox.accessToken = 'pk.eyJ1IjoibXdoYXR0ZXJzIiwiYSI6ImM5YjljNGE4MzcwZmRlOTJlOTNmMTczMTY4N2FkMDNiIn0.mYeJTMzrCEY8XMUqqTp6tg';
+		var geocoder 		 = L.mapbox.geocoder('mapbox.places'),
+		    latestMarker = undefined,
+		    self 				 = this
+
+		//map variable shared between functions.
+		map = L.mapbox.map('map', 'mapbox.streets')
+
+		 map.on('click', function(e) {
+				if (latestMarker === undefined) {} else {
+					this.removeLayer(latestMarker) }
+				
+		    latestMarker = self.addMarker(e.latlng.lat, e.latlng.lng)
+		    latestMarker.addTo(map);
+
+		    self.props.latValue = e.latlng.lat
+		    self.props.lonValue = e.latlng.lng
+		    console.log(self.props)
+		  });
+
+			map.on('mouseup', function(e) {
+				self.props.latValue = e.latlng.lat
+				self.props.lonValue = e.latlng.lng
+		    console.log(self.props)
+			})
+
+		//show the users zip code area of the map
+		geocoder.query(this.props.zip, self.showMap)
+	},
+
+
+
+	addMarker: function(c1, c2) {
+		var marker = L.marker(new L.LatLng(c1, c2), {
+	    icon: L.mapbox.marker.icon({
+	        'marker-color': 'ff8888'
+	    }),
+	    	draggable: true
+		});
+		console.log(marker)
+		return marker
+	},
+
+	showMap: function(err, data) {
+    if (data.lbounds) {
+        map.fitBounds(data.lbounds);
+    } else if (data.latlng) {
+        map.setView([data.latlng[0], data.latlng[1]], 13); 
+    } 
+	},
+
+  render: function() {
     return (
       <div className="issue_map_wrapper">
-        issue form
+        <div id='map'></div>
       </div>
     )
   }
+
 })

@@ -16,7 +16,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails_12factor', group: :production
 
-
+# Mapping
+gem 'mapbox-rails'
 
 group :development, :test do
 	gem 'faker'

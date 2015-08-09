@@ -16,7 +16,7 @@ Crowdsourced Community Upkeep
 
 **Backend:**
 * Ruby
-* Postgresql
+* PostgreSQL
 * Rails
 * Node & Socket.io
 * Redis
@@ -26,14 +26,16 @@ Crowdsourced Community Upkeep
 
 ## How it Works
 
-1) Models:
-  * User
-  * Issue
-  * Fix
-  * FixComment
-  * IssueSomment
-
-2)
+**Models:**
+  * **User** - Incorporates Devise for user authentication
+  * **UsersBump** - Manages community "up votes" for individual issues
+  * **Issue**
+  * **IssueComment** - Packages comments for a given issue
+  * **Fix**
+  * **FixComment** - Packages comments for a given fix
+  * **IssuesWatch** - This model allows users to "watch" or track a given issue over time
+  * **Category** - This is our list of categories for a given issue
+  * **Communities** - For our Beta version, we only have a "global" or public community, but overtime we are planning on releasing individual and private communities
 
 ## Invitation
 

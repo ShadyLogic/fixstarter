@@ -7,19 +7,19 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # User.create()
 
-marshall = User.new(email: "marshall@trash.org", first_name: "Mash", last_name: "Hannersly")
+marshall = User.new(email: "marshall@trash.org", first_name: "Mash", last_name: "Hannersly", bio: "I live in a trash can. Life. I live for derelict (my balls). I'm a derelict vagabond.", avatar_url: "https://avatars2.githubusercontent.com/u/9030453?v=3&s=460")
 marshall.password = "trashcan"
 marshall.save!
 
-tim = User.new(email: "tim@trash.org", first_name: "Smash", last_name: "Canada")
+tim = User.new(email: "tim@trash.org", first_name: "Smash", last_name: "Canada", zip: '94110')
 tim.password = "trashcan"
 tim.save!
 
-jacob = User.new(email: "jacob@trash.org", first_name: "Fist", last_name: "Punchersly")
+jacob = User.new(email: "jacob@trash.org", first_name: "Fist", last_name: "Punchersly", zip: '94121')
 jacob.password = "trashcan"
 jacob.save!
 
-andrea = User.new(email: "andrea@trash.org", first_name: "Doctor", last_name: "Draaay")
+andrea = User.new(email: "andrea@trash.org", first_name: "Doctor", last_name: "Draaay", zip: '94110')
 andrea.password = "trashcan"
 andrea.save!
 
@@ -32,6 +32,7 @@ screwloose = Issue.create(user_id: 1, community_id: 1, title: "Marshall unscrewe
 trashcanfix = Fix.create(user_id: 2, issue_id: trashcan.id, title: "Picked up trashcan", description: "Pulled him up and sent him off", image_url: "http://puppypicsonline.com/wp-content/uploads/2012/12/image.jpg")
 trashcanfix2 = Fix.create(user_id: 3, issue_id: trashcan.id, title: "Marshall was still dirty", description: "Cleaned him off.", image_url: "http://www.effectivecreations.com/tattarga/images/labrador-puppy8.jpg")
 smashcanfix = Fix.create(user_id: 2, issue_id: smashcan.id, title: "Ironed the Marshall", description: "Needed at least 30 minutes to iron properly. But he's good to go now.", image_url: "https://s-media-cache-ak0.pinimg.com/736x/a5/b9/c2/a5b9c26880b0213c1c967f4da56a94e6.jpg")
+screwloosefix = Fix.create(user_id: 1, issue_id: screwloose.id, title: "I rescrewed the jarlette", description: "After I ate all the cookies, I was able to close my own issue", image_url: "http://2.bp.blogspot.com/-97Vou7CtPVI/TZxkaclKLTI/AAAAAAAAAO4/Mk6NaGRtamg/s1600/cute%2Bpuppy%2Bin%2Bjar%2Bvase%2Bbucket%2Bfunny%2Blol.jpg")
 
 trashcanfixcomment = FixComment.create(fix_id: trashcanfix.id, user_id: 1, content: "Yay! You did a nice job cleaning me up. Thanks yo.")
 trashcanfixcomment2 = FixComment.create(fix_id: trashcanfix.id, user_id: 2, content: "Yo. MARSHALL. Did you post your own issue?!")

@@ -144,6 +144,12 @@
 
 }
 
+.img-circle {
+    border-radius: 50%;
+    width: 10%;
+    height: 10%;
+}
+
 .user_title_wrapper {
 }
 
@@ -175,6 +181,10 @@
 
 }
 
+.user_badges_wrapper {
+
+}
+
 /*---------------FIX SHOW PAGE--------------*/
 .fix_show_page{
 
@@ -194,6 +204,12 @@
 
 .issue_map_wrapper{
 
+}
+
+#map { 
+  width: 700px;
+  height: 500px;
+  border: 1px solid black;
 }
 
 .issue_image_wrapper{

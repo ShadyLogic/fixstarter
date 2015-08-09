@@ -7,7 +7,6 @@ var Discover = React.createClass({
         < FilterBar />
         < ResultList />
         < DiscoverMap />
-        < IssueNew />
       </div>
       )
   }

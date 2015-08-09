@@ -6,6 +6,7 @@ var Dashboard = React.createClass({
         <h1> Dashboard </h1>
         < DashboardNav />
         < DashboardMap />
+        < Stream streamIssues={this.props.streamIssues} />
       </div>
       )
   }
