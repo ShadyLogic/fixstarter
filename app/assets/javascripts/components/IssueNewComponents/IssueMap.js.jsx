@@ -37,12 +37,10 @@ var IssueMap = React.createClass({
 	    	draggable: true
 		});
 		console.log(marker)
-		debugger
 		return marker
 	},
 
 	showMap: function(err, data) {
-		console.log(data)
     if (data.lbounds) {
         map.fitBounds(data.lbounds);
     } else if (data.latlng) {
