@@ -10,6 +10,20 @@ class FixesController < ApplicationController
   end
 
   def new
+    @issue = Issue.find(params[:issue_id])
+  end
+
+  def create
+    @issue = params[:issue_id]
+    @fix = Fix.new(fix_params)
+    User.first.fixes << @fix
+    # current_user.fixes << @fix  #for when current_user is working
+    @fix.save
+    redirect_to "issues/#{@issue}"
+  end
+
+  def fix_params
+    params.permit(:title, :description, :issue_id)
   end
 
 end
