@@ -24,7 +24,7 @@ var IssueForm = React.createClass({
 
           <p>Description</p>
           <input ref="description" name="issue[description]" type="text" />
-          
+
           <p>Image</p>
           <input ref="image" name="issue[image]" type="file" />
 
@@ -32,6 +32,7 @@ var IssueForm = React.createClass({
           <input id="lon" ref="lon" name="issue[longitude]" type="hidden" />
           <input type="submit" />
         </form>
+
       </div>
     )
   }
