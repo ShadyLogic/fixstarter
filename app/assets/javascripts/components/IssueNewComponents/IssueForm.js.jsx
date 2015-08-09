@@ -6,6 +6,7 @@ var IssueForm = React.createClass({
     var titleNode = this.refs.title.getDOMNode();
     var descriptionNode = this.refs.description.getDOMNode();
     var zipNode = this.refs.zip.getDOMNode();
+
     var title = titleNode.value.trim()
     var description = descriptionNode.value.trim()
     var zip = zipNode.value.trim()
@@ -13,8 +14,7 @@ var IssueForm = React.createClass({
     var issue = {
       title: title,
       description: description,
-      zip: zip,
-      image: image
+      zip: zip
     }
 
     // submit
