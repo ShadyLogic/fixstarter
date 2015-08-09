@@ -3,6 +3,6 @@ class IssueComment < ActiveRecord::Base
   belongs_to :user
 
   def package_info
-    {id: self.id, content: self.content, user: self.user.first_name}
+    {id: self.id, user_id: self.user_id, issue_id: self.issue_id, content: self.content, user: self.user.first_name}
   end
 end
