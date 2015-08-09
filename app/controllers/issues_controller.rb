@@ -12,4 +12,16 @@ class IssuesController < ApplicationController
   def new
   end
 
+  def create
+    @issue = Issue.new(issue_params)
+    User.first.issues << @issue
+    # current_user.issues << @issue  #for when Current_User is working
+    @issue.save
+  end
+
+  def issue_params
+    params.permit(:title, :description)
+    # params.permit(:title, :description, :zip, :image)
+  end
+
 end
