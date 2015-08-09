@@ -12,10 +12,16 @@ class Issue < ActiveRecord::Base
   def self.package_stream_issues
     stream_items = []
     self.last(4).each do |issue|
+
+      p issue.id
+      p issue.user
+
       stream_items << {id: issue.id,
                       title: issue.title,
                       description: issue.description,
                       username: issue.user.full_name,
+                      latitude: issue.latitude,
+                      longitude: issue.longitude,
                       imageUrl: issue.image_url }
     end
     stream_items

@@ -1,5 +1,8 @@
 class IssuesController < ApplicationController
 
+  # Allows for json post requests to process without the need for a CSRF
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
+
   def show
     if @issue = Issue.find_by(id: params[:id])
       @fixes = @issue.fixes
@@ -15,15 +18,17 @@ class IssuesController < ApplicationController
   end
 
   def create
+
     @issue = Issue.new(issue_params)
-    current_user.issues << @issue
     @issue.save
+    @issue.update_attributes(user_id: current_user.id)
+    redirect_to dashboard_path
   end
 
 
   private
   def issue_params
-    params.permit(:title, :description, :latitude, :longitude)
+    params.require(:issue).permit(:title, :description, :latitude, :longitude)
     # params.permit(:title, :description, :zip, :image)
   end
 
