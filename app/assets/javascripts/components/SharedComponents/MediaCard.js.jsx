@@ -3,9 +3,9 @@ var MediaCard = React.createClass({
     return (
       <div className="media_card">
         <h3> Media Card </h3>
-        < MediaImage />
-        < MediaText />
+        < MediaImage image_url={this.props.image_url} />
+        < MediaText description={this.props.description} />
       </div>
-      )
+    )
   }
 })
