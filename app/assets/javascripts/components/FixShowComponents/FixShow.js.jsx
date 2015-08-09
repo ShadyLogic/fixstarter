@@ -2,9 +2,9 @@ var FixShow = React.createClass({
   render: function(){
     return (
       <div className="fix_show_page">
-        < FixHeader />
-         {/* < MediaCard/> */}
-         {/* < CommentList /> */}
+        < FixHeader title={this.props.fix.title} id={this.props.fix.id} issue_id= {this.props.issue.id} issue_title= {this.props.issue.title} />
+        < MediaCard image_url={this.props.fix.image_url} description={this.props.fix.description} />
+        < CommentsList comments={this.props.comments} />
       </div>
       )
   }
