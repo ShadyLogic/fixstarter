@@ -144,6 +144,12 @@
 
 }
 
+.img-circle {
+    border-radius: 50%;
+    width: 10%;
+    height: 10%;
+}
+
 .user_title_wrapper {
 }
 
@@ -172,6 +178,10 @@
 }
 
 .user_watching_item_wrapper {
+
+}
+
+.user_badges_wrapper {
 
 }
 

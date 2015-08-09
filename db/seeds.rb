@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create()
 
-marshall = User.new(email: "marshall@trash.org", first_name: "Mash", last_name: "Hannersly")
+marshall = User.new(email: "marshall@trash.org", first_name: "Mash", last_name: "Hannersly", bio: "I live in a trash can. Life. I live for derelict (my balls). I'm a derelict vagabond.", avatar_url: "https://avatars2.githubusercontent.com/u/9030453?v=3&s=460")
 marshall.password = "trashcan"
 marshall.save!
 
