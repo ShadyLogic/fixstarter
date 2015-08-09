@@ -9,6 +9,9 @@ var IssueForm = React.createClass({
       zip: zip,
       image: image
     }
+
+    // submit
+    this.props.onIssueSubmit(issue)
   },
 
   render: function(){

@@ -7,4 +7,13 @@ class IssuesController < ApplicationController
   def new
   end
 
+  def create
+    @issue = Issue.new(comment_params)
+    @issue.save
+  end
+
+  def issue_params
+    params.permit(:title, :description, :zip, :image)
+  end
+
 end
