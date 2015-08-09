@@ -206,6 +206,12 @@
 
 }
 
+#map { 
+  width: 700px;
+  height: 500px;
+  border: 1px solid black;
+}
+
 .issue_image_wrapper{
 
 }
@@ -225,5 +231,10 @@
   overflow: scroll;
   width: 80%;
   margin-top: 100px;
+}
+
+.stream_item_wrapper{
+  margin: 1%;
+  border-top: 1px solid skyblue;
 }
 /*----------------------------------------------*/

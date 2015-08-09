@@ -12,7 +12,8 @@ class Issue < ActiveRecord::Base
   def self.package_stream_issues
     stream_items = []
     self.last(4).each do |issue|
-      stream_items << {title: issue.title,
+      stream_items << {id: issue.id,
+                      title: issue.title,
                       description: issue.description,
                       username: issue.user.full_name,
                       imageUrl: issue.image_url }
