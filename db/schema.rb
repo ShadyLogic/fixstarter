@@ -99,6 +99,8 @@ ActiveRecord::Schema.define(version: 20150809081158) do
     t.string   "last_name"
     t.string   "latitude"
     t.string   "longitude"
+    t.string   "avatar_url"
+    t.string   "bio"
     t.string   "zip"
   end
 

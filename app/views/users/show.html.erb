@@ -1,4 +1,1 @@
-  <%= react_component('UserShow', {}) %>
-
-
-<%= current_user.full_name %>
+  <%= react_component('UserShow', {prerender: true, user: @user, issues: @issues, fixes: @fixes, watches: @watches}) %>
