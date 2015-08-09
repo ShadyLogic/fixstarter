@@ -1,11 +1,11 @@
 var FixNew = React.createClass({
 
   getInitialState: function(){
-    return {issueId: ""}
+    return {issueId: this.props.issue.id}
   },
 
   handleFixSubmit: function(dataObject){
-    var path = '/issues/:issue_id/fixes'
+    var path = '/issues/' + this.state.issueId + '/fixes'
     App.request('post', path, dataObject)
     {/* will probably want to setState? */}
   },

@@ -10,6 +10,7 @@ class FixesController < ApplicationController
   end
 
   def new
+    @issue = Issue.find(params[:issue_id])
   end
 
   def create
