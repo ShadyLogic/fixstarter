@@ -23,6 +23,8 @@ var IssueMap = React.createClass({
 	    }),
 	    	draggable: true
 		});
+		console.log(marker)
+		debugger
 		return marker
 	},
 

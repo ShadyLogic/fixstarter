@@ -10,12 +10,13 @@ class IssuesController < ApplicationController
   end
 
   def new
+
+    @zip = 
   end
 
   def create
     @issue = Issue.new(issue_params)
-    User.first.issues << @issue
-    # current_user.issues << @issue  #for when Current_User is working
+    current_user.issues << @issue
     @issue.save
   end
 
