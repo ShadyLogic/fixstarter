@@ -1,9 +1,8 @@
 var IssueNew = React.createClass({
 
+  // we don't need this method due to non-ajax!
   handleIssueSubmit: function(dataObject){
-    var path = '/issues'
-    App.request('post', path, dataObject)
-    {/* will probably want to setState? */}
+    console.log(dataObject)
   },
 
   render: function(){

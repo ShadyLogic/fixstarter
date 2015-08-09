@@ -23,7 +23,7 @@ class IssuesController < ApplicationController
 
   private
   def issue_params
-    params.permit(:title, :description)
+    params.permit(:title, :description, :latitude, :longitude)
     # params.permit(:title, :description, :zip, :image)
   end
 
