@@ -1,19 +1,32 @@
 var IssueMap = React.createClass({
 
 	componentDidMount: function() {
-	//Map config
-	L.mapbox.accessToken = 'pk.eyJ1IjoibXdoYXR0ZXJzIiwiYSI6ImM5YjljNGE4MzcwZmRlOTJlOTNmMTczMTY4N2FkMDNiIn0.mYeJTMzrCEY8XMUqqTp6tg';
-	var geocoder = L.mapbox.geocoder('mapbox.places'),
-	    map = L.mapbox.map('map', 'mapbox.streets');
-	 var latestMarker = undefined
-	 var self = this
-	 map.on('click', function(e) {
-			if (latestMarker === undefined) {} else {
-				this.removeLayer(latestMarker) }
-			
-	    latestMarker = self.addMarker(e.latlng.lat, e.latlng.lng)
-	    latestMarker.addTo(map);
-	  });
+		this.renderMap();
+				// map needs acceess to other functions
+	},
+
+	renderMap: function() {
+		L.mapbox.accessToken = 'pk.eyJ1IjoibXdoYXR0ZXJzIiwiYSI6ImM5YjljNGE4MzcwZmRlOTJlOTNmMTczMTY4N2FkMDNiIn0.mYeJTMzrCEY8XMUqqTp6tg';
+		var geocoder 		 = L.mapbox.geocoder('mapbox.places'),
+		    latestMarker = undefined,
+		    self 				 = this
+
+		//map variable shared between functions.
+		map = L.mapbox.map('map', 'mapbox.streets')
+
+		 map.on('click', function(e) {
+				if (latestMarker === undefined) {} else {
+					this.removeLayer(latestMarker) }
+				
+		    latestMarker = self.addMarker(e.latlng.lat, e.latlng.lng)
+		    latestMarker.addTo(map);
+
+		    console.log(e.latlng.lat)
+		    console.log(e.latlng.lng)
+		    
+		  });
+
+		geocoder.query(this.props.zip, self.showMap)
 	},
 
 	addMarker: function(c1, c2) {

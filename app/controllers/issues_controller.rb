@@ -10,8 +10,9 @@ class IssuesController < ApplicationController
   end
 
   def new
-
-    @zip = 
+    return @zip = current_user.zip if user_signed_in?
+    # TODO: Get user login completed
+    # redirect_to welcome_index_path
   end
 
   def create
@@ -20,6 +21,8 @@ class IssuesController < ApplicationController
     @issue.save
   end
 
+
+  private
   def issue_params
     params.permit(:title, :description)
     # params.permit(:title, :description, :zip, :image)
