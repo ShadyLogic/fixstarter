@@ -16,7 +16,7 @@ var FixNew = React.createClass({
         <h3> Submit a Fix! </h3>
         < FixImage />
         <br/>
-        < FixForm onFixSubmit={this.handleFixSubmit} />
+        < FixForm issue={this.props.issue} onFixSubmit={this.handleFixSubmit} />
       </div>
       )
   }

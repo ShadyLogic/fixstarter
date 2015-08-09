@@ -1,20 +1,19 @@
 var FixForm = React.createClass({
 
   handleSubmit: function(event){
-    event.preventDefalt()
+    event.preventDefault()
 
     var titleNode = this.refs.title.getDOMNode();
     var descriptionNode = this.refs.description.getDOMNode();
-    var zipNode = this.refs.zip.getDOMNode();
 
     var title = titleNode.value.trim()
     var description = descriptionNode.value.trim()
-    var zip = zipNode.value.trim()
+    var issue_id = this.props.issue.id
 
     var fix = {
       title: title,
       description: description,
-      zip: zip
+      issue_id: issue_id,
     }
 
     // submit
