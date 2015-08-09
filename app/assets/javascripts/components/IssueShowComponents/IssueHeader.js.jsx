@@ -2,9 +2,9 @@ var IssueHeader = React.createClass({
   render: function(){
     return (
       <div className="issue_header">
-        <h3> Header </h3>
+        <h3>{this.props.issue.title}</h3>
         < IssueCheckbox />
-        < IssueStatus />
+        < IssueStatus status={this.props.issue.status} />
         < SubmitFixButton />
       </div>
       )

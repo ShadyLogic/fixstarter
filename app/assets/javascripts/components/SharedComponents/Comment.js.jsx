@@ -2,7 +2,7 @@ var Comment = React.createClass({
   render: function(){
     return (
       <div className="comment">
-        <h4> Comment </h4>
+        <p>{this.props.user}: {this.props.content}</p>
       </div>
       )
   }
