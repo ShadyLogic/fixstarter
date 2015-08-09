@@ -11,8 +11,7 @@ class IssuesController < ApplicationController
 
   def new
     return @zip = current_user.zip if user_signed_in?
-    # TODO: Get user login completed
-    # redirect_to welcome_index_path
+    redirect_to welcome_index_path
   end
 
   def create
