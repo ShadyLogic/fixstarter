@@ -26,7 +26,7 @@ var FixForm = React.createClass({
   render: function(){
     return (
       <div className="fix_form_wrapper">
-        <form action={'/issues/' + this.props.issue.id + '/fixes'} method="post"   /* onSubmit={this.handleSubmit} */  ref="form" >
+        <form action={'/issues/' + this.props.issue.id + '/fixes'} method="post"  /* onSubmit={this.handleSubmit} */  ref="form" >
           Name The Fix:
           <input ref="title" name="title" type="text" />
           <br/>
