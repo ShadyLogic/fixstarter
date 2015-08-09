@@ -3,6 +3,13 @@ var IssueForm = React.createClass({
   handleSubmit: function(event){
     event.preventDefault()
 
+    var titleNode = this.refs.title.getDOMNode();
+    var descriptionNode = this.refs.description.getDOMNode();
+    var zipNode = this.refs.zip.getDOMNode();
+    var title = titleNode.value.trim()
+    var description = descriptionNode.value.trim()
+    var zip = zipNode.value.trim()
+
     var issue = {
       title: title,
       description: description,
