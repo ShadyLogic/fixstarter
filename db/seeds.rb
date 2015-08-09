@@ -7,19 +7,19 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # User.create()
 
-marshall = User.new(email: "marshall@trash.org", first_name: "Mash", last_name: "Hannersly")
+marshall = User.new(email: "marshall@trash.org", first_name: "Mash", last_name: "Hannersly", zip: '94122')
 marshall.password = "trashcan"
 marshall.save!
 
-tim = User.new(email: "tim@trash.org", first_name: "Smash", last_name: "Canada")
+tim = User.new(email: "tim@trash.org", first_name: "Smash", last_name: "Canada", zip: '94110')
 tim.password = "trashcan"
 tim.save!
 
-jacob = User.new(email: "jacob@trash.org", first_name: "Fist", last_name: "Punchersly")
+jacob = User.new(email: "jacob@trash.org", first_name: "Fist", last_name: "Punchersly", zip: '94121')
 jacob.password = "trashcan"
 jacob.save!
 
-andrea = User.new(email: "andrea@trash.org", first_name: "Doctor", last_name: "Draaay")
+andrea = User.new(email: "andrea@trash.org", first_name: "Doctor", last_name: "Draaay", zip: '94110')
 andrea.password = "trashcan"
 andrea.save!
 
