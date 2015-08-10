@@ -19,9 +19,12 @@ class IssuesController < ApplicationController
   end
 
   def create
+    category= Category.find(params[:issue][:category])
     @issue = Issue.new(issue_params)
     @issue.image_url = upload_image if contains_image?
-    @issue.save
+    if @issue.save
+      category.issues << @issue
+    end
     @issue.update_attributes(user_id: current_user.id)
     redirect_to issue_path(@issue)
   end
