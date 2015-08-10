@@ -19,6 +19,7 @@ class FixesController < ApplicationController
   def create
     issue = Issue.find(params[:issue_id])
     @fix = Fix.new(fix_params)
+    @fix.image_url = upload_image if contains_image?
     current_user.fixes << @fix
     if @fix.save
       issue.status = "closed"

@@ -18,7 +18,7 @@ var IssueForm = React.createClass({
       <div className="issue_form_wrapper">
       <IssueMap ref='latlon' zip={this.props.zip} latValue={this.props.latValue} lonValue={this.props.lonValue} />
 
-        <form ref="form" action="/issues" method="post" onSubmit={this.handleSubmit} >
+        <form ref="form" action="/issues" method="post" encType="multipart/form-data" onSubmit={this.handleSubmit} >
           <p>Title</p>
           <input ref="title" name="issue[title]" type="text" />
 
@@ -26,7 +26,7 @@ var IssueForm = React.createClass({
           <input ref="description" name="issue[description]" type="text" />
 
           <p>Image</p>
-          <input ref="image" name="issue[image]" type="file" />
+          <ImageUploadForm />
 
           <input id="lat" ref="lat" name="issue[latitude]" type="hidden" />
           <input id="lon" ref="lon" name="issue[longitude]" type="hidden" />

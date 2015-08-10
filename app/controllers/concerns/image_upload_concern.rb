@@ -18,4 +18,8 @@ module ImageUploadConcern
     return image_url
   end
 
+  def contains_image?
+    !params[:image].nil?
+  end
+
 end
