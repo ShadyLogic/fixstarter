@@ -24,7 +24,8 @@ class Issue < ActiveRecord::Base
                       longitude: issue.longitude,
                       imageUrl: issue.image_url }
     end
-    stream_items
+    # show latest streams first (with reverse)
+    stream_items.reverse
   end
 
   def self.package_open_issues
