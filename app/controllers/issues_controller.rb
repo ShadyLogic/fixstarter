@@ -22,7 +22,7 @@ class IssuesController < ApplicationController
     @issue.image_url = upload_image if contains_image?
     @issue.save
     @issue.update_attributes(user_id: current_user.id)
-    redirect_to dashboard_path
+    redirect_to issue_path(@issue)
   end
 
 
