@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   get '/discover', to: 'welcome#discover', as: :discover
   get '/registerlogin', to: 'welcome#register_login', as: :register_login
 
+  post '/images', to: 'welcome#image', as: :image_post
+
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
