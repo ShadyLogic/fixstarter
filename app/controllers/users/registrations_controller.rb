@@ -32,7 +32,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     new_user = User.find_by(email: params[:user][:email])
     new_user.first_name = "Good"
     new_user.last_name = "Samaritan"
-    new_user.zip = params[:user][:zipcode]
+    new_user.zip = params[:user][:zip]
     new_user.save
   end
 
