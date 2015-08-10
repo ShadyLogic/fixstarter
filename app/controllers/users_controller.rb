@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @watches = @user.issues_watches.map { |watches| watches.package_info}
   end
 
+  def my_profile
+    redirect_to "/users/#{current_user.id}"
+  end
+
   def create_watch
 
   end
