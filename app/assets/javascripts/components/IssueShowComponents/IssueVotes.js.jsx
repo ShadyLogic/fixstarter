@@ -1,29 +1,26 @@
-var IssueCheckbox = React.createClass({
+var IssueVotes = React.createClass({
   render: function(){
     return (
-      <div className="issue_checkbox">
-        <p>
-          { this.props.current_user_watching ?
-            <p> You are watching this issue.
-              <form action="/issues_watches/*" method="POST">
+      <div className="issue_votes">
+      <p> This issue has {this.props.upvotes} upvotes. </p>
+      <p>
+            { this.props.current_user_upvoted ?
+              <form action="/users_votes/*" method="POST">
               <input type="hidden" name="_method" value="DELETE" />
               <input type="hidden" name="user_id" value={this.props.current_user_id} />
               <input type="hidden" name="issue_id" value={this.props.issue.id} />
-              <button type= "Submit"> Unwatch </button>
+              <button type= "Submit"> Remove UpVote </button>
               </form>
-             </p>
+
           :
-            <p> You are not watching this issue.
-              <form action="/issues_watches" method="POST">
+              <form action="/users_votes" method="POST">
               <input type="hidden" name="user_id" value={this.props.current_user_id} />
               <input type="hidden" name="issue_id" value={this.props.issue.id} />
-              <button type= "Submit"> Watch </button>
+              <button type= "Submit"> UpVote </button>
               </form>
-            </p>
           }
-         </p>
-
+      </p>
       </div>
-      )
+    )
   }
 })

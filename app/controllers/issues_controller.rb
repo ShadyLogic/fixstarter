@@ -5,12 +5,15 @@ class IssuesController < ApplicationController
 
   def show
     if @issue = Issue.find_by(id: params[:id])
-      @category = @issue.categories
 
-      if @category.empty?
+      @categories = @issue.categories
+
+      p @categories
+
+      if @categories.empty?
+
         @category_name = "Uncategorized"
-      else
-        @category_name = @category.first.name
+
       end
 
       @fixes = @issue.fixes
@@ -22,7 +25,18 @@ class IssuesController < ApplicationController
         if current_user.issues_watches.where(issue_id: @issue.id).size != 0
           @current_user_watching = true
         end
-          @current_user_id = current_user.id
+        @current_user_id = current_user.id
+      end
+
+
+      @upvotes = @issue.users_votes.size
+
+      @current_user_upvoted = false
+      if user_signed_in?
+        if UsersVote.where(issue_id: @issue.id, user_id: @current_user.id).size != 0
+          @current_user_upvoted = true
+        end
+        @current_user_id = current_user.id
       end
 
 
@@ -38,12 +52,29 @@ class IssuesController < ApplicationController
   end
 
   def create
-    category= Category.find(params[:issue][:category])
+    category_id_array = []
+    uncategorized_category = Category.where(name: "Uncategorized").first
+
+    if params[:categories]
+      params[:categories].each do |category_id|
+        category_id_array << category_id[1].to_i
+      end
+    end
+
     @issue = Issue.new(issue_params)
     @issue.image_url = upload_image if contains_image?
+
     if @issue.save
-      category.issues << @issue
+      unless category_id_array.empty?
+        category_id_array.each do |category_id|
+          category = Category.find(category_id)
+          category.issues << @issue
+        end
+      else
+        uncategorized_category.issues << @issue
+      end
     end
+
     @issue.update_attributes(user_id: current_user.id)
 
     # publish event to redis server

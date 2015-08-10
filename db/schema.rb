@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20150809235504) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "users_bumps", force: :cascade do |t|
+  create_table "users_votes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "issue_id"
     t.datetime "created_at", null: false

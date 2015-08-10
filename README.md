@@ -28,7 +28,7 @@ Check out our [Fixstart](http://fixstart.herokuapp.com/) demo on Heroku. Please 
 
 **Models:**
   * **User** - Incorporates Devise for user authentication
-  * **UsersBump** - Manages community "up votes" for individual issues
+  * **UsersVote** - Manages community "up votes" for individual issues
   * **Issue**
   * **IssueComment** - Packages comments for a given issue
   * **Fix**
