@@ -4,7 +4,7 @@ var IssueHeader = React.createClass({
       <div className="issue_header">
         <h3>{this.props.issue.title}</h3>
 
-        < IssueVotes upvotes={this.props.upvotes}/>
+        < IssueVotes upvotes={this.props.upvotes} current_user_upvoted={this.props.current_user_upvoted} current_user_id={this.props.current_user_id} issue={this.props.issue}/>
 
         <h4>Category: {this.props.category_name}</h4>
 

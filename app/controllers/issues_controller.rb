@@ -6,7 +6,6 @@ class IssuesController < ApplicationController
   def show
     if @issue = Issue.find_by(id: params[:id])
 
-      @upvotes = @issue.users_votes.size
 
       @category = @issue.categories
       if @category.empty?
@@ -24,7 +23,18 @@ class IssuesController < ApplicationController
         if current_user.issues_watches.where(issue_id: @issue.id).size != 0
           @current_user_watching = true
         end
-          @current_user_id = current_user.id
+        @current_user_id = current_user.id
+      end
+
+
+      @upvotes = @issue.users_votes.size
+
+      @current_user_upvoted = false
+      if user_signed_in?
+        if UsersVote.where(issue_id: @issue.id, user_id: @current_user.id).size != 0
+          @current_user_upvoted = true
+        end
+        @current_user_id = current_user.id
       end
 
 
