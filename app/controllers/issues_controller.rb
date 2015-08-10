@@ -5,17 +5,26 @@ class IssuesController < ApplicationController
 
   def show
     if @issue = Issue.find_by(id: params[:id])
-      @category_name = @issue.categories.first.name
+      @category = @issue.categories
+
+      if @category.empty?
+        @category_name = "Uncategorized"
+      else
+        @category_name = @category.first.name
+      end
+
       @fixes = @issue.fixes
       @comments = @issue.issue_comments.map { |comment| comment.package_info }
 
+
       @current_user_watching = false
-      if current_user.issues_watches.where(issue_id: @issue.id).size != 0
-        @current_user_watching = true
+      if user_signed_in?
+        if current_user.issues_watches.where(issue_id: @issue.id).size != 0
+          @current_user_watching = true
+        end
+          @current_user_id = current_user.id
       end
 
-      @current_user_id = current_user.id
-      p @current_user_id
 
     else
       redirect_to welcome_index_path
