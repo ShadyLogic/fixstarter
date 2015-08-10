@@ -3,6 +3,14 @@ var DashboardMap = React.createClass({
 	componentDidMount: function() {
 		this.renderMap();
 		this.addIssues(this.props.allOpenIssues)
+
+		var socket = io('localhost:5001')
+		var self = this
+		socket.on('issue-created', function(data) {
+			console.log('issue-created')
+			console.log(data)
+		})
+		
 	},
 
 	renderMap: function() {

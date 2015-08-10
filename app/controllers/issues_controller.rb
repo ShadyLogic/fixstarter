@@ -45,6 +45,9 @@ class IssuesController < ApplicationController
       category.issues << @issue
     end
     @issue.update_attributes(user_id: current_user.id)
+
+    Redis.current.publis 'issue-created', Issue.package_open_issues.to_json
+
     redirect_to issue_path(@issue)
   end
 
