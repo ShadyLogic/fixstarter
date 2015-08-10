@@ -20,10 +20,10 @@ var IssueForm = React.createClass({
   render: function(){
     return (
       <div className="issue_form_wrapper">
-      <IssueMap ref='latlon' zip={this.props.zip} latValue={this.props.latValue} lonValue={this.props.lonValue} />
-      <span className='error'></span>
+        <IssueMap ref='latlon' zip={this.props.zip} latValue={this.props.latValue} lonValue={this.props.lonValue} />
+        <span className='error'></span>
 
-        <form ref="form" action="/issues" method="post" encType="multipart/form-data" onSubmit={this.handleSubmit} >
+        <form className="issue_new_form" ref="form" action="/issues" method="post" encType="multipart/form-data" onSubmit={this.handleSubmit} >
           <p>Title</p>
           <input ref="title" name="issue[title]" type="text" required />
 
