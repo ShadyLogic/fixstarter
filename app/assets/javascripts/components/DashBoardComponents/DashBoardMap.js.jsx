@@ -12,6 +12,8 @@ var DashboardMap = React.createClass({
 			self.addIssues(data)
 		})
 
+		// NOTE: singleMarkerObject is, unlike the other objects we recieve, a hash and NOT an array. on Line 75, we wrap it 
+		// in an array before passing it to the addIssues method.
 		socket.on('fix-created', function(singleMarkerObject){
 			console.log('fix-created')
 			self.findAndUpdateMarker(singleMarkerObject)

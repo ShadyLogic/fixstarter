@@ -66,8 +66,6 @@ class Issue < ActiveRecord::Base
              color: '0044FF' }
   end
 
-
-
   def package_as_fixed
    {  id: self.id,
       title: self.title,
