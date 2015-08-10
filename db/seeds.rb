@@ -77,12 +77,12 @@ smashcancomment = IssueComment.create(issue_id: smashcan.id, user_id: 4, content
 
 
 
-#-------------------------------- USER BUMPS ----------------------------------------#
-bump1 = UsersBump.create(user_id: 1, issue_id: 1)
-bump2 = UsersBump.create(user_id: 1, issue_id: 2)
-bump3 = UsersBump.create(user_id: 1, issue_id: 3)
-bump4 = UsersBump.create(user_id: 2, issue_id: 1)
-bump5 = UsersBump.create(user_id: 2, issue_id: 2)
+#-------------------------------- USER VOTES ----------------------------------------#
+vote1 = UsersVote.create(user_id: 1, issue_id: 1)
+vote2 = UsersVote.create(user_id: 1, issue_id: 2)
+vote3 = UsersVote.create(user_id: 1, issue_id: 3)
+vote4 = UsersVote.create(user_id: 2, issue_id: 1)
+vote5 = UsersVote.create(user_id: 2, issue_id: 2)
 #------------------------------------------------------------------------------------#
 
 
