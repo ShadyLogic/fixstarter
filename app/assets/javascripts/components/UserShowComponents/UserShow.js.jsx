@@ -5,7 +5,7 @@ var UserShow = React.createClass({
 
       {this.props.same_user ?
         <div>
-          <h1> Hello! Welcome to your FixStart profile page. </h1>
+          <h1> Hello {this.props.user.first_name}! Welcome to your FixStart profile page. </h1>
           <a href="/profile/edit"> Update my profile information </a>
         </div>
       :
