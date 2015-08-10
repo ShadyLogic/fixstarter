@@ -5,8 +5,10 @@ class IssuesController < ApplicationController
 
   def show
     if @issue = Issue.find_by(id: params[:id])
-      @category = @issue.categories
 
+      @upvotes = @issue.users_votes.size
+
+      @category = @issue.categories
       if @category.empty?
         @category_name = "Uncategorized"
       else
