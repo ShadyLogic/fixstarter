@@ -7,14 +7,13 @@ class IssuesController < ApplicationController
     if @issue = Issue.find_by(id: params[:id])
 
       @categories = @issue.categories
-      p "************************"
+
       p @categories
 
       if @categories.empty?
 
         @category_name = "Uncategorized"
-      # else
-      #   @category_names = @categories.first.name
+
       end
 
       @fixes = @issue.fixes
