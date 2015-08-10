@@ -252,6 +252,11 @@
   color: orange;
 }
 
+.stream_content{
+  text-decoration: none;
+  color: black;
+}
+
 .stream_image{
   width: 10%;
 }
