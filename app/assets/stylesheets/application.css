@@ -217,16 +217,18 @@
 
 /*---------------ISSUE NEW FORM --------------*/
 .issue_new_wrapper{
+  text-align: center
   /*border: 1px solid skyblue;*/
 }
 
 .issue_map_wrapper{
-
+  display: inline-block;
+  width: 60%;
 }
 
 #map {
   width: 100%;
-  height: 500px;
+  height: 600px;
   border: 1px solid black;
 }
 
@@ -240,6 +242,18 @@
 
 .issue_votes{
 
+}
+
+.issue_new_form{
+  font-size: 20px;
+  margin-left: 1%;
+  display: inline-block;
+  text-align: left;
+}
+
+#myCanvas{
+  height: 150px;
+  overflow: hidden;
 }
 /*----------------------------------------------*/
 

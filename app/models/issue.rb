@@ -54,6 +54,29 @@ class Issue < ActiveRecord::Base
     issue_items
   end
 
+  def self.package_latest_issue
+    issue = self.last
+    [] << {  id: issue.id,
+             title: issue.title,
+             description: issue.description,
+             latitude: issue.latitude,
+             longitude: issue.longitude,
+             fix_text: 'Fix It!',
+             link: "/issues/#{issue.id}",
+             color: '0044FF' }
+  end
+
+  def package_as_fixed
+   {  id: self.id,
+      title: self.title,
+      description: 'This issue has been fixed!',
+      latitude: self.latitude,
+      longitude: self.longitude,
+      fix_text: 'Check out the fix!',
+      link: "/issues/#{self.id}",
+      color: '989898'  } 
+  end
+
   def package_info
     {id: self.id, user_id: self.user_id, title: self.title, image_url: self.image_url, status: self.status, upvotes: self.users_votes.size}
   end

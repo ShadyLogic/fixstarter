@@ -19,6 +19,9 @@ gem 'rails_12factor', group: :production
 # Mapping
 gem 'mapbox-rails'
 
+#redis server for socket
+gem 'redis'
+
 group :development, :test do
 	gem 'faker'
   gem 'pry-byebug'

@@ -25,6 +25,7 @@ class FixesController < ApplicationController
       issue.status = "closed"
       issue.save
     end
+    Redis.current.publish 'fix-created', issue.package_as_fixed.to_json
     redirect_to issue_path(id: issue.id)
   end
 
