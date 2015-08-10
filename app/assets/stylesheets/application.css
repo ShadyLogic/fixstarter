@@ -68,7 +68,7 @@
 
 
 
-/*---------------DASHBOARD  PAGE--------------*/
+/*---------------DASHBOARD PAGE--------------*/
 .dashboard_page{
   text-align: center;
   /*border: 1px solid black;*/
@@ -81,6 +81,8 @@
 
 .dashboard_map_wrapper{
   /*background-image: url(http://i.imgur.com/ziM5W14.png);*/
+  display: inline-block;
+  width: 80%;
   background-size: 100%;
   /*border: 3px solid lightgrey;*/
 }
@@ -95,7 +97,7 @@
 
 
 
-/*---------------DISCOVER  PAGE--------------*/
+/*---------------DISCOVER PAGE--------------*/
 .discover_page{
   text-align: center;
 }
@@ -132,6 +134,9 @@
   border: 3px solid lightgrey;
 }
 /*----------------------------------------------*/
+
+
+
 
 /*---------------USER PROFILE--------------*/
 
@@ -191,6 +196,10 @@
 .user_badges_wrapper {
 
 }
+/*----------------------------------------------*/
+
+
+
 
 /*---------------FIX SHOW PAGE--------------*/
 .fix_show_page{
@@ -201,6 +210,8 @@
 
 }
 /*----------------------------------------------*/
+
+
 
 
 
@@ -230,11 +241,13 @@
 
 
 
+
+
 /*----------------------STREAM-------------------*/
 .stream_wrapper {
   display: inline-block;
   border: 3px solid lightgrey;
-  height: 300px;
+  height: 400px;
   overflow: scroll;
   width: 80%;
   margin-top: 100px;
@@ -242,6 +255,22 @@
 
 .stream_item_wrapper{
   margin: 1%;
+  padding: 1%;
   border-top: 1px solid skyblue;
+}
+
+.stream_title{
+  font-size: 24px;
+  text-decoration: none;
+  color: orange;
+}
+
+.stream_content{
+  text-decoration: none;
+  color: black;
+}
+
+.stream_image{
+  width: 10%;
 }
 /*----------------------------------------------*/
