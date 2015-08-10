@@ -16,6 +16,10 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
+  def after_sign_in_path_for(resource_or_scope)
+    dashboard_path
+  end
+
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.

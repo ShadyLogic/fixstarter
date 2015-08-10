@@ -9,12 +9,35 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super
+    build_resource(sign_up_params)
+
+    resource.save
+    # yield resource if block_given?
+    if resource.persisted?
+      if resource.active_for_authentication?
+        set_flash_message :notice, :signed_up if is_flashing_format?
+        sign_up(resource_name, resource)
+        respond_with resource, location: after_sign_up_path_for(resource)
+      else
+        set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
+        expire_data_after_sign_in!
+        respond_with resource, location: after_inactive_sign_up_path_for(resource)
+      end
+    else
+      clean_up_passwords resource
+      set_minimum_password_length
+      respond_with resource
+    end
 
     new_user = User.find_by(email: params[:user][:email])
     new_user.first_name = "Good"
     new_user.last_name = "Samaritan"
+    new_user.zip = params[:user][:zipcode]
     new_user.save
+  end
+
+  def after_sign_in_path_for(resource_or_scope)
+    dashboard_path
   end
 
   # GET /resource/edit
