@@ -8,7 +8,7 @@ var IssueShow = React.createClass({
 
         < FixList fixes={this.props.fixes} issue_id={this.props.issue.id} />
         < MediaCard image_url={this.props.issue.image_url} description={this.props.issue.description} />
-        < CommentsList comments={this.props.comments} />
+        < CommentsList comments={this.props.comments} path={'/issues/' + this.props.issue.id + '/comments'} current_user={this.props.current_user} />
         < IssueShowMap issue={this.props.issue} />
       </div>
     )

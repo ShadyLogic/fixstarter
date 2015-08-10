@@ -21,13 +21,17 @@ class IssuesController < ApplicationController
 
 
       @current_user_watching = false
+      @current_user = nil
+
       if user_signed_in?
+        @current_user_id = current_user.id
+        @current_user = current_user
         if current_user.issues_watches.where(issue_id: @issue.id).size != 0
           @current_user_watching = true
         end
+
         @current_user_id = current_user.id
       end
-
 
       @upvotes = @issue.users_votes.size
 
