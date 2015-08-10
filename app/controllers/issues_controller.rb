@@ -5,6 +5,7 @@ class IssuesController < ApplicationController
 
   def show
     if @issue = Issue.find_by(id: params[:id])
+      @category_name = @issue.categories.first.name
       @fixes = @issue.fixes
       @comments = @issue.issue_comments.map { |comment| comment.package_info }
     else
@@ -13,14 +14,18 @@ class IssuesController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     return @zip = current_user.zip if user_signed_in?
     redirect_to welcome_index_path
   end
 
   def create
+    category= Category.find(params[:issue][:category])
     @issue = Issue.new(issue_params)
     @issue.image_url = upload_image if contains_image?
-    @issue.save
+    if @issue.save
+      category.issues << @issue
+    end
     @issue.update_attributes(user_id: current_user.id)
     redirect_to issue_path(@issue)
   end
@@ -29,7 +34,6 @@ class IssuesController < ApplicationController
   private
   def issue_params
     params.require(:issue).permit(:title, :description, :latitude, :longitude)
-    # params.permit(:title, :description, :zip, :image)
   end
 
 end

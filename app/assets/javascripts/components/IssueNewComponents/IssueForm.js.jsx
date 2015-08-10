@@ -25,7 +25,10 @@ var IssueForm = React.createClass({
           <p>Description</p>
           <input ref="description" name="issue[description]" type="text" />
 
-          <p>Image</p>
+          <p>Category</p>
+          < CategoryDropdown categories={this.props.categories} />
+
+          <p>Upload an Image:</p>
           <ImageUploadForm />
 
           <input id="lat" ref="lat" name="issue[latitude]" type="hidden" />

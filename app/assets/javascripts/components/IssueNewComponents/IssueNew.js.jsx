@@ -9,7 +9,7 @@ var IssueNew = React.createClass({
     return (
       <div className="issue_new_wrapper">
         < IssueImage />
-        < IssueForm zip={this.props.zip} onIssueSubmit={this.handleIssueSubmit} />
+        < IssueForm zip={this.props.zip} categories={this.props.categories} onIssueSubmit={this.handleIssueSubmit} />
       </div>
       )
   }
