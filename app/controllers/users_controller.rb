@@ -19,12 +19,14 @@ class UsersController < ApplicationController
   end
 
   def create_watch
-    @new_issue = IssuesWatch.create(user_id: params[:user_id], issue_id: params[:issue_id])
+    new_watch = IssuesWatch.create(user_id: params[:user_id], issue_id: params[:issue_id])
     redirect_to issue_path(id: params[:issue_id])
   end
 
   def delete_watch
-
+    watch_to_delete = IssuesWatch.find_by(user_id: params[:user_id], issue_id: params[:issue_id])
+    watch_to_delete.destroy
+    redirect_to issue_path(id: params[:issue_id])
   end
 
   def create_bump
