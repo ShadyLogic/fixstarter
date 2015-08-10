@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :fix_comments
   has_many :fixes
   has_many :issue_comments
-  has_many :users_bumps
+  has_many :users_votes
   has_many :issues
   has_many :communities, through: :issues
 

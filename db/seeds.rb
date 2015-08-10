@@ -77,12 +77,12 @@ smashcancomment = IssueComment.create(issue_id: smashcan.id, user_id: 4, content
 
 
 
-#-------------------------------- USER BUMPS ----------------------------------------#
-bump1 = UsersBump.create(user_id: 1, issue_id: 1)
-bump2 = UsersBump.create(user_id: 1, issue_id: 2)
-bump3 = UsersBump.create(user_id: 1, issue_id: 3)
-bump4 = UsersBump.create(user_id: 2, issue_id: 1)
-bump5 = UsersBump.create(user_id: 2, issue_id: 2)
+#-------------------------------- USER VOTES ----------------------------------------#
+vote1 = UsersVote.create(user_id: 1, issue_id: 1)
+vote2 = UsersVote.create(user_id: 1, issue_id: 2)
+vote3 = UsersVote.create(user_id: 1, issue_id: 3)
+vote4 = UsersVote.create(user_id: 2, issue_id: 1)
+vote5 = UsersVote.create(user_id: 2, issue_id: 2)
 #------------------------------------------------------------------------------------#
 
 
@@ -102,13 +102,14 @@ watch5 = IssuesWatch.create(user_id: 2, issue_id: 2)
 
 
 #-------------------------------- CATEGORIES -----------------------------------------#
-heavy =      Category.create(name: "Heavy", description: "Our hero will need to lift >50 lbs.")
-very_heavy = Category.create(name: "Very Heavy", description: "Our hero will need to lift >100 lbs.")
-dirty =      Category.create(name: "Dirty", description: "Our hero will need to clean the area or item.")
-tools =      Category.create(name: "Tools", description: "Our hero will need to bring a tool (e.g., screwdriver, hammer). See description for the submitter’s opinion for what tools are required..")
-yard_work =  Category.create(name: "Yard Work & Removal", description: "Our hero can clean up the community area and remove any yard waste or rubbish.")
-handyman =   Category.create(name: "General Handyman", description: "Our hero would perform minor repairs.")
-escalate =   Category.create(name: "Escalate", description: "This issue is bigger than what someone in our community can solve, and needs a hero to alert the city / public officials.")
+heavy =         Category.create(name: "Heavy", description: "Our hero will need to lift >50 lbs.")
+very_heavy =    Category.create(name: "Very Heavy", description: "Our hero will need to lift >100 lbs.")
+dirty =         Category.create(name: "Dirty", description: "Our hero will need to clean the area or item.")
+tools =         Category.create(name: "Tools", description: "Our hero will need to bring a tool (e.g., screwdriver, hammer). See description for the submitter’s opinion for what tools are required..")
+yard_work =     Category.create(name: "Yard Work & Removal", description: "Our hero can clean up the community area and remove any yard waste or rubbish.")
+handyman =      Category.create(name: "General Handyman", description: "Our hero would perform minor repairs.")
+escalate =      Category.create(name: "Escalate", description: "This issue is bigger than what someone in our community can solve, and needs a hero to alert the city / public officials.")
+uncategorized = Category.create(name: "Uncategorized", description: "A home for all orphaned fixes.")
 #-------------------------------------------------------------------------------------#
 
 

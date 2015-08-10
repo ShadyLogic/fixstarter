@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   post '/issues_watches', to: 'users#create_watch'
   delete '/issues_watches/:id', to: 'users#delete_watch'
 
-  post '/users_bumps', to: 'users#create_bump'
-  delete '/users_bumps/:id', to: 'users#delete_bump'
+  post '/users_votes', to: 'users#create_vote'
+  delete '/users_votes/:id', to: 'users#delete_vote'
 
   get '/my_profile', to: 'users#my_profile', as: :my_profile
 

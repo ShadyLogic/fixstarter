@@ -60,7 +60,6 @@ var IssueMap = React.createClass({
 		var geolocate = $('#geoLocate')
 		var self = this
     geolocate.click(function (e) {
-    	debugger
         e.preventDefault();
         e.stopPropagation();
         map.locate();

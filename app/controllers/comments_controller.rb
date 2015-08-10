@@ -25,8 +25,8 @@ class CommentsController < ApplicationController
     p params
     p "*"*100
 
-    fix = Fix.find_by(id: params[:id])
-    comment = FixComment.create(fix_id: params[:issue_id], user_id: current_user.id, content: params[:content])
+    fix = Fix.find_by(id: params[:fix_id])
+    comment = FixComment.create(fix_id: params[:fix_id], user_id: current_user.id, content: params[:content])
 
     if request.xhr?
       render '/comments/comment_partial'
