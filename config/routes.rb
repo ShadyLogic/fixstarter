@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post '/users_bumps', to: 'users#create_bump'
   delete '/users_bumps/:id', to: 'users#delete_bump'
 
+  get '/my_profile', to: 'users#my_profile', as: :my_profile
+
   resources :issues do
     resources :fixes
   end
