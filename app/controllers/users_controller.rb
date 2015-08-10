@@ -19,7 +19,8 @@ class UsersController < ApplicationController
   end
 
   def create_watch
-
+    @new_issue = IssuesWatch.create(user_id: params[:user_id], issue_id: params[:issue_id])
+    redirect_to issue_path(id: params[:issue_id])
   end
 
   def delete_watch
