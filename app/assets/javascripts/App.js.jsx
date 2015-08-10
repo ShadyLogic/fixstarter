@@ -18,3 +18,23 @@ App.request = function(method, path, data){
     });
   });
 };
+
+App.jacobs_request = function(method, path, data){
+
+    var request = $.ajax({
+      url:      path,
+      method:   method,
+      data:     {content: data}
+    });
+
+    request.done(function(serverData){
+      console.log("SUCCESS")
+      return serverData
+    });
+
+    request.fail(function(serverData){
+      console.log("FAILURE")
+      return serverData
+    });
+
+};
