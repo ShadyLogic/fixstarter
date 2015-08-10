@@ -51,9 +51,12 @@ class IssuesController < ApplicationController
 
   def create
     category_id_array = []
-    uncategorized_category = Category.where(name: "Uncategorized")
-    params[:categories].each do |category_id|
-      category_id_array << category_id[1].to_i
+    uncategorized_category = Category.where(name: "Uncategorized").first
+
+    if params[:categories]
+      params[:categories].each do |category_id|
+        category_id_array << category_id[1].to_i
+      end
     end
 
     @issue = Issue.new(issue_params)
@@ -62,10 +65,12 @@ class IssuesController < ApplicationController
       unless category_id_array.empty?
         category_id_array.each do |category_id|
           category = Category.find(category_id)
+          category.issues << @issue
         end
-          uncategorized_category.issues << @issue
       else
-
+        p "no category chosen!"
+        p "***********************"
+        uncategorized_category.issues << @issue
       end
     end
     @issue.update_attributes(user_id: current_user.id)
