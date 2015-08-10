@@ -9,7 +9,7 @@ var UserFixedList = React.createClass({
 
     return (
       <div className="user_issues_list_wrapper">
-      <h2> You have fixed the following items</h2>
+      <h2> Issues Fixed</h2>
       {Fixes}
       </div>
       )
