@@ -12,10 +12,6 @@ class Issue < ActiveRecord::Base
   def self.package_stream_issues
     stream_items = []
     self.last(4).each do |issue|
-
-      p issue.id
-      p issue.user
-
       stream_items << {id: issue.id,
                       title: issue.title,
                       description: issue.description,
@@ -24,7 +20,8 @@ class Issue < ActiveRecord::Base
                       longitude: issue.longitude,
                       imageUrl: issue.image_url }
     end
-    stream_items
+    # show latest streams first (with reverse)
+    stream_items.reverse
   end
 
   def self.package_open_issues
@@ -66,6 +63,7 @@ class Issue < ActiveRecord::Base
              color: '0044FF' }
   end
 
+  # THE Below method does NOT return an array, but a hash.
   def package_as_fixed
    {  id: self.id,
       title: self.title,
