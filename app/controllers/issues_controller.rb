@@ -76,6 +76,10 @@ class IssuesController < ApplicationController
     end
 
     @issue.update_attributes(user_id: current_user.id)
+
+    # publish event to redis server
+    Redis.current.publish 'issue-created', Issue.package_latest_issue.to_json
+
     redirect_to issue_path(@issue)
   end
 

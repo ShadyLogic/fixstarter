@@ -3,6 +3,22 @@ var DashboardMap = React.createClass({
 	componentDidMount: function() {
 		this.renderMap();
 		this.addIssues(this.props.allOpenIssues)
+
+		// Socket
+		var socket = io('localhost:5001')
+		var self = this
+		socket.on('issue-created', function(data) {
+			console.log('issue-created')
+			self.addIssues(data)
+		})
+
+		// NOTE: singleMarkerObject is, unlike the other objects we recieve, a hash and NOT an array. on Line 75, we wrap it 
+		// in an array before passing it to the addIssues method.
+		socket.on('fix-created', function(singleMarkerObject){
+			console.log('fix-created')
+			self.findAndUpdateMarker(singleMarkerObject)
+		})
+
 	},
 
 	renderMap: function() {
@@ -51,6 +67,16 @@ var DashboardMap = React.createClass({
 		 	
 	 		map.addLayer(markers);
 	 },
+
+	findAndUpdateMarker: function(marker) {
+		var self = this
+		markers.eachLayer(function(i) {
+			if (i._latlng.lng == marker.longitude && i._latlng.lat == marker.latitude) {
+				markers.removeLayer(i)
+				self.addIssues([marker])
+			}
+		});
+	},
 
 	packageIssue: function(issue) {
 		return ("<p><b>"+issue.title+"</b></p><p>"+issue.description+"</p><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
