@@ -5,6 +5,7 @@ class IssuesController < ApplicationController
 
   def show
     if @issue = Issue.find_by(id: params[:id])
+      @category_name = @issue.categories.first.name
       @fixes = @issue.fixes
       @comments = @issue.issue_comments.map { |comment| comment.package_info }
     else
