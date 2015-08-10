@@ -19,6 +19,7 @@ class IssuesController < ApplicationController
 
   def create
     @issue = Issue.new(issue_params)
+    @issue.image_url = upload_image if contains_image?
     @issue.save
     @issue.update_attributes(user_id: current_user.id)
     redirect_to dashboard_path
