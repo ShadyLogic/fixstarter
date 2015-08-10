@@ -21,13 +21,9 @@ var ImageUploadForm = React.createClass({
   render: function(){
     return (
       <div>
-        <form action="/images" method="POST" encType="multipart/form-data">
-          <input id="image" type="file" accept="image/*;capture=camera" name="image" onChange={this.handleImage} />
-          <input type="submit" value="Submit" />
-        </form>
-
-        <canvas id="myCanvas" width="200" height="200" style={{border: "1px solid black"}} >
-        </canvas>
+        <canvas id="myCanvas" width="50" height="50" style={{border: "1px solid black"}} >
+        </canvas><br/>
+        <input id="image" type="file" accept="image/*;capture=camera" name="image" onChange={this.handleImage} />
       </div>
       )
   }
