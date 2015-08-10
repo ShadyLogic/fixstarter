@@ -5,6 +5,7 @@ var Discover = React.createClass({
         <h2> Discover Page </h2>
         < SearchBar />
         < FilterBar />
+        < Stream streamIssues={this.props.streamIssues} />
         < ResultList />
         < DiscoverMap />
       </div>
