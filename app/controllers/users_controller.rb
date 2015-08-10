@@ -29,11 +29,11 @@ class UsersController < ApplicationController
     redirect_to issue_path(id: params[:issue_id])
   end
 
-  def create_bump
+  def create_vote
 
   end
 
-  def delete_bump
+  def delete_vote
 
   end
 

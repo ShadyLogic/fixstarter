@@ -3,7 +3,7 @@ class Issue < ActiveRecord::Base
   has_many :fixes
   has_many :fix_comments, through: :fixes
   has_many :issue_comments
-  has_many :users_bumps
+  has_many :users_votes
   belongs_to :user
   belongs_to :community
   has_many   :categories_issues
