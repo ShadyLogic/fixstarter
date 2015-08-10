@@ -4,13 +4,19 @@ var DashboardMap = React.createClass({
 		this.renderMap();
 		this.addIssues(this.props.allOpenIssues)
 
+		// Socket
 		var socket = io('localhost:5001')
 		var self = this
 		socket.on('issue-created', function(data) {
 			console.log('issue-created')
-			console.log(data)
+			self.addIssues(data)
 		})
-		
+
+		socket.on('fix-created', function(singleMarkerObject){
+			console.log('fix-created')
+			self.findAndUpdateMarker(singleMarkerObject)
+		})
+
 	},
 
 	renderMap: function() {
@@ -59,6 +65,16 @@ var DashboardMap = React.createClass({
 		 	
 	 		map.addLayer(markers);
 	 },
+
+	findAndUpdateMarker: function(marker) {
+		var self = this
+		markers.eachLayer(function(i) {
+			if (i._latlng.lng == marker.longitude && i._latlng.lat == marker.latitude) {
+				markers.removeLayer(i)
+				self.addIssues([marker])
+			}
+		});
+	},
 
 	packageIssue: function(issue) {
 		return ("<p><b>"+issue.title+"</b></p><p>"+issue.description+"</p><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
