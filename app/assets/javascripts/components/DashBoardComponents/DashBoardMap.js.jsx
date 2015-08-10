@@ -27,22 +27,29 @@ var DashboardMap = React.createClass({
 	},
 
 	addIssues: function(issues) {
+		var self = this
     for (var i = 0; i < issues.length; i++) {
       var issue = issues[i];
-      var marker = L.marker(new L.LatLng(issue.latitude, issue.longitude), {
-          icon: L.mapbox.marker.icon({'marker-symbol': 'circle', 'marker-color': issue.color}),
-          properties: {
-          	title: issue.title,
-          	description: issue.description,
-          	link: issue.link,
-        }
-      });
+      self.addMarker(issue)
+    	}
+	 },
 
-      var issuePackage = this.packageIssue(issue)
-      marker.bindPopup(issuePackage)
-      markers.addLayer(marker);
-    }
-    map.addLayer(markers);
+	 addMarker: function(issue) {
+		 	var marker = L.marker(new L.LatLng(issue.latitude, issue.longitude), {
+	 	    icon: L.mapbox.marker.icon({'marker-symbol': 'circle', 'marker-color': issue.color}),
+	 	    properties: {
+	 	    	title: issue.title,
+	 	    	description: issue.description,
+	 	    	link: issue.link,
+		 	  }
+		});
+
+		 	var issuePackage = this.packageIssue(issue)
+		 	marker.bindPopup(issuePackage)
+		 	markers.addLayer(marker);
+
+		 	
+	 		map.addLayer(markers);
 	 },
 
 	packageIssue: function(issue) {
