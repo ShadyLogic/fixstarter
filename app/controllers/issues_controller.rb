@@ -13,6 +13,7 @@ class IssuesController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     return @zip = current_user.zip if user_signed_in?
     redirect_to welcome_index_path
   end
@@ -29,7 +30,6 @@ class IssuesController < ApplicationController
   private
   def issue_params
     params.require(:issue).permit(:title, :description, :latitude, :longitude)
-    # params.permit(:title, :description, :zip, :image)
   end
 
 end
