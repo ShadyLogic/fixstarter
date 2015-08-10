@@ -30,10 +30,15 @@ class UsersController < ApplicationController
   end
 
   def create_vote
+    up_vote = UsersVote.create(user_id: params[:user_id], issue_id: params[:issue_id])
+    redirect_to issue_path(id: params[:issue_id])
 
   end
 
   def delete_vote
+    vote_to_delete = UsersVote.find_by(user_id: params[:user_id], issue_id: params[:issue_id])
+    vote_to_delete.destroy
+    redirect_to issue_path(id: params[:issue_id])
 
   end
 
