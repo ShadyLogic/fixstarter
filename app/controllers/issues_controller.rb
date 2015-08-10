@@ -6,12 +6,14 @@ class IssuesController < ApplicationController
   def show
     if @issue = Issue.find_by(id: params[:id])
 
+      @categories = @issue.categories
 
-      @category = @issue.categories
-      if @category.empty?
+      p @categories
+
+      if @categories.empty?
+
         @category_name = "Uncategorized"
-      else
-        @category_name = @category.first.name
+
       end
 
       @fixes = @issue.fixes
@@ -50,12 +52,29 @@ class IssuesController < ApplicationController
   end
 
   def create
-    category= Category.find(params[:issue][:category])
+    category_id_array = []
+    uncategorized_category = Category.where(name: "Uncategorized").first
+
+    if params[:categories]
+      params[:categories].each do |category_id|
+        category_id_array << category_id[1].to_i
+      end
+    end
+
     @issue = Issue.new(issue_params)
     @issue.image_url = upload_image if contains_image?
+
     if @issue.save
-      category.issues << @issue
+      unless category_id_array.empty?
+        category_id_array.each do |category_id|
+          category = Category.find(category_id)
+          category.issues << @issue
+        end
+      else
+        uncategorized_category.issues << @issue
+      end
     end
+
     @issue.update_attributes(user_id: current_user.id)
     redirect_to issue_path(@issue)
   end
