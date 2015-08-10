@@ -51,6 +51,7 @@ class IssuesController < ApplicationController
 
   def create
     category_id_array = []
+    uncategorized_category = Category.where(name: "Uncategorized")
     params[:categories].each do |category_id|
       category_id_array << category_id[1].to_i
     end
@@ -58,9 +59,13 @@ class IssuesController < ApplicationController
     @issue = Issue.new(issue_params)
     @issue.image_url = upload_image if contains_image?
     if @issue.save
-      category_id_array.each do |category_id|
-        category = Category.find(category_id)
-        category.issues << @issue
+      unless category_id_array.empty?
+        category_id_array.each do |category_id|
+          category = Category.find(category_id)
+        end
+          uncategorized_category.issues << @issue
+      else
+
       end
     end
     @issue.update_attributes(user_id: current_user.id)
