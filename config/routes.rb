@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   delete '/users_votes/:id', to: 'users#delete_vote'
 
   get '/my_profile', to: 'users#my_profile', as: :my_profile
+  get '/profile', to: 'profile#show'
+  get '/profile/edit', to: 'profile#edit'
+  put '/profile', to: 'profile#update'
+
 
   resources :issues do
     resources :fixes

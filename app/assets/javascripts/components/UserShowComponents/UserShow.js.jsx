@@ -4,7 +4,10 @@ var UserShow = React.createClass({
       <div className="user_show_wrapper">
 
       {this.props.same_user ?
-        <h1> Hello! Welcome to your FixStart profile page. </h1>
+        <div>
+          <h1> Hello {this.props.user.first_name}! Welcome to your FixStart profile page. </h1>
+          <a href="/profile/edit"> Update my profile information </a>
+        </div>
       :
         <h1> {this.props.user.first_name} {this.props.user.last_name} </h1>
       }
