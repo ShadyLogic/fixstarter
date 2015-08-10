@@ -4,7 +4,7 @@ Crowdsourced Community Upkeep
 
 ## Demo
 
-[Fixstart](http://www.fixstart.io)
+Check out our [Fixstart](http://fixstarter.herokuapp.com/) demo on Heroku. Please be patient as we spin up our servers after you click.
 
 ## Technologies
 

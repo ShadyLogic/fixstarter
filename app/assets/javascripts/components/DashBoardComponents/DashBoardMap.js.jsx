@@ -30,7 +30,7 @@ var DashboardMap = React.createClass({
     for (var i = 0; i < issues.length; i++) {
       var issue = issues[i];
       var marker = L.marker(new L.LatLng(issue.latitude, issue.longitude), {
-          icon: L.mapbox.marker.icon({'marker-symbol': 'circle', 'marker-color': '0044FF'}),
+          icon: L.mapbox.marker.icon({'marker-symbol': 'circle', 'marker-color': issue.color}),
           properties: {
           	title: issue.title,
           	description: issue.description,
@@ -46,7 +46,7 @@ var DashboardMap = React.createClass({
 	 },
 
 	packageIssue: function(issue) {
-		return ("<p><b>"+issue.title+"</b></p><p>"+issue.description+"</p><a href='"+issue.link+"'>Fix It!</a>")
+		return ("<p><b>"+issue.title+"</b></p><p>"+issue.description+"</p><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
 	},
 
   render: function(){
