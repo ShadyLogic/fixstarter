@@ -49,4 +49,9 @@ class WelcomeController < ApplicationController
     end
     render json: {issues: @issue_results, location: location}
   end
+
+  def about
+    render 'welcome/about'
+  end
+
 end
