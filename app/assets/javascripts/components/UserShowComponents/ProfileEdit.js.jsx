@@ -19,7 +19,7 @@ var ProfileEdit = React.createClass({
       <p> Hello, {this.props.user.first_name} {this.props.user.last_name}.
       You can update your profile below. </p>
 
-      <form action='/profile' method="POST"  /* onSubmit={this.handleSubmit} */  ref="form" encType="multipart/form-data">
+      <form action='/profile' method="POST"  ref="form" encType="multipart/form-data">
           <input type="hidden" name="_method" value="PUT" />
 
           First Name<br/>
@@ -39,7 +39,7 @@ var ProfileEdit = React.createClass({
           <br/>
 
           Upload a new Avatar<br/>
-          <button> Put Koba Avatar button here. </button>
+          < ImageUploadForm />
           <br/><br/>
 
           <button type="submit">Update Profile</button>
