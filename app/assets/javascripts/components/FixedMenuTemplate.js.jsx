@@ -4,7 +4,7 @@ var FixedMenuTemplate = React.createClass({
     return (
       <div className="fixed-menu-template">
       <p> <a href="/issues/new"> Submit a new issue </a> </p>
-      <p> <a href="/my_profile"> My profile </a> </p>
+      <p> <a href="/profile"> My profile </a> </p>
       <p> <a href="/dashboard"> Dashboard </a> </p>
       <p> <a href="/discover"> Discover </a> </p>
       <a href="/users/sign_out" data-method="delete" rel="nofollow">Logout</a>

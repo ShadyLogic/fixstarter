@@ -29,6 +29,11 @@ var DashboardMap = React.createClass({
 
 		map = L.mapbox.map('map', 'mapbox.streets')
 		markers = new L.MarkerClusterGroup();
+		
+		// center to issue when clicked
+		markers.on('click', function(e){
+			map.panTo(e.layer.getLatLng())
+		})
 
 		//show the users zip code area of the map
 		geocoder.query(this.props.zip, self.showMap)

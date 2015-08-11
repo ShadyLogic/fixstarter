@@ -18,6 +18,7 @@ class WelcomeController < ApplicationController
 
 
   def discover
+    @issues = Issue.all
   end
 
   def register_login

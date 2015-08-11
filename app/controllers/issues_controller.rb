@@ -81,8 +81,10 @@ class IssuesController < ApplicationController
 
     @issue.update_attributes(user_id: current_user.id)
 
-    # publish event to redis server
+    # publish event to redis server, sent to dashboard
     Redis.current.publish 'issue-created', Issue.package_latest_issue.to_json
+    # publish change to streaming front-page
+    Redis.current.publish 'stream', Issue.package_stream_issues.to_json
 
     redirect_to issue_path(@issue)
   end
