@@ -42,7 +42,8 @@ class Issue < ActiveRecord::Base
                        longitude: issue.longitude,
                        imageUrl: issue.image_url,
                        category_icon: CATEGORIES[category],
-                       category_name: category
+                       category_name: category,
+                       points: issue.users_votes.size
                        }
     end
     # show latest streams first (with reverse)
@@ -66,7 +67,8 @@ class Issue < ActiveRecord::Base
                           link: "/issues/#{issue.id}",
                           color: '989898',
                           category_icon: CATEGORIES[category],
-                          category_name: category }
+                          category_name: category,
+                          points: issue.users_votes.size }
 
       end
     end
@@ -91,7 +93,8 @@ class Issue < ActiveRecord::Base
        link: "/issues/#{self.id}",
        color: '989898',
        category_icon: CATEGORIES[category],
-       category_name: category  }
+       category_name: category,
+       points: issue.users_votes.size  }
   end
 
 
@@ -142,7 +145,8 @@ class Issue < ActiveRecord::Base
       link: "/issues/#{issue.id}",
       color: '0044FF',
       category_icon: CATEGORIES[category],
-      category_name: category }
+      category_name: category,
+      points: issue.users_votes.size }
   end
 
   def package_info
