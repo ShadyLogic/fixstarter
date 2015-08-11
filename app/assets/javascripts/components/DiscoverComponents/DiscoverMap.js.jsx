@@ -86,7 +86,7 @@ var DiscoverMap = React.createClass({
 
 	  render: function(){
 	    return (
-	      <div className="dashboard_map_wrapper">
+	      <div className="discover_map_wrapper">
 	      	<div id='map'></div>
 	      </div>
 	      )
