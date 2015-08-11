@@ -51,5 +51,7 @@ class WelcomeController < ApplicationController
   end
 
   def about
+    render 'welcome/about'
   end
+
 end

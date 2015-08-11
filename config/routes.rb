@@ -41,9 +41,9 @@ Rails.application.routes.draw do
 
   post '/search', to: 'welcome#search'
 
-  match '*path' => 'welcome#show', via: [:get]
-
   get '/team', to: 'welcome#about', as: :team
+
+  match '*path' => 'welcome#show', via: [:get]
 
   root 'welcome#index'
 
