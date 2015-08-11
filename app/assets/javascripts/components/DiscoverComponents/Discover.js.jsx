@@ -28,13 +28,13 @@ var Discover = React.createClass({
   },
 
   render: function(){
+    console.log(this.props.openIssues)
     return (
       <div className="discover_page">
         <h2> Discover Page </h2>
         < FilterBar onSearchSubmit={this.handleSearchSubmit} />
         < DiscoverMap openIssues={this.state.openIssues} location={this.state.location} />
-        < ResultList />
-        < Stream streamIssues={this.props.streamIssues} />
+        < ResultList results={this.state.openIssues} />
       </div>
       )
   }

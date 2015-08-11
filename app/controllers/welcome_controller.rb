@@ -22,8 +22,7 @@ class WelcomeController < ApplicationController
 
   def discover
     if user_signed_in?
-      @issues = Issue.all
-      @open_issues = Issue.package_open_issues
+      @open_issues = Issue.package_discover_issues
       @zip = current_user.zip
     else
       redirect_to root_path
