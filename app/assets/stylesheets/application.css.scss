@@ -118,10 +118,13 @@ body{
 }
 
 
-#footer a.item{
+#footer a{
   text-decoration: none;
   color: #666;
+}
 
+#footer a:hover{
+  color: #ff6e00;
 }
 /*-------------------------------------------*/
 
@@ -385,7 +388,7 @@ body{
 
 
 
-/*----------------------STREAM-------------------*/
+/*----------------------STREAM (old) -------------------*/
 .stream_wrapper {
   /*display: inline-block;*/
   border: 3px solid lightgrey;
@@ -416,3 +419,4 @@ body{
   width: 10%;
 }
 /*----------------------------------------------*/
+

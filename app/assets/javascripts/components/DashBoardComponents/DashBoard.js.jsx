@@ -42,9 +42,9 @@ var Dashboard = React.createClass({
           < DashboardMap allOpenIssues={this.props.allOpenIssues} zip={this.props.zip} environment={this.props.environment} />
         </div>
 
-        <div className="one column row">
+      { /* <div className="one column row">
           < Stream streamIssues={this.state.streamIssues} />
-        </div>
+        </div> */ }
 
       </div>
       )
