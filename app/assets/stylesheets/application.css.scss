@@ -104,22 +104,25 @@ body{
 
 /*-------------------FOOTER----------------*/
 #footer{
+  margin-top: 20px;
   background: #eee;
   border-top: 1px solid #ddd;
   width: 100%;
   clear: both;
   float: left;
   overflow: hidden;
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
   box-sizing: border-box;
   color: #666;
+  font-size: 1.25em;
 }
+
 
 #footer a.item{
   text-decoration: none;
   color: #666;
-}
 
+}
 /*-------------------------------------------*/
 
 
