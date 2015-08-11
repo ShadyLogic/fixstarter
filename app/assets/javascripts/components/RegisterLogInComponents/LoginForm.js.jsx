@@ -4,7 +4,7 @@ var LoginForm = React.createClass({
 
     return (
 
-      <div className="login_form">
+      <div className="ui stackable one column centered grid container login_form">
         <h3> Login </h3>
         <form>
           Email
