@@ -5,7 +5,7 @@ var Dashboard = React.createClass({
   },
 
   componentDidMount: function() {
-    if (this.props.environment === 'production'){
+    if (this.props.environment == 'production'){
       var socket = io("https://node-fixstart.herokuapp.com")
     }else{
       var socket = io('localhost:5001')
