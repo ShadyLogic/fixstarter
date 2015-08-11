@@ -27,6 +27,32 @@
 
 
 
+
+/*-------------------HEADER----------------*/
+#mainHead{
+  margin: 40px 40px 0px 40px;
+  text-align: center;
+}
+#menu{
+  max-width: 1024px;
+  margin: 0 auto;
+}
+#mainImage{
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+
+
+@media all and(max-width: 630px){
+  #menu{display: none;}
+}
+
+/*--------------------------------------------*/
+
+
+
 /*---------------FIXED MENU TEMPLATE----------------*/
 .fixed-menu-template {
   background-color: #D3D3D3;
