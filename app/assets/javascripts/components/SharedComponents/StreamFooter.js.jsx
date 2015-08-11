@@ -6,7 +6,7 @@ var StreamFooter = React.createClass({
     });
 
     return (
-      <div className="ui feed small">
+      <div id="footer_stream" className="ui feed small">
         {streamIssues}
       </div>
     )
