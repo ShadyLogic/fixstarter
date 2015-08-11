@@ -1,10 +1,11 @@
 var Discover = React.createClass({
 
   getInitialState: function() {
-    return {openIssues: this.props.openIssues, zip: this.props.zip}
+    return {openIssues: this.props.openIssues, location: this.props.location}
   },
 
   handleSearchSubmit: function(searchData){
+    var self = this
     $.ajax({
       url: '/search',
       method: 'post',
@@ -12,9 +13,18 @@ var Discover = React.createClass({
       dataType: 'json',
     }).done(function(searchResponse){
       console.log(searchResponse)
+
+      // the hackiest thing ever... ugh. must fix.
+      self.setMap(searchResponse)
+      self.setMap(searchResponse)
+
     }).fail(function(searchResponse){
       console.log('fail')
     })
+  },
+
+  setMap: function(data) {
+    this.setState({openIssues: data.issues, location: data.location})
   },
 
   render: function(){
@@ -22,7 +32,7 @@ var Discover = React.createClass({
       <div className="discover_page">
         <h2> Discover Page </h2>
         < FilterBar onSearchSubmit={this.handleSearchSubmit} />
-        < DiscoverMap openIssues={this.state.openIssues} zip={this.state.zip} />
+        < DiscoverMap openIssues={this.state.openIssues} location={this.state.location} />
         < ResultList />
         < Stream streamIssues={this.props.streamIssues} />
       </div>

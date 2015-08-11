@@ -42,9 +42,12 @@ class WelcomeController < ApplicationController
 
   # ajax route for discover page
   def search
-    p "*" * 100
-    p params
-    p "*" * 100
-    render json: params
+    @issue_results = Issue.package_issues_containing(params[:keyword], params[:category])
+    if params[:location] == ""
+      location = "San Francisco"
+    else
+      location = params[:location]
+    end
+    render json: {issues: @issue_results, location: location}
   end
 end

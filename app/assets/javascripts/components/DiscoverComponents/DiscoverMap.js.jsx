@@ -1,30 +1,46 @@
 var DiscoverMap = React.createClass({
 
+	getInitialState: function() {
+		return {location: this.props.location, openIssues: this.props.openIssues}
+	},
+
 		componentDidMount: function() {
-			this.renderMap();
-			this.addIssues(this.props.openIssues)
-		},
-
-		renderMap: function() {
 			L.mapbox.accessToken = 'pk.eyJ1IjoibXdoYXR0ZXJzIiwiYSI6ImM5YjljNGE4MzcwZmRlOTJlOTNmMTczMTY4N2FkMDNiIn0.mYeJTMzrCEY8XMUqqTp6tg';
-			var geocoder 		 = L.mapbox.geocoder('mapbox.places'),
-			    latestMarker = undefined,
-			    self 				 = this
-
 			map = L.mapbox.map('map', 'mapbox.streets')
 			markers = new L.MarkerClusterGroup();
+			geocoder 		 = L.mapbox.geocoder('mapbox.places')
 
-			// center to issue when clicked
+			//map centering on click
 			markers.on('click', function(e){
 				map.panTo(e.layer.getLatLng())
 			})
 
+			this.renderMap();
+			this.addIssues(this.state.openIssues)
+		},
+
+		componentWillReceiveProps: function(props) {
+			markers.clearLayers()
+			this.setState({location: props.location, openIssues: props.openIssues})
+			this.addIssues(this.state.openIssues)
+			this.renderMap();
+		},
+
+		renderMap: function() {
+			var geocoder 		 = L.mapbox.geocoder('mapbox.places'),
+			    latestMarker = undefined,
+			    self 				 = this
+
 			//show the users zip code area of the map
-			geocoder.query(this.props.zip, self.showMap)
+			geocoder.query(this.state.location, self.showMap)
 		},
 
 		showMap: function(err, data) {
-	    map.setView([data.latlng[0], data.latlng[1]], 12);
+	    if (data.lbounds) {
+	        map.fitBounds(data.lbounds);
+	    } else if (data.latlng) {
+	        map.setView([data.latlng[0], data.latlng[1]], 13); 
+	    } 
 		},
 
 		addIssues: function(issues) {

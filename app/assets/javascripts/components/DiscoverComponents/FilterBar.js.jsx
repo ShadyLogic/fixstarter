@@ -5,9 +5,9 @@ var FilterBar = React.createClass({
 		console.log('saerch')
 		var category = $('select').val();
 		var keyword = React.findDOMNode(this.refs.keyword).value.trim();
-		var city = React.findDOMNode(this.refs.city).value.trim();
+		var location = React.findDOMNode(this.refs.location).value.trim();
 
-		this.props.onSearchSubmit({category: category, keyword: keyword, city: city});
+		this.props.onSearchSubmit({category: category, keyword: keyword, location: location});
 	},
 
   render: function(){
@@ -18,8 +18,8 @@ var FilterBar = React.createClass({
        		<span>keyword:</span>
 	       <input ref="keyword" type="search" name="search[keyword]" placeholder="searchbar"/>
 	       <br/>
-	       <span>city search:</span>
-	       <input ref="city" type="search" name="search[city]" placeholder="searchbar"/>
+	       <span>location:</span>
+	       <input ref="location" type="search" name="search[location]" placeholder="searchbar"/>
 	       <br/>
 	       <span>category:</span>
 	       <select>

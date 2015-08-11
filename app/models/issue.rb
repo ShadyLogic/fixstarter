@@ -75,6 +75,36 @@ class Issue < ActiveRecord::Base
        color: '989898'  }
   end
 
+  # TODO: write out this method filtering out search results -- omg this method is stoopid
+  def self.package_issues_containing(keyword, category)
+    issues = self.all
+    if category == "None"
+      issues = issues.select { |issue| issue.title.downcase.include?(keyword.downcase) || 
+                                       issue.description.downcase.include?(keyword.downcase) }
+
+    elsif keyword == ""
+      issues = issues.select { |issue| issue.categories.map { |cat| cat.name }.include?(category) }
+
+    else
+      issues = issues.select { |issue| issue.title.downcase.include?(keyword.downcase) || 
+                                       issue.description.downcase.include?(keyword.downcase) }
+      issues = issues.select { |issue| issue.categories.map { |cat| cat.name }.include?(category) }
+    end
+
+    found_issues = []
+      issues.each do |issue|
+        found_issues << {  id: issue.id,
+                           title: issue.title,
+                           description: issue.description,
+                           latitude: issue.latitude,
+                           longitude: issue.longitude,
+                           fix_text: 'Fix It!',
+                           link: "/issues/#{issue.id}",
+                           color: '0044FF' }
+    end
+      return found_issues
+  end
+
   def package_info
     {id: self.id, user_id: self.user_id, title: self.title, image_url: self.image_url, status: self.status, upvotes: self.users_votes.size}
   end
