@@ -3,7 +3,11 @@ class ProfileController < ApplicationController
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
 
   def show
-    redirect_to "/users/#{current_user.id}"
+    if user_signed_in?
+      redirect_to "/users/#{current_user.id}"
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
