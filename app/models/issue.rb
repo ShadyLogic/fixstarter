@@ -137,7 +137,7 @@ class Issue < ActiveRecord::Base
                            fix_text: 'Fix It!',
                            link: "/issues/#{issue.id}",
                            color: '0044FF',
-                           category_img: CATEGORIES[category],
+                           category_icon: CATEGORIES[category],
                            category_name: category }
     end
       return found_issues
