@@ -20,7 +20,6 @@ class Issue < ActiveRecord::Base
     "Escalate" => 'police'
   }
 
-
   def self.assign_category(issue)
     unless issue.categories.empty?
       issue.categories.first.name
@@ -99,7 +98,8 @@ class Issue < ActiveRecord::Base
 
 
   # TODO: write out this method filtering out search results -- omg this method is stoopid
-  def self.package_issues_containing(keyword, category)
+  def self.package_issues_containing(keyword, category, location)
+    location_coords = Geocoder.coordinates(location)
     issues = self.all
     if category == "None"
       issues = issues.select { |issue| issue.title.downcase.include?(keyword.downcase) ||
@@ -116,11 +116,16 @@ class Issue < ActiveRecord::Base
 
     found_issues = []
     issues.each do |issue|
-      unless issue.status == 'closed'
-        found_issues << Issue.packaged_issue(issue)
+      if issue.status != 'closed'
+        if Geocoder::Calculations.distance_between(location_coords, [issue.latitude, issue.longitude]) < 50
+          found_issues << Issue.packaged_issue(issue)
+        end
       end
     end
-    return found_issues
+    if found_issues.empty?
+      found_issues << { title: "No issues found", description: "Try another search!", fix_text: "Return to Dashboard", link: '/dashboard', points: "no", image: 'http://images.clipartpanda.com/residency-clipart-black-and-white-sad-face-md.png'}
+    end
+    found_issues
   end
 
 
@@ -134,8 +139,17 @@ class Issue < ActiveRecord::Base
     issue_items
   end
 
+  def self.assign_image(issue)
+    unless issue.image_url == nil
+      issue.image_url
+    else
+      "http://www.scoopstake.com/assets/images/campaigns/no-photo.gif"
+    end
+  end
+
   def self.packaged_issue(issue)
     category = Issue.assign_category(issue)
+    image = Issue.assign_image(issue)
     { id: issue.id,
       title: issue.title,
       description: issue.description,
@@ -146,7 +160,8 @@ class Issue < ActiveRecord::Base
       color: '0044FF',
       category_icon: CATEGORIES[category],
       category_name: category,
-      points: issue.users_votes.size }
+      points: issue.users_votes.size,
+      image: image }
   end
 
   def package_info

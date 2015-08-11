@@ -29,7 +29,7 @@
       <h2>
 
     </div>
-    <img id="mainImage" src="assets/header8.png" />
+    <img id="mainImage" src="http://i.imgur.com/L65HE0g.jpg" />
   </div>
 
   <div class="notice"><%= notice %></div>
@@ -45,9 +45,13 @@
 
   <!-- FOOTER -->
   <div id="footer">
-    <div class="ui grid three column">
+    <div class="ui grid three column stackable">
 
       <div class="column">
+        <div class="ui horizontal icon divider">
+          <i class="circular list icon"></i>
+        </div>
+
         <div class="ui list">
 
           <a href="/issues/new" class="item">
@@ -70,7 +74,7 @@
 
       <div class="column">
         <div class="ui horizontal icon divider">
-          <i class="circular chat icon"></i>
+          <i class="circular configure icon"></i>
         </div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -79,7 +83,10 @@
       </div>
 
       <div class="column">
-
+        <div class="ui horizontal icon divider">
+          <i class="circular configure icon"></i>
+        </div>
+        <%= react_component('StreamFooter', {streamIssues: @stream_issues, prerender: true}) %>
       </div>
 
     </div>

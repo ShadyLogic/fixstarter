@@ -1,5 +1,4 @@
 class WelcomeController < ApplicationController
-
   def index # splash page (root_path)
     if user_signed_in?
       redirect_to dashboard_path
@@ -41,12 +40,12 @@ class WelcomeController < ApplicationController
 
   # ajax route for discover page
   def search
-    @issue_results = Issue.package_issues_containing(params[:keyword], params[:category])
-    if params[:location] == ""
+    if Geocoder.coordinates(params[:location]) == nil
       location = "San Francisco"
     else
       location = params[:location]
     end
+    @issue_results = Issue.package_issues_containing(params[:keyword], params[:category], location)
     render json: {issues: @issue_results, location: location}
   end
 
