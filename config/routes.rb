@@ -43,6 +43,8 @@ Rails.application.routes.draw do
 
   match '*path' => 'welcome#show', via: [:get]
 
+  get '/team', to: 'welcome#about', as: :team
+
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
