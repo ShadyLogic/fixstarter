@@ -13,28 +13,41 @@
 
 <body>
 
+  <!-- HEADER -->
+  <div id="header">
+    <div id="mainHead">
+      <% if user_signed_in? %>
+        <%= react_component('FixedMenuTemplate', {prerender: true}) %>
+      <% end %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+      <div class="ui huge icon header inverted">
+        <i class="circular configure icon inverted"></i> Fix. Shit. Today.
+      </div>
 
+      <h2 class="ui header inverted">
+        <i class="configure icon inverted"> </i> Fix. Shit. Today.
+      <h2>
 
-  <div id="mainHead">
-    <% if user_signed_in? %>
-      <%= react_component('FixedMenuTemplate', {prerender: true}) %>
-    <% end %>
-
-    <div class="ui icon header">
-      <i class="configure icon"></i> Fix. Shit. Today.
     </div>
+    <img id="mainImage" src="assets/header8.png" />
+  </div>
+
+  <div class="notice"><%= notice %></div>
+  <div class="alert"><%= alert %></div>
+  <!-- HEADER -->
+
+
+
+  <!-- body content -->
+  <%= yield %>
+  <!-- body content -->
+
+
+  <!-- FOOTER -->
+  <div id="footer">
 
   </div>
-  <img id="mainImage" src="assets/header8.png" />
-
-  <%= yield %>  <!-- body content -->
-
-  <div class="footer">
-
-  </div>
+  <!-- FOOTER -->
 
 </body>
 

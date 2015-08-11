@@ -29,6 +29,12 @@
 
 
 /*-------------------HEADER----------------*/
+#header{
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
 #mainHead{
   margin: 40px 40px 0px 40px;
   text-align: center;
@@ -44,12 +50,58 @@
   top: 0;
 }
 
+@media all and(min-width: 900px){
+  #mainHead .header{
+    margin-top: 8%;
+  }
+}
+
+@media all and(max-width: 730px){
+  #mainHead .ui.header.huge{
+    font-size: 1.5em;
+  }
+}
+
+@media all and(min-width: 631px){
+  html body.pushed{
+    margin-left: 0 !important;
+  }
+  #m_menu.active{
+    display: none;
+  }
+  #mainHead h2{
+    display: none;
+  }
+}
 
 @media all and(max-width: 630px){
   #menu{display: none;}
+  #m_btn{
+    display: inline-block;
+  }
+  body.pushed{
+    overflow: hidden;
+  }
+  #mainHead .ui.icon.header.huge{
+    display: none;
+  }
 }
-
 /*--------------------------------------------*/
+
+
+
+
+
+
+/*-------------------FOOTER----------------*/
+#footer{
+  background-color: #eee;
+
+}
+/*-------------------------------------------*/
+
+
+
 
 
 
