@@ -16,5 +16,6 @@
 //= require react_ujs
 //= require semantic-ui
 //= require semantic-ui/modal
+//= require semantic-ui/dropdown
 //= require components
 //= require_tree .
