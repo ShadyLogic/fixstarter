@@ -11,9 +11,6 @@ module ImageUploadConcern
     response = HTTParty.post('https://api.imgur.com/3/image',
                         :body => body,
                         :headers => headers)
-    p "*"*100
-    p response
-    p "*"*100
 
     image_url = response["data"]["link"]
 

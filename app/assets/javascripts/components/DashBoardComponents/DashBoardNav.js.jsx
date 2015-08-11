@@ -2,14 +2,11 @@ var DashboardNav = React.createClass({
 
   render: function(){
     return(
-      <div className="dashboard_nav_wrapper">
+      <div className="ui grid">
 
-        <div className="dashboard_nav_link">
-          <a href="/discover"> Find an Issue </a>
-        </div>
-
-        <div className="dashboard_nav_link">
-          <a href="/issues/new"> Submit an Issue </a>
+        <div className="two column row">
+          <a className="ui button nav_button" href="/discover"> Find an Issue </a>
+          <a className="ui button nav_button" href="/issues/new"> Submit an Issue </a>
         </div>
 
       </div>

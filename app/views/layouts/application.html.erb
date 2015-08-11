@@ -10,17 +10,32 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-<% if user_signed_in? %>
-  <%= react_component('FixedMenuTemplate', {prerender: true}) %>
-<% end %>
 
-<%= yield %>
+  <div id="mainHead">
+    <% if user_signed_in? %>
+      <%= react_component('FixedMenuTemplate', {prerender: true}) %>
+    <% end %>
+
+    <div class="ui icon header">
+      <i class="configure icon"></i> Fix. Shit. Today.
+    </div>
+
+  </div>
+  <img id="mainImage" src="assets/header8.png" />
+
+  <%= yield %>  <!-- body content -->
+
+  <div class="footer">
+
+  </div>
 
 </body>
+
 </html>

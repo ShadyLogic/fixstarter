@@ -2,7 +2,7 @@ var FixedMenuTemplate = React.createClass({
 
   render: function(){
     return (
-      <div className="fixed-menu-template">
+      <div id="menu" className="fixed-menu-template">
       <p> <a href="/issues/new"> Submit a new issue </a> </p>
       <p> <a href="/profile"> My profile </a> </p>
       <p> <a href="/dashboard"> Dashboard </a> </p>
