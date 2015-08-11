@@ -45,14 +45,14 @@ class IssuesController < ApplicationController
 
 
     else
-      redirect_to welcome_index_path
+      redirect_to root_path
     end
   end
 
   def new
     @categories = Category.all
     return @zip = current_user.zip if user_signed_in?
-    redirect_to welcome_index_path
+    redirect_to root_path
   end
 
   def create
