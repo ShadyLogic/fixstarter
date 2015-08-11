@@ -29,7 +29,6 @@ class IssuesController < ApplicationController
         if current_user.issues_watches.where(issue_id: @issue.id).size != 0
           @current_user_watching = true
         end
-
         @current_user_id = current_user.id
       end
 
@@ -41,6 +40,13 @@ class IssuesController < ApplicationController
           @current_user_upvoted = true
         end
         @current_user_id = current_user.id
+      end
+
+      @current_user_created_issue = false
+      if user_signed_in?
+        if Issue.where(id: @issue.id, user_id: @current_user.id).size != 0
+          @current_user_created_issue = true
+        end
       end
 
 
@@ -93,6 +99,12 @@ class IssuesController < ApplicationController
   private
   def issue_params
     params.require(:issue).permit(:title, :description, :latitude, :longitude)
+  end
+
+  def close_issue
+  end
+
+  def reopen_issue
   end
 
 end
