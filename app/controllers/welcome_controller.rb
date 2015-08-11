@@ -9,9 +9,9 @@ class WelcomeController < ApplicationController
 
 
   def show  # dashboard
-    @stream_issues = Issue.package_stream_issues
-    @all_open_issues = Issue.package_open_issues
     if current_user
+      @stream_issues = Issue.package_stream_issues
+      @all_open_issues = Issue.package_open_issues
       @zip = current_user.zip
       render 'welcome/show'
     else

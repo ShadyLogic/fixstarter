@@ -36,6 +36,9 @@ Rails.application.routes.draw do
 
   post '/images', to: 'welcome#image', as: :image_post
 
+
+  match '*path' => 'welcome#show', via: [:get]
+
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
