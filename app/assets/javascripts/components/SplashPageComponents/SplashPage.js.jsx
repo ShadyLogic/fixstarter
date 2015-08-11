@@ -5,7 +5,11 @@ var SplashPage = React.createClass({
 	},
 
 	componentDidMount: function() {
-	  var socket = io('localhost:5001')
+	  if (this.props.environment === 'production'){
+      var socket = io("https://node-fixstart.herokuapp.com")
+    }else{
+      var socket = io('localhost:5001')
+    }
 	  var self = this
 	  socket.on('stream', function(data) {
 	    console.log('stream-updated success')
