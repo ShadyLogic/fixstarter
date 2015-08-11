@@ -68,6 +68,7 @@ var DashboardMap = React.createClass({
 	 	    properties: {
 	 	    	title: issue.title,
 	 	    	category: issue.category_name,
+	 	    	points: issue.points,
 	 	    	description: issue.description,
 	 	    	link: issue.link,
 		 	  }
@@ -92,7 +93,7 @@ var DashboardMap = React.createClass({
 	},
 
 	packageIssue: function(issue) {
-		return ("<p><b>"+issue.title+" </b><em>("+issue.category_name+")</em></p><p>"+issue.description+"</p><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
+		return ("<p><b>"+issue.title+" </b><em>("+issue.category_name+")</em></p><p>"+issue.description+"</p><span>"+issue.points+" point(s) | </span><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
 	},
 
   render: function(){
