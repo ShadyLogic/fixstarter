@@ -4,11 +4,11 @@ class FixesController < ApplicationController
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
 
   def show
-    if @fix = Fix.find_by(id: params[:id])
+    if @fix = Fix.find_by(id: params[:id], issue_id: params[:issue_id])
       @issue = @fix.issue
       @comments = @fix.fix_comments.map { |comment| comment.package_info }
     else
-      redirect_to welcome_index_path
+      redirect_to dashboard_path
     end
   end
 
