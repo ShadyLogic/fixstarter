@@ -17,10 +17,13 @@ var IssueHeader = React.createClass({
           <div>
             < IssueCheckbox current_user_watching={this.props.current_user_watching} current_user_id={this.props.current_user_id} issue={this.props.issue} />
 
+            { this.props.current_user_created_issue ?
+              < IssueOpenClose issue={this.props.issue} />
+            :
+              null
+            }
 
-        < IssueOpenClose current_user_created_issue={this.props.current_user_created_issue} />
-
-        < IssueStatus status={this.props.issue.status} />
+            < IssueStatus status={this.props.issue.status} />
 
             < SubmitFixButton issueID={this.props.issue.id} />
           </div>

@@ -95,16 +95,24 @@ class IssuesController < ApplicationController
     redirect_to issue_path(@issue)
   end
 
+  def close_issue
+    @issue = Issue.find_by(id: params[:id])
+    @issue.status = "closed"
+    @issue.save
+    redirect_to issue_path(@issue)
+  end
+
+  def reopen_issue
+    @issue = Issue.find_by(id: params[:id])
+    @issue.status = "open"
+    @issue.save
+    redirect_to issue_path(@issue)
+  end
+
 
   private
   def issue_params
     params.require(:issue).permit(:title, :description, :latitude, :longitude)
-  end
-
-  def close_issue
-  end
-
-  def reopen_issue
   end
 
 end
