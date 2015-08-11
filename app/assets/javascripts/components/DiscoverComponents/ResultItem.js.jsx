@@ -2,7 +2,10 @@ var ResultItem = React.createClass({
   render: function(){
     return (
       <div className="result_item_wrapper">
-       result item
+      	<h4>{this.props.title}</h4>
+      	<em>{this.props.category_name}</em>
+      	<p>{this.props.description}</p>
+      	<a href={this.props.link}>Fix it!</a>
       </div>
       )
   }

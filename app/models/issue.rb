@@ -20,6 +20,7 @@ class Issue < ActiveRecord::Base
     "Escalate" => 'police'
   }
 
+
   def self.assign_category(issue)
     unless issue.categories.empty?
       issue.categories.first.name
@@ -27,6 +28,7 @@ class Issue < ActiveRecord::Base
       "None"
     end
   end
+
 
   def self.package_stream_issues
     stream_items = []
@@ -47,21 +49,12 @@ class Issue < ActiveRecord::Base
     stream_items.reverse
   end
 
+
   def self.package_open_issues
     issue_items = []
     self.all.each do |issue|
       unless issue.status == 'closed'
-      category = Issue.assign_category(issue)
-        issue_items << {  id: issue.id,
-                          title: issue.title,
-                          description: issue.description,
-                          latitude: issue.latitude,
-                          longitude: issue.longitude,
-                          fix_text: 'Fix It!',
-                          link: "/issues/#{issue.id}",
-                          color: '0044FF',
-                          category_icon: CATEGORIES[category],
-                          category_name: category }
+        issue_items << Issue.packaged_issue(issue)
       else
         category = Issue.assign_category(issue)
         issue_items << {  id: issue.id,
@@ -80,20 +73,11 @@ class Issue < ActiveRecord::Base
     issue_items
   end
 
+
   def self.package_latest_issue
-    issue = self.last
-    category = Issue.assign_category(issue)
-    [] << {  id: issue.id,
-             title: issue.title,
-             description: issue.description,
-             latitude: issue.latitude,
-             longitude: issue.longitude,
-             fix_text: 'Fix It!',
-             link: "/issues/#{issue.id}",
-             color: '0044FF',
-             category_icon: CATEGORIES[category],
-             category_name: category }
+    [] << Issue.packaged_issue(self.last)
   end
+
 
   # THE Below method does NOT return an array, but a hash.
   def package_as_fixed
@@ -110,37 +94,55 @@ class Issue < ActiveRecord::Base
        category_name: category  }
   end
 
+
   # TODO: write out this method filtering out search results -- omg this method is stoopid
   def self.package_issues_containing(keyword, category)
     issues = self.all
     if category == "None"
-      issues = issues.select { |issue| issue.title.downcase.include?(keyword.downcase) || 
-                                       issue.description.downcase.include?(keyword.downcase) }
+      issues = issues.select { |issue| issue.title.downcase.include?(keyword.downcase) ||
+      issue.description.downcase.include?(keyword.downcase) }
 
     elsif keyword == ""
       issues = issues.select { |issue| issue.categories.map { |cat| cat.name }.include?(category) }
 
     else
-      issues = issues.select { |issue| issue.title.downcase.include?(keyword.downcase) || 
-                                       issue.description.downcase.include?(keyword.downcase) }
+      issues = issues.select { |issue| issue.title.downcase.include?(keyword.downcase) ||
+      issue.description.downcase.include?(keyword.downcase) }
       issues = issues.select { |issue| issue.categories.map { |cat| cat.name }.include?(category) }
     end
 
     found_issues = []
-      issues.each do |issue|
-      category = Issue.assign_category(issue)
-        found_issues << {  id: issue.id,
-                           title: issue.title,
-                           description: issue.description,
-                           latitude: issue.latitude,
-                           longitude: issue.longitude,
-                           fix_text: 'Fix It!',
-                           link: "/issues/#{issue.id}",
-                           color: '0044FF',
-                           category_img: CATEGORIES[category],
-                           category_name: category }
+    issues.each do |issue|
+      unless issue.status == 'closed'
+        found_issues << Issue.packaged_issue(issue)
+      end
     end
-      return found_issues
+    return found_issues
+  end
+
+
+  def self.package_discover_issues
+    issue_items = []
+    self.all.each do |issue|
+      unless issue.status == 'closed'
+        issue_items << Issue.packaged_issue(issue)
+      end
+    end
+    issue_items
+  end
+
+  def self.packaged_issue(issue)
+    category = Issue.assign_category(issue)
+    { id: issue.id,
+      title: issue.title,
+      description: issue.description,
+      latitude: issue.latitude,
+      longitude: issue.longitude,
+      fix_text: 'Fix It!',
+      link: "/issues/#{issue.id}",
+      color: '0044FF',
+      category_icon: CATEGORIES[category],
+      category_name: category }
   end
 
   def package_info
