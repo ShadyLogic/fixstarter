@@ -16,8 +16,12 @@ class ProfileController < ApplicationController
 
   def update
     user = User.find(current_user.id)
-    p profile_params
     user.update_attributes(profile_params)
+
+    if contains_image?
+      user.avatar_url = upload_image
+      user.save
+    end
 
     redirect_to "/users/#{current_user.id}"
   end
