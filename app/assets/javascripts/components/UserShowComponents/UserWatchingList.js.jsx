@@ -7,7 +7,7 @@ var UserWatchingList = React.createClass({
 
     return (
       <div className="user_watching_list_wrapper">
-      <h2> Watching </h2>
+      <h3 className="ui header"> Watching </h3>
       {Watches}
       </div>
       )

@@ -3,14 +3,31 @@ var UserShow = React.createClass({
     return (
       <div className="user_show_wrapper">
 
-      {this.props.same_user ?
-        <div>
-          <h1> Hello {this.props.user.first_name}! Welcome to your FixStart profile page. </h1>
-          <a href="/profile/edit"> Update my profile information </a>
+      <div className="ui card">
+        <div className="image">
+          <img src={this.props.user.avatar_url}></img>
         </div>
-      :
-        <h1> {this.props.user.first_name} {this.props.user.last_name} </h1>
-      }
+        <div className="content">
+          <p className="header"> {this.props.user.first_name} {this.props.user.last_name} </p>
+          <div className="meta">
+            <span className="date"> FixStart Hero ID #{this.props.user.id}</span>
+          </div>
+          <div className="description">
+            {this.props.user.bio}
+          </div>
+          <div className="meta">
+            <span> {this.props.same_user ?
+              <div>
+                <a href="/profile/edit"> Update my profile information </a>
+                <br></br>
+              </div>
+            :
+              <p></p>
+            } </span>
+          </div>
+
+        </div>
+      </div>
 
       < UserHeader user={this.props.user} />
       < UserBio user={this.props.user} />
