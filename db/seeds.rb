@@ -120,7 +120,9 @@ uncategorized = Category.create(name: "Uncategorized", description: "A home for 
 heavy.issues << trashcan
 very_heavy.issues << manatee
 dirty.issues << spilt_dirt
+tools.issues << spilt_dirt
 tools.issues << wood
+yard_work.issues << wood
 yard_work.issues << lawn_fix
 handyman.issues << screwloose
 escalate.issues << smashcan
