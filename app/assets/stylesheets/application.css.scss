@@ -18,6 +18,15 @@
   /*border: 1px dashed black;*/
  }
 
+body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 200;
+}
+
 
 /*-------------------SEMANTIC----------------*/
 @import "semantic-ui";
@@ -95,9 +104,22 @@
 
 /*-------------------FOOTER----------------*/
 #footer{
-  background-color: #eee;
-
+  background: #eee;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  clear: both;
+  float: left;
+  overflow: hidden;
+  padding: 0 20px;
+  box-sizing: border-box;
+  color: #666;
 }
+
+#footer a.item{
+  text-decoration: none;
+  color: #666;
+}
+
 /*-------------------------------------------*/
 
 
