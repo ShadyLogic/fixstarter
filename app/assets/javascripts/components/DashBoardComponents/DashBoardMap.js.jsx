@@ -5,14 +5,20 @@ var DashboardMap = React.createClass({
 		this.addIssues(this.props.allOpenIssues)
 
 		// Socket
-		var socket = io('localhost:5001')
+	  if (this.props.environment == 'development'){
+      var socket = io('localhost:5001')
+      console.log("DEVELOPMENT")
+    }else{
+      var socket = io("https://node-fixstart.herokuapp.com")
+      console.log("NOT DEVELOPMENT")
+    }
 		var self = this
 		socket.on('issue-created', function(data) {
 			console.log('issue-created')
 			self.addIssues(data)
 		})
 
-		// NOTE: singleMarkerObject is, unlike the other objects we recieve, a hash and NOT an array. on Line 75, we wrap it 
+		// NOTE: singleMarkerObject is, unlike the other objects we recieve, a hash and NOT an array. on Line 75, we wrap it
 		// in an array before passing it to the addIssues method.
 		socket.on('fix-created', function(singleMarkerObject){
 			console.log('fix-created')
@@ -29,7 +35,7 @@ var DashboardMap = React.createClass({
 
 		map = L.mapbox.map('map', 'mapbox.streets')
 		markers = new L.MarkerClusterGroup();
-		
+
 		// center to issue when clicked
 		markers.on('click', function(e){
 			map.panTo(e.layer.getLatLng())
@@ -43,8 +49,8 @@ var DashboardMap = React.createClass({
     if (data.lbounds) {
         map.fitBounds(data.lbounds);
     } else if (data.latlng) {
-        map.setView([data.latlng[0], data.latlng[1]], 13); 
-    } 
+        map.setView([data.latlng[0], data.latlng[1]], 13);
+    }
 	},
 
 	addIssues: function(issues) {
@@ -69,7 +75,7 @@ var DashboardMap = React.createClass({
 		 	marker.bindPopup(issuePackage)
 		 	markers.addLayer(marker);
 
-		 	
+
 	 		map.addLayer(markers);
 	 },
 
@@ -90,7 +96,7 @@ var DashboardMap = React.createClass({
   render: function(){
     return (
       <div className="dashboard_map_wrapper">
-      	<div id='map'></div>	
+      	<div id='map'></div>
       </div>
       )
   }
