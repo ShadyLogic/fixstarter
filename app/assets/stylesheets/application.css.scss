@@ -29,8 +29,6 @@
 
 
 /*-------------------HEADER----------------*/
-
-
 #header{
   position: relative;
   overflow: hidden;
@@ -52,20 +50,17 @@
   top: 0;
 }
 
-
 @media all and(min-width: 900px){
   #mainHead .header{
     margin-top: 8%;
   }
 }
 
-
 @media all and(max-width: 730px){
   #mainHead .ui.header.huge{
     font-size: 1.5em;
   }
 }
-
 
 @media all and(min-width: 631px){
   html body.pushed{
@@ -79,7 +74,6 @@
   }
 }
 
-
 @media all and(max-width: 630px){
   #menu{display: none;}
   #m_btn{
@@ -92,11 +86,22 @@
     display: none;
   }
 }
-
-
-
-
 /*--------------------------------------------*/
+
+
+
+
+
+
+/*-------------------FOOTER----------------*/
+#footer{
+  background-color: #eee;
+
+}
+/*-------------------------------------------*/
+
+
+
 
 
 
