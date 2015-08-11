@@ -19,6 +19,14 @@
  }
 */
 
+/*-------------------SEMANTIC----------------*/
+@import "semantic-ui";
+@import "semantic-ui/collections/menu";
+@import "semantic-ui/collections/grid";
+/*--------------------------------------------*/
+
+
+
 /*---------------FIXED MENU TEMPLATE----------------*/
 .fixed-menu-template {
   background-color: #D3D3D3;
@@ -26,6 +34,9 @@
 }
 
 /*--------------------------------------------*/
+
+
+
 
 /*---------------SPLASH PAGE----------------*/
 .splash_page {
