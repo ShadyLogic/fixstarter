@@ -3,15 +3,17 @@ module ImageUploadConcern
   extend ActiveSupport::Concern
 
   def upload_image
-    file = Base64.encode64(open(params[:image].tempfile) { |io| io.read })
+    file = Base64.encode64(params[:image].tempfile.open.read)
 
     body = { 'image' => file }
-    headers = { "Authorization" => "Client-ID 3deb91dad34b579" }
+    headers = { "Authorization" => "Client-ID " + ENV['IMGUR_CLIENT_ID']}
 
     response = HTTParty.post('https://api.imgur.com/3/image',
                         :body => body,
                         :headers => headers)
-
+    p "*"*100
+    p response
+    p "*"*100
 
     image_url = response["data"]["link"]
 
