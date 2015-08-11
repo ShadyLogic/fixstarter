@@ -14,10 +14,10 @@
  *= require_self
  */
 
-/* * {
+ * {
   border: 1px dashed black;
  }
-*/
+
 
 /*-------------------SEMANTIC----------------*/
 @import "semantic-ui";
@@ -32,7 +32,6 @@
   background-color: #D3D3D3;
   text-align: center;
 }
-
 /*--------------------------------------------*/
 
 
@@ -86,22 +85,24 @@
 }
 
 .dashboard_nav_wrapper{
-  height: 200px;
+/*  height: 200px;*/
   /*border: 1px solid skyblue;*/
 }
 
 .dashboard_map_wrapper{
   /*background-image: url(http://i.imgur.com/ziM5W14.png);*/
   display: inline-block;
-  width: 80%;
+  width: 100%;
   background-size: 100%;
   /*border: 3px solid lightgrey;*/
 }
 
 .dashboard_nav_link{
+  display: inline-block;
   font-size: 24px;
   margin: 2%;
 }
+
 /*----------------------------------------------*/
 
 
@@ -282,14 +283,14 @@
   border: 3px solid lightgrey;
   height: 400px;
   overflow: scroll;
-  width: 80%;
+  width: 100%;
   margin-top: 100px;
 }
 
 .stream_item_wrapper{
   margin: 1%;
   padding: 1%;
-  border-top: 1px solid skyblue;
+  /*border-top: 1px solid skyblue;*/
 }
 
 .stream_title{
