@@ -20,15 +20,11 @@ var DiscoverMap = React.createClass({
 			})
 
 			//show the users zip code area of the map
-			geocoder.query('San Francisco', self.showMap)
+			geocoder.query(this.props.zip, self.showMap)
 		},
 
 		showMap: function(err, data) {
-	    if (data.lbounds) {
-	        map.fitBounds(data.lbounds);
-	    } else if (data.latlng) {
-	        map.setView([data.latlng[0], data.latlng[1]], 13);
-	    }
+	    map.setView([data.latlng[0], data.latlng[1]], 12);
 		},
 
 		addIssues: function(issues) {

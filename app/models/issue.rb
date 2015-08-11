@@ -13,12 +13,12 @@ class Issue < ActiveRecord::Base
     stream_items = []
     self.last(4).each do |issue|
       stream_items << {id: issue.id,
-                      title: issue.title,
-                      description: issue.description,
-                      username: issue.user.full_name,
-                      latitude: issue.latitude,
-                      longitude: issue.longitude,
-                      imageUrl: issue.image_url }
+                       title: issue.title,
+                       description: issue.description,
+                       username: issue.user.full_name,
+                       latitude: issue.latitude,
+                       longitude: issue.longitude,
+                       imageUrl: issue.image_url }
     end
     # show latest streams first (with reverse)
     stream_items.reverse
@@ -65,14 +65,14 @@ class Issue < ActiveRecord::Base
 
   # THE Below method does NOT return an array, but a hash.
   def package_as_fixed
-   {  id: self.id,
-      title: self.title,
-      description: 'This issue has been fixed!',
-      latitude: self.latitude,
-      longitude: self.longitude,
-      fix_text: 'Check out the fix!',
-      link: "/issues/#{self.id}",
-      color: '989898'  } 
+    {  id: self.id,
+       title: self.title,
+       description: 'This issue has been fixed!',
+       latitude: self.latitude,
+       longitude: self.longitude,
+       fix_text: 'Check out the fix!',
+       link: "/issues/#{self.id}",
+       color: '989898'  }
   end
 
   def package_info

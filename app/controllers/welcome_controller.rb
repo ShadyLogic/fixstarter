@@ -21,8 +21,13 @@ class WelcomeController < ApplicationController
 
 
   def discover
-    @issues = Issue.all
-    @open_issues = Issue.package_open_issues
+    if user_signed_in?
+      @issues = Issue.all
+      @open_issues = Issue.package_open_issues
+      @zip = current_user.zip
+    else
+      redirect_to root_path
+    end
   end
 
   def register_login
@@ -35,4 +40,11 @@ class WelcomeController < ApplicationController
     redirect_to image_url
   end
 
+  # ajax route for discover page
+  def search
+    p "*" * 100
+    p params
+    p "*" * 100
+    render json: params
+  end
 end
