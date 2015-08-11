@@ -23,6 +23,9 @@ Rails.application.routes.draw do
     resources :fixes
   end
 
+  put '/issues/:id/close', to: 'issues#close_issue'
+  put '/issues/:id/reopen', to: 'issues#reopen_issue'
+
   post '/issues/:issue_id/comments', to: 'comments#issue_create', as: :issue_comments
   delete '/issues/:issue_id/comments/:id', to: 'comments#issue_destroy', as: :issue_comment
 
