@@ -134,8 +134,17 @@ class Issue < ActiveRecord::Base
     issue_items
   end
 
+  def self.assign_image(issue)
+    unless issue.image_url == nil
+      issue.image_url
+    else
+      "http://www.scoopstake.com/assets/images/campaigns/no-photo.gif"
+    end
+  end
+
   def self.packaged_issue(issue)
     category = Issue.assign_category(issue)
+    image = Issue.assign_image(issue)
     { id: issue.id,
       title: issue.title,
       description: issue.description,
@@ -146,7 +155,8 @@ class Issue < ActiveRecord::Base
       color: '0044FF',
       category_icon: CATEGORIES[category],
       category_name: category,
-      points: issue.users_votes.size }
+      points: issue.users_votes.size,
+      image: image }
   end
 
   def package_info
