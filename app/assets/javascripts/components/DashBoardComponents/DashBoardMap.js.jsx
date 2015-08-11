@@ -7,11 +7,12 @@ var DashboardMap = React.createClass({
 		// Socket
 	  if (this.props.environment == 'development'){
       var socket = io('localhost:5001')
-      console.log("DEVELOPMENT")
+      console.log("DEVELOPMENT-MAP")
     }else{
       var socket = io("https://node-fixstart.herokuapp.com")
-      console.log("NOT DEVELOPMENT")
+      console.log("PRODUCTION")
     }
+
 		var self = this
 		socket.on('issue-created', function(data) {
 			console.log('issue-created')
@@ -63,9 +64,10 @@ var DashboardMap = React.createClass({
 
 	 addMarker: function(issue) {
 		 	var marker = L.marker(new L.LatLng(issue.latitude, issue.longitude), {
-	 	    icon: L.mapbox.marker.icon({'marker-symbol': 'circle', 'marker-color': issue.color}),
+	 	    icon: L.mapbox.marker.icon({'marker-symbol': issue.category_icon, 'marker-color': issue.color}),
 	 	    properties: {
 	 	    	title: issue.title,
+	 	    	category: issue.category_name,
 	 	    	description: issue.description,
 	 	    	link: issue.link,
 		 	  }
@@ -90,7 +92,7 @@ var DashboardMap = React.createClass({
 	},
 
 	packageIssue: function(issue) {
-		return ("<p><b>"+issue.title+"</b></p><p>"+issue.description+"</p><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
+		return ("<p><b>"+issue.title+" </b><em>("+issue.category_name+")</em></p><p>"+issue.description+"</p><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
 	},
 
   render: function(){

@@ -53,9 +53,10 @@ var DiscoverMap = React.createClass({
 
 		 addMarker: function(issue) {
 			 	var marker = L.marker(new L.LatLng(issue.latitude, issue.longitude), {
-		 	    icon: L.mapbox.marker.icon({'marker-symbol': 'circle', 'marker-color': issue.color}),
+		 	    icon: L.mapbox.marker.icon({'marker-symbol': issue.category_icon, 'marker-color': issue.color}),
 		 	    properties: {
 		 	    	title: issue.title,
+		 	    	category: issue.category_name,
 		 	    	description: issue.description,
 		 	    	link: issue.link,
 			 	  }
@@ -80,12 +81,12 @@ var DiscoverMap = React.createClass({
 		},
 
 		packageIssue: function(issue) {
-			return ("<p><b>"+issue.title+"</b></p><p>"+issue.description+"</p><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
+			return ("<p><b>"+issue.title+" </b><em>("+issue.category_name+")</em></p><p>"+issue.description+"</p><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
 		},
 
 	  render: function(){
 	    return (
-	      <div className="dashboard_map_wrapper">
+	      <div className="discover_map_wrapper">
 	      	<div id='map'></div>
 	      </div>
 	      )

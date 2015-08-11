@@ -29,7 +29,7 @@ var IssueShowMap = React.createClass({
 
 	render: function(){
 	  return (
-	    <div className="dashboard_map_wrapper">
+	    <div className="issue_show_map_wrapper">
 	    	<div id='map'></div>	
 	    </div>
 	    )
