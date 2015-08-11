@@ -5,7 +5,12 @@ var Dashboard = React.createClass({
   },
 
   componentDidMount: function() {
-    var socket = io('localhost:5001')
+    if (this.props.environment === 'production'){
+      var socket = io("https://node-fixstart.herokuapp.com")
+    }else{
+      var socket = io('localhost:5001')
+    }
+    debugger
     var self = this
     socket.on('stream', function(data) {
       console.log('stream-updated success')
