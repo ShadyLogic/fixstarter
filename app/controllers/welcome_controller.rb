@@ -29,14 +29,8 @@ class WelcomeController < ApplicationController
   end
 
   def image
-    p "*"*100
-    p params
-    p "*"*100
-    p params[:image].tempfile
-    p "*"*100
-
+    # calls the image upload method in the image upload concern
     image_url = upload_image
-
     redirect_to image_url
   end
 
