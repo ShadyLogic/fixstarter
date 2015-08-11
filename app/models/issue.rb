@@ -94,7 +94,7 @@ class Issue < ActiveRecord::Base
        color: '989898',
        category_icon: CATEGORIES[category],
        category_name: category,
-       points: issue.users_votes.size  }
+       points: self.users_votes.size  }
   end
 
 
