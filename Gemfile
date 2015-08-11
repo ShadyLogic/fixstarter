@@ -24,6 +24,7 @@ gem 'rails_12factor', group: :production
 
 # Mapping
 gem 'mapbox-rails'
+gem 'geocoder'
 
 #redis server for socket
 gem 'redis'
