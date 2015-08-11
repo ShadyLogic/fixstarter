@@ -9,16 +9,39 @@ class Issue < ActiveRecord::Base
   has_many   :categories_issues
   has_many   :categories, through: :categories_issues
 
+  CATEGORIES = {
+    "None" => 'circle-stroked',
+    "Heavy" => 'square-stroked',
+    "Very Heavy" => 'square',
+    "Dirty" => 'waste-basket',
+    "Tools" => 'logging',
+    "Yard Work & Removal" => 'garden',
+    "General Handyman" => 'pitch',
+    "Escalate" => 'police'
+  }
+
+  def self.assign_category(issue)
+    unless issue.categories.empty?
+      issue.categories.first.name
+    else
+      "None"
+    end
+  end
+
   def self.package_stream_issues
     stream_items = []
     self.last(4).each do |issue|
+      category = Issue.assign_category(issue)
       stream_items << {id: issue.id,
-                      title: issue.title,
-                      description: issue.description,
-                      username: issue.user.full_name,
-                      latitude: issue.latitude,
-                      longitude: issue.longitude,
-                      imageUrl: issue.image_url }
+                       title: issue.title,
+                       description: issue.description,
+                       username: issue.user.full_name,
+                       latitude: issue.latitude,
+                       longitude: issue.longitude,
+                       imageUrl: issue.image_url,
+                       category_icon: CATEGORIES[category],
+                       category_name: category
+                       }
     end
     # show latest streams first (with reverse)
     stream_items.reverse
@@ -28,6 +51,7 @@ class Issue < ActiveRecord::Base
     issue_items = []
     self.all.each do |issue|
       unless issue.status == 'closed'
+      category = Issue.assign_category(issue)
         issue_items << {  id: issue.id,
                           title: issue.title,
                           description: issue.description,
@@ -35,8 +59,11 @@ class Issue < ActiveRecord::Base
                           longitude: issue.longitude,
                           fix_text: 'Fix It!',
                           link: "/issues/#{issue.id}",
-                          color: '0044FF' }
+                          color: '0044FF',
+                          category_icon: CATEGORIES[category],
+                          category_name: category }
       else
+        category = Issue.assign_category(issue)
         issue_items << {  id: issue.id,
                           title: issue.title,
                           description: 'This issue has been fixed!',
@@ -44,7 +71,9 @@ class Issue < ActiveRecord::Base
                           longitude: issue.longitude,
                           fix_text: 'Check out the fix!',
                           link: "/issues/#{issue.id}",
-                          color: '989898' }
+                          color: '989898',
+                          category_icon: CATEGORIES[category],
+                          category_name: category }
 
       end
     end
@@ -53,6 +82,7 @@ class Issue < ActiveRecord::Base
 
   def self.package_latest_issue
     issue = self.last
+    category = Issue.assign_category(issue)
     [] << {  id: issue.id,
              title: issue.title,
              description: issue.description,
@@ -60,19 +90,57 @@ class Issue < ActiveRecord::Base
              longitude: issue.longitude,
              fix_text: 'Fix It!',
              link: "/issues/#{issue.id}",
-             color: '0044FF' }
+             color: '0044FF',
+             category_icon: CATEGORIES[category],
+             category_name: category }
   end
 
   # THE Below method does NOT return an array, but a hash.
   def package_as_fixed
-   {  id: self.id,
-      title: self.title,
-      description: 'This issue has been fixed!',
-      latitude: self.latitude,
-      longitude: self.longitude,
-      fix_text: 'Check out the fix!',
-      link: "/issues/#{self.id}",
-      color: '989898'  } 
+    category = Issue.assign_category(self)
+    {  id: self.id,
+       title: self.title,
+       description: 'This issue has been fixed!',
+       latitude: self.latitude,
+       longitude: self.longitude,
+       fix_text: 'Check out the fix!',
+       link: "/issues/#{self.id}",
+       color: '989898',
+       category_icon: CATEGORIES[category],
+       category_name: category  }
+  end
+
+  # TODO: write out this method filtering out search results -- omg this method is stoopid
+  def self.package_issues_containing(keyword, category)
+    issues = self.all
+    if category == "None"
+      issues = issues.select { |issue| issue.title.downcase.include?(keyword.downcase) || 
+                                       issue.description.downcase.include?(keyword.downcase) }
+
+    elsif keyword == ""
+      issues = issues.select { |issue| issue.categories.map { |cat| cat.name }.include?(category) }
+
+    else
+      issues = issues.select { |issue| issue.title.downcase.include?(keyword.downcase) || 
+                                       issue.description.downcase.include?(keyword.downcase) }
+      issues = issues.select { |issue| issue.categories.map { |cat| cat.name }.include?(category) }
+    end
+
+    found_issues = []
+      issues.each do |issue|
+      category = Issue.assign_category(issue)
+        found_issues << {  id: issue.id,
+                           title: issue.title,
+                           description: issue.description,
+                           latitude: issue.latitude,
+                           longitude: issue.longitude,
+                           fix_text: 'Fix It!',
+                           link: "/issues/#{issue.id}",
+                           color: '0044FF',
+                           category_img: CATEGORIES[category],
+                           category_name: category }
+    end
+      return found_issues
   end
 
   def package_info

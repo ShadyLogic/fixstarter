@@ -5,14 +5,21 @@ var DashboardMap = React.createClass({
 		this.addIssues(this.props.allOpenIssues)
 
 		// Socket
-		var socket = io('localhost:5001')
+	  if (this.props.environment == 'development'){
+      var socket = io('localhost:5001')
+      console.log("DEVELOPMENT-MAP")
+    }else{
+      var socket = io("https://node-fixstart.herokuapp.com")
+      console.log("PRODUCTION")
+    }
+
 		var self = this
 		socket.on('issue-created', function(data) {
 			console.log('issue-created')
 			self.addIssues(data)
 		})
 
-		// NOTE: singleMarkerObject is, unlike the other objects we recieve, a hash and NOT an array. on Line 75, we wrap it 
+		// NOTE: singleMarkerObject is, unlike the other objects we recieve, a hash and NOT an array. on Line 75, we wrap it
 		// in an array before passing it to the addIssues method.
 		socket.on('fix-created', function(singleMarkerObject){
 			console.log('fix-created')
@@ -29,7 +36,7 @@ var DashboardMap = React.createClass({
 
 		map = L.mapbox.map('map', 'mapbox.streets')
 		markers = new L.MarkerClusterGroup();
-		
+
 		// center to issue when clicked
 		markers.on('click', function(e){
 			map.panTo(e.layer.getLatLng())
@@ -43,8 +50,8 @@ var DashboardMap = React.createClass({
     if (data.lbounds) {
         map.fitBounds(data.lbounds);
     } else if (data.latlng) {
-        map.setView([data.latlng[0], data.latlng[1]], 13); 
-    } 
+        map.setView([data.latlng[0], data.latlng[1]], 13);
+    }
 	},
 
 	addIssues: function(issues) {
@@ -57,9 +64,10 @@ var DashboardMap = React.createClass({
 
 	 addMarker: function(issue) {
 		 	var marker = L.marker(new L.LatLng(issue.latitude, issue.longitude), {
-	 	    icon: L.mapbox.marker.icon({'marker-symbol': 'circle', 'marker-color': issue.color}),
+	 	    icon: L.mapbox.marker.icon({'marker-symbol': issue.category_icon, 'marker-color': issue.color}),
 	 	    properties: {
 	 	    	title: issue.title,
+	 	    	category: issue.category_name,
 	 	    	description: issue.description,
 	 	    	link: issue.link,
 		 	  }
@@ -69,7 +77,7 @@ var DashboardMap = React.createClass({
 		 	marker.bindPopup(issuePackage)
 		 	markers.addLayer(marker);
 
-		 	
+
 	 		map.addLayer(markers);
 	 },
 
@@ -84,13 +92,13 @@ var DashboardMap = React.createClass({
 	},
 
 	packageIssue: function(issue) {
-		return ("<p><b>"+issue.title+"</b></p><p>"+issue.description+"</p><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
+		return ("<p><b>"+issue.title+" </b><em>("+issue.category_name+")</em></p><p>"+issue.description+"</p><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
 	},
 
   render: function(){
     return (
       <div className="dashboard_map_wrapper">
-      	<div id='map'></div>	
+      	<div id='map'></div>
       </div>
       )
   }

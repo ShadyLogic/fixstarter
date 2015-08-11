@@ -171,6 +171,7 @@
   background-size: 100%;
   border: 3px solid lightgrey;
 }
+
 /*----------------------------------------------*/
 
 
@@ -269,7 +270,7 @@
 }
 
 #map {
-  width: 100%;
+  /*width: 100%;*/
   height: 600px;
   border: 1px solid black;
 }
@@ -283,6 +284,10 @@
 }
 
 .issue_votes{
+
+}
+
+.issue_open_close{
 
 }
 

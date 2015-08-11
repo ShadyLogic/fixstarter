@@ -5,12 +5,20 @@ var Dashboard = React.createClass({
   },
 
   componentDidMount: function() {
-    var socket = io('localhost:5001')
+    if (this.props.environment == 'development'){
+      var socket = io('localhost:5001')
+      console.log("DEVELOPMENT-STREAM")
+    }else{
+      var socket = io("https://node-fixstart.herokuapp.com")
+      console.log("PRODUCTION")
+    }
     var self = this
     socket.on('stream', function(data) {
       console.log('stream-updated success')
       self.refreshStream(data)
     })
+
+    console.log(this.props.allOpenIssues)
   },
 
   refreshStream: function(data) {
@@ -19,6 +27,7 @@ var Dashboard = React.createClass({
 
   render: function(){
     return (
+
       <div className="ui centered grid container">
 
         <div className="one column row">
@@ -30,7 +39,7 @@ var Dashboard = React.createClass({
         </div>
 
         <div className="one column row">
-          < DashboardMap allOpenIssues={this.props.allOpenIssues} zip={this.props.zip} />
+          < DashboardMap allOpenIssues={this.props.allOpenIssues} zip={this.props.zip} environment={this.props.environment} />
         </div>
 
         <div className="one column row">

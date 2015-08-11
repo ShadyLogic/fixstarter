@@ -3,7 +3,11 @@ class ProfileController < ApplicationController
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
 
   def show
-    redirect_to "/users/#{current_user.id}"
+    if user_signed_in?
+      redirect_to "/users/#{current_user.id}"
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
@@ -12,8 +16,12 @@ class ProfileController < ApplicationController
 
   def update
     user = User.find(current_user.id)
-    p profile_params
     user.update_attributes(profile_params)
+
+    if contains_image?
+      user.avatar_url = upload_image
+      user.save
+    end
 
     redirect_to "/users/#{current_user.id}"
   end
