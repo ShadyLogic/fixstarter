@@ -14,10 +14,21 @@ var ProfileEdit = React.createClass({
   render: function(){
     return (
       <div className="profile_edit_wrapper">
-      <ProfilePic user={this.props.user}/>
 
-      <p> Hello, {this.props.user.first_name} {this.props.user.last_name}.
-      You can update your profile below. </p>
+      <div className="ui cards">
+        <div className="card">
+          <div className="content">
+            <img className="right floated mini ui image" src={this.props.user.avatar_url} />
+            <div className="header">
+              {this.props.user.first_name} {this.props.user.last_name}
+            </div>
+            <div className="discription">
+              You can update your profile below.
+            </div>
+          </div>
+        </div>
+      </div>
+      <br></br>
 
       <form className="ui form" action='/profile' method="POST"  ref="form" encType="multipart/form-data">
           <input type="hidden" name="_method" value="PUT" />

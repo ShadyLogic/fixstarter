@@ -21,7 +21,7 @@ var ImageUploadForm = React.createClass({
   render: function(){
     return (
       <div>
-        <canvas id="myCanvas" width="10" height="10" >
+        <canvas id="myCanvas" width="50" height="50" >
         </canvas><br/>
         <input id="image" type="file" accept="image/*;capture=camera" name="image" onChange={this.handleImage} />
       </div>
