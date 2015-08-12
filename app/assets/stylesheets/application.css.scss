@@ -376,25 +376,37 @@ html{
 }
 
 .result_list_wrapper{
-  margin-top: 100px;
+  margin-top: 25px;
   /*height: 600px;*/
-  width: 50%;
+  width: 37%;
   float: left;
+}
+
+.result_list_event{
+}
+
+.result_item_category{
+  color: gray;
 }
 
 .result_item_wrapper{
 
 }
 
+.discover_fix_button{
+  margin: 25px;
+}
+
 .discover_form{
-  width: 600px;
+  width: 35%;
   margin: 0 auto;
+  float: left;
 }
 
 .discover_map_wrapper{
-  margin-top: 100px;
+  margin-top: 15px;
   height: 600px;
-  width: 50%;
+  width: 60%;
   float: right;
   background-image: url(http://i.imgur.com/ziM5W14.png);
   background-size: 100%;
@@ -402,6 +414,12 @@ html{
 }
 
 @media all and(max-width: 750px){
+  .result_list_wrapper{
+    float:none;
+    display: block;
+    width: 100%;
+  }
+
   .result_list_wrapper{
     float: none;
     width: 100%;
@@ -413,8 +431,11 @@ html{
   }
 
   .discover_form{
+    float:none;
     width: 80%;
   }
+
+
 }
 
 /*----------------------------------------------*/
