@@ -131,7 +131,7 @@ html{
   }
 }
 
-/*when iphone6*/
+/*when iphone5 and iphone6*/
 @media only screen and (min-device-width: 320px) and (max-device-width: 667px)   and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait){
 
   /*hide the normal menu*/
@@ -153,10 +153,6 @@ html{
     display: none;
   }
 }
-
-
-/*when iphone5*/
-
 /*--------------------------------------------*/
 
 
