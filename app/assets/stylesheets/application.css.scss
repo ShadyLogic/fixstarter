@@ -386,6 +386,11 @@ html{
 
 }
 
+.discover_form{
+  width: 600px;
+  margin: 0 auto;
+}
+
 .discover_map_wrapper{
   margin-top: 100px;
   height: 600px;
@@ -394,6 +399,22 @@ html{
   background-image: url(http://i.imgur.com/ziM5W14.png);
   background-size: 100%;
   border: 3px solid lightgrey;
+}
+
+@media all and(max-width: 750px){
+  .result_list_wrapper{
+    float: none;
+    width: 100%;
+  }
+
+  .discover_map_wrapper{
+    float:none;
+    width: 100%;
+  }
+
+  .discover_form{
+    width: 80%;
+  }
 }
 
 /*----------------------------------------------*/
