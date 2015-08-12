@@ -13,101 +13,99 @@
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <!-- HEADER -->
-  <% unless @splash %>
-    <div id="header">
-      <div id="mainHead">
-        <% if user_signed_in? %>
-          <%= react_component('FixedMenuTemplate', {prerender: true}) %>
-        <% end %>
+    <!-- HEADER -->
+    <% unless @splash_page || @log_in_page  || @sign_up_page %>
+      <div id="header">
+        <div id="mainHead">
+          <% if user_signed_in? %>
+            <%= react_component('FixedMenuTemplate', {prerender: true}) %>
+          <% end %>
 
-        <div class="ui huge icon header inverted">
-          <i class="circular configure icon inverted"></i> Fix. Shit. Today.
+          <div class="ui huge icon header inverted">
+            <i class="circular configure icon inverted"></i> Fix. Shit. Today.
+          </div>
+
+          <h2 class="ui header inverted">
+            <i class="configure icon inverted"> </i> Fix. Shit. Today.
+          </h2>
+
         </div>
-
-        <h2 class="ui header inverted">
-          <i class="configure icon inverted"> </i> Fix. Shit. Today.
-        </h2>
-
+        <img id="mainImage" src="http://i.imgur.com/L65HE0g.jpg" />
       </div>
-      <img id="mainImage" src="http://i.imgur.com/L65HE0g.jpg" />
-    </div>
-  <div class="notice"><%= notice %></div>
-  <div class="alert"><%= alert %></div>
-  <% end %>
-
-  <!-- HEADER -->
+      <div class="notice"><%= notice %></div>
+      <div class="alert"><%= alert %></div>
+    <% end %>
+    <!-- HEADER -->
 
 
 
-  <!-- body content -->
-  <% if @splash %>
-    <div id="splash_wrapper">
-      <%= yield %>
-    </div>
-
-  <% else %>
-    <div id="content">
-      <%= yield %>
-    </div>
-  <% end %>
-  <!-- body content -->
-
-
-
-  <!-- FOOTER -->
-  <div id="footer">
-    <div class="ui grid three column stackable">
-
-      <div class="column">
-        <div class="ui horizontal icon divider">
-          <i class="circular list icon"></i>
-        </div>
-
-        <div class="ui list">
-
-          <a href="/issues/new" class="item">
-            <i class="plus icon"></i>
-            Submit an Issue
-          </a>
-
-          <a href="/dashboard" class="item">
-            <i class="home icon"></i>
-            Dashboard
-          </a>
-
-          <a href="/team" class="item">
-            <i class="configure icon"></i>
-            About Us
-          </a>
-
-        </div>
+    <!-- body content -->
+    <% if @splash_page || @log_in_page || @sign_up_page %>
+      <div id="splash_wrapper">
+        <%= yield %>
       </div>
 
-      <div class="column">
-        <div class="ui horizontal icon divider">
-          <i class="circular configure icon"></i>
-        </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore mag
-        </p>
+    <% else %>
+      <div id="content">
+        <%= yield %>
       </div>
+    <% end %>
+    <!-- body content -->
 
-      <div class="column">
-        <div class="ui horizontal icon divider">
-          <i class="circular configure icon"></i>
+
+
+    <!-- FOOTER -->
+    <div id="footer">
+      <div class="ui grid three column stackable">
+
+        <div class="column">
+          <div class="ui horizontal icon divider">
+            <i class="circular list icon"></i>
+          </div>
+
+          <div class="ui list">
+
+            <a href="/issues/new" class="item">
+              <i class="plus icon"></i>
+              Submit an Issue
+            </a>
+
+            <a href="/dashboard" class="item">
+              <i class="home icon"></i>
+              Dashboard
+            </a>
+
+            <a href="/team" class="item">
+              <i class="configure icon"></i>
+              About Us
+            </a>
+
+          </div>
         </div>
-        <%= react_component('StreamFooter', {streamIssues: Issue.package_stream_issues, environment: Rails.env, prerender: true}) %>
-      </div>
 
+        <div class="column">
+          <div class="ui horizontal icon divider">
+            <i class="circular configure icon"></i>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore mag
+          </p>
+        </div>
+
+        <div class="column">
+          <div class="ui horizontal icon divider">
+            <i class="circular configure icon"></i>
+          </div>
+          <%= react_component('StreamFooter', {streamIssues: Issue.package_stream_issues, environment: Rails.env, prerender: true}) %>
+        </div>
+
+      </div>
     </div>
+    <!-- FOOTER -->
   </div>
-  <!-- FOOTER -->
-</div>
 
 </body>
-
 </html>

@@ -43,7 +43,6 @@ html{
   /*margin-bottom: 500px;*/
   height: 100%;
 }
-
 /*--------------------------------------------*/
 
 
@@ -134,6 +133,43 @@ html{
 
 
 
+
+/*-------------------FOOTER----------------*/
+#footer{
+  background: #eee;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  box-sizing: border-box;
+  color: #666;
+  font-size: 1.25em;
+  z-index: 1000;
+  position: relative;
+/*  bottom: 0;
+  position: fixed;*/
+}
+
+#footer a{
+  text-decoration: none;
+  color: #666;
+}
+
+#footer a:hover{
+  color: #ff6e00;
+}
+
+#footer_stream{
+  font-size: 0.75em;
+  margin-left: 20px;
+  overflow: scroll;
+  overflow-x: hidden ;
+  height: 100px;
+}
+/*-------------------------------------------*/
+
+
+
+
 /*---------------SPLASH PAGE----------------*/
 #splash{
   padding-bottom: 20px;
@@ -151,6 +187,7 @@ html{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  text-align: center;
 }
 
 /*#splashImage{
@@ -178,11 +215,11 @@ html{
 }
 
 
-@media all and(min-width: 900px){
+/*@media all and(min-width: 900px){
   #mainSplash .header{
     margin-top: 3%;
   }
-}
+}*/
 
 @media all and(max-width: 730px){
   #mainSplash .ui.header.huge{
@@ -220,37 +257,42 @@ html{
 
 
 
-/*-------------------FOOTER----------------*/
-#footer{
-  position: fixed;
-  background: #eee;
-  border-top: 1px solid #ddd;
-  width: 100%;
-  padding: 0 20px 20px 20px;
-  box-sizing: border-box;
-  color: #666;
-  font-size: 1.25em;
-  bottom: 0;
-  z-index: 1000;
+
+/*---------------SIGNUP AND LOGIN PAGES---------------*/
+.signin_and_login_form_wrapper{
+  display: inline-block;
+  margin-bottom: 50px;
 }
 
-#footer a{
-  text-decoration: none;
-  color: #666;
+.signin_and_login_form{
+  color: white;
+  font-weight: bold;
 }
 
-#footer a:hover{
-  color: #ff6e00;
+.slash_form{
+  color: white;
 }
 
-#footer_stream{
-  font-size: 0.75em;
-  margin-left: 20px;
-  overflow: scroll;
-  overflow-x: hidden ;
-  height: 100px;
+.splash_field{
+  opacity: 0.5;
 }
-/*-------------------------------------------*/
+
+@media only screen and (min-device-width: 375px) and (min-device-width: 375px)   and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .signin_and_login_form_wrapper{
+    width: 80%;
+    font-size: 3em
+  }
+  .splash_field{
+    font-size: 3em;
+  }
+  .splash_title{
+    font-size: 3em;
+  }
+}
+/*---------------------------------------------------*/
+
+
+
 
 
 
@@ -264,11 +306,12 @@ html{
 
 
 
+
 /*---------------REGISTER/LOGIN PAGE--------------*/
-.register_login_page{
+/*.register_login_page{
   width: 100%;
   text-align: center;
-  /*border: 1px solid black;*/
+  border: 1px solid black;
 }
 
 .register_form{
@@ -276,7 +319,7 @@ html{
   display: inline-block;
   width: 20%;
   font-size: 20px;
-  /*border: 1px solid skyblue;*/
+  border: 1px solid skyblue;
 }
 
 .login_form{
@@ -284,8 +327,8 @@ html{
   display: inline-block;
   width: 20%;
   font-size: 20px;
-  /*border: 1px solid skyblue;*/
-}
+  border: 1px solid skyblue;
+}*/
 /*----------------------------------------------*/
 
 
