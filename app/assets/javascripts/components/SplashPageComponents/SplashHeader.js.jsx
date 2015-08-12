@@ -12,9 +12,9 @@ var SplashHeader = React.createClass({
             </div>
           </div>
 
-          // <h2 className="ui header inverted">
-          //   <i className="configure icon inverted"> </i> Fix. Shit. Today.
-          // </h2>
+          <h2 className="ui header inverted">
+            <i className="configure icon inverted"> </i> Fix. Shit. Today.
+          </h2>
 
         </div>
         <img id="splashImage" src="http://i.imgur.com/hNp8q7C.jpg" />

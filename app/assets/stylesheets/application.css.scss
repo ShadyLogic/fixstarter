@@ -128,17 +128,17 @@ html{
 /*---------------SPLASH PAGE----------------*/
 #splash{
   position: relative;
-/*  overflow: hidden;*/
+  height: 100%;
   padding-bottom: 20px;
 }
 
 #mainSplash{
   text-align: center;
+  position: relative;
 }
 
 #splashImage{
   width: 100%;
-  overflow: hidden;
   position: absolute;
   z-index: -1;
   top: 0;
@@ -161,8 +161,8 @@ html{
   box-sizing: border-box;
   color: #666;
   font-size: 1.25em;
-  position: absolute;
   bottom: 0;
+  position: absolute;
 }
 
 #footer a{
