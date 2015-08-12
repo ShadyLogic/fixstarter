@@ -7,6 +7,7 @@ class ProfileController < ApplicationController
 
       #Badge Assignment
       check_misc_badges
+      check_profile_badges
 
       redirect_to "/users/#{current_user.id}"
     else
@@ -30,7 +31,7 @@ class ProfileController < ApplicationController
     #Badge Assignment
     check_profile_badges
 
-    redirect_to "/users/#{current_user.id}"
+    redirect_to profile_path
   end
 
   private
