@@ -13,6 +13,10 @@ var IssueMap = React.createClass({
 
 		//map variable shared between functions.
 		map = L.mapbox.map('map', 'mapbox.streets')
+
+		// disable map scroll zoom
+		map.scrollWheelZoom.disable();
+
 		latestMarker = undefined
 
 		 map.on('click', function(e) {
@@ -24,6 +28,9 @@ var IssueMap = React.createClass({
 
 		    self.props.latValue = e.latlng.lat
 		    self.props.lonValue = e.latlng.lng
+
+		    //Pan to newly placed pin
+		    map.panTo(e.latlng)
 		  });
 
 			map.on('mouseup', function(e) {

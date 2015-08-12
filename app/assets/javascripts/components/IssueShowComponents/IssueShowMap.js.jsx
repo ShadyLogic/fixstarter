@@ -11,6 +11,10 @@ var IssueShowMap = React.createClass({
 		    self 				 = this
 
 		map = L.mapbox.map('map', 'mapbox.streets')
+		// disable map movement
+		map.touchZoom.disable();
+		map.scrollWheelZoom.disable();
+
 		geocoder.reverseQuery({	lat: this.props.issue.latitude,
 													 	lon: this.props.issue.longitude }, self.showMap)
 	},

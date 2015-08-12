@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index # splash page (root_path)
-    @splash = true
+    @splash_page = true
     @stream_issues = Issue.package_stream_issues
     if user_signed_in?
       redirect_to dashboard_path
