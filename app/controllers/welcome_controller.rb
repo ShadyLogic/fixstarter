@@ -41,7 +41,7 @@ class WelcomeController < ApplicationController
   # ajax route for discover page
   def search
     if Geocoder.coordinates(params[:location]) == nil
-      location = "San Francisco"
+      location = current_user.zip
     else
       location = params[:location]
     end
