@@ -131,7 +131,7 @@ class Issue < ActiveRecord::Base
                         description: "Try another search!",
                         latitude: location_coords[0],
                         longitude: location_coords[1],
-                        category_icon: 'n/a',
+                        category_icon: 'none',
                         fix_text: "Return to Dashboard",
                         link: '/dashboard',
                         points: "n/a",
