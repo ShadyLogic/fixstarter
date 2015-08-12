@@ -10,6 +10,9 @@ var DiscoverMap = React.createClass({
 			markers = new L.MarkerClusterGroup();
 			geocoder 		 = L.mapbox.geocoder('mapbox.places')
 
+			// disable map scroll zoom
+			map.scrollWheelZoom.disable();
+
 			//map centering on click
 			markers.on('click', function(e){
 				map.panTo(e.layer.getLatLng())
