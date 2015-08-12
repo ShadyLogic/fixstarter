@@ -1,0 +1,126 @@
+var TeamMediaCards = React.createClass({
+  render: function(){
+    return (
+      <div className="about_team_show_page">
+        <h2 className="ui horizontal divider header"> About Us </h2>
+
+        <p> Jacob, one of our co-founders, is always on the hunt to fix broken things. One day on his way to work, he could not stop staring at a loose screw on the bus. He knew he could fix it, but (argh) he did not have any tools on him that day. </p>
+        <p> He wished he could snap a picture and post it, and then the next kindred-spirit could solve the issue. <b>And FixStart was born</b>. </p>
+        <p> Jacob, Marshall, Tim, and Andrea designed a mobile-responsive app for FixStart and launched it at the <a href="http://devbootcamp.com/">DevBootcamp</a> Demo Day in August 2015.</p>
+        <p>Our project is open source, and we would be thrilled if you could contribut to it via our <a href="https://github.com/ShadyLogic/fixstarter">GitHub</a>. Enjoy our community! <b>Fix shit, today</b>. </p>
+        <br/>
+
+        <div className="ui stackable two column grid">
+          <div className="column">
+            <div className="ui card">
+              <div className="image">
+                <img src="<%= image_url('team_photos/cannady.jpg') %>" />
+              </div>
+              <div className="content">
+                <a className="header">Tim Cannady</a>
+
+                <div className="meta">
+                  <span className="date">Nickname: Smash</span>
+                </div>
+
+                <div className="header">
+                  <a href="https://github.com/timcannady"><i className="github icon"></i></a>
+                  <a href="https://twitter.com/tcannadysf"><i className="twitter icon"></i></a>
+                  <a href="https://www.linkedin.com/in/timcannady"><i className="linkedin icon"></i></a>
+                </div>
+
+                <div className="description">
+                  Tim bio.
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div className="column">
+            <div className="ui card">
+              <div className="image">
+                <img src="<%= image_url('team_photos/coravos.jpg') %>" />
+              </div>
+              <div className="content">
+                <a className="header">Andrea Coravos</a>
+
+                <div className="meta">
+                  <span className="date">Nickname: Dre</span>
+                </div>
+
+                <div className="header">
+                  <a href="https://github.com/acoravos"><i className="github icon"></i></a>
+                  <a href="https://twitter.com/andreacoravos"><i className="twitter icon"></i></a>
+                  <a href="https://www.linkedin.com/in/andreacoravos"><i className="linkedin icon"></i></a>
+                </div>
+
+                <div className="description">
+                  Andrea made a midcareer switch to learn how to code. She believes that technology, specifically software, is the future of all well-run businesses. Previously, she worked at McKinsey and Company and KKR. Now, she is a full-stack developer and co-founder at FixStart.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="ui stackable two column grid">
+          <div className="column">
+            <div className="ui card">
+              <div className="image">
+                <img src="<%= image_url('team_photos/hattersley.jpg') %>" />
+              </div>
+              <div className="content">
+                <a className="header">Marshall Hattersley</a>
+
+                <div className="meta">
+                  <span className="date">Nickname: Trashcanersley</span>
+                </div>
+
+                <div className="header">
+                  <a href="https://github.com/mwhatters"><i className="github icon"></i></a>
+                  <a href="https://twitter.com/mwhatters"><i className="twitter icon"></i></a>
+                  <a href="https://www.linkedin.com/pub/marshall-hattersley/66/552/211"><i className="linkedin icon"></i></a>
+                </div>
+
+                <div className="description">
+                  Marshall bio.
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div className="column">
+            <div className="ui card">
+              <div className="image">
+                <img src="<%= image_url('team_photos/rogers.png') %>" />
+              </div>
+              <div className="content">
+                <a className="header">Jacob Rogers</a>
+
+                <div className="meta">
+                  <span className="date">Nickname: Coba, the Season Bringer</span>
+                </div>
+
+                <div className="header">
+                  <a href="https://github.com/shadylogic"><i className="github icon"></i></a>
+                  <a href="https://twitter.com/shadylogic"><i className="twitter icon"></i></a>
+                  <a href="https://www.linkedin.com/in/jacobrogers42"><i className="linkedin icon"></i></a>
+                </div>
+
+                <div className="description">
+                  Coba bio.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <br/>
+
+      </div>
+      )
+  }
+})
