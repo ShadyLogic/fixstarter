@@ -61,6 +61,10 @@ html{
 @import "semantic-ui";
 @import "semantic-ui/collections/menu";
 @import "semantic-ui/collections/grid";
+/*@import "semantic-ui/collections/breadcrumb";
+@import "semantic-ui/collections/message";
+@import "semantic-ui/collections/table";
+@import "semantic-ui/collections/table";*/
 /*--------------------------------------------*/
 
 
@@ -92,38 +96,54 @@ html{
   min-height: 100%;
 }
 
+#m_btn{
+  display: none;
+}
+
+/*Main Head has slight margin when at full screen*/
 @media all and(min-width: 900px){
   #mainHead .header{
     margin-top: 3%;
   }
 }
 
+/*main head font is smaller when screen size is smaller*/
 @media all and(max-width: 730px){
   #mainHead .ui.header.huge{
     font-size: 1.5em;
   }
 }
 
+/*when larger than mobile*/
 @media all and(min-width: 631px){
   html body.pushed{
     margin-left: 0 !important;
   }
+
+  /*hide the mobile menu*/
   #m_menu.active{
     display: none;
   }
+
+  /*hide the mobile header*/
   #mainHead h2{
     display: none;
   }
 }
 
-@media all and(max-width: 630px){
+/*when mobile*/
+@media only screen and (min-device-width: 375px) and (min-device-width: 375px)   and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  /*hide the normal menu*/
   #menu{display: none;}
+
+  /*display the mobile menu button*/
   #m_btn{
     display: inline-block;
   }
   body.pushed{
     overflow: hidden;
   }
+  /*hide the main header*/
   #mainHead .ui.icon.header.huge{
     display: none;
   }
@@ -239,7 +259,7 @@ html{
   }
 }
 
-@media all and(max-width: 630px){
+/*@media all and(max-width: 630px){
   #menu{display: none;}
   #m_btn{
     display: inline-block;
@@ -250,7 +270,7 @@ html{
   #mainHead .ui.icon.header.huge{
     display: none;
   }
-}
+}*/
 /*--------------------------------------------*/
 
 /*---------------SIGNUP AND LOGIN PAGES---------------*/
