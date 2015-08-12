@@ -5,7 +5,7 @@ var UserBadges = React.createClass({
         <div className="ui cards">
           <div className="card">
             <div className="content">
-            These are the user badges for {this.props.user.first_name}.
+              <p><b>Badges</b></p>
             </div>
           </div>
         </div>

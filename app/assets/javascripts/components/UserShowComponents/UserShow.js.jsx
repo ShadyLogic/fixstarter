@@ -3,8 +3,6 @@ var UserShow = React.createClass({
     return (
       <div className="user_show_wrapper">
 
-      <br></br>
-
       < UserProfileCard user={this.props.user} same_user={this.props.same_user} />
 
       <br></br>
