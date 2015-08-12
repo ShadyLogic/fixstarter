@@ -37,6 +37,9 @@ var DashboardMap = React.createClass({
 		map = L.mapbox.map('map', 'mapbox.streets')
 		markers = new L.MarkerClusterGroup();
 
+		// disable map scroll zoom
+		map.scrollWheelZoom.disable();
+
 		// center to issue when clicked
 		markers.on('click', function(e){
 			map.panTo(e.layer.getLatLng())
