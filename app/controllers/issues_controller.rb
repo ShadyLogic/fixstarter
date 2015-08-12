@@ -87,6 +87,9 @@ class IssuesController < ApplicationController
 
     @issue.update_attributes(user_id: current_user.id)
 
+    #Badge Assignment
+    check_issue_badges
+
     # publish event to redis server, sent to dashboard
     Redis.current.publish 'issue-created', Issue.package_latest_issue.to_json
     # publish change to streaming front-page

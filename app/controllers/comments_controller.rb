@@ -7,6 +7,9 @@ class CommentsController < ApplicationController
     issue = Issue.find_by(id: params[:issue_id])
     comment = IssueComment.create(issue_id: params[:issue_id], user_id: current_user.id, content: params[:content])
 
+    #Badge Assignment
+    check_issue_comment_badges
+
     if request.xhr?
       render '/comments/comment_partial'
     else
@@ -27,6 +30,9 @@ class CommentsController < ApplicationController
 
     fix = Fix.find_by(id: params[:fix_id])
     comment = FixComment.create(fix_id: params[:fix_id], user_id: current_user.id, content: params[:content])
+
+    #Badge Assignment
+    check_fix_comment_badges
 
     if request.xhr?
       render '/comments/comment_partial'
