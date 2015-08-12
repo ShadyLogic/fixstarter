@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :users_votes
   has_many :issues
   has_many :communities, through: :issues
+  has_one :badge_collection
 
   def full_name
     "#{self.first_name} #{self.last_name}"
