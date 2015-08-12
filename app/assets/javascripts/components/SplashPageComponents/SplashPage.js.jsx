@@ -27,8 +27,6 @@ var SplashPage = React.createClass({
     return (
       <div className = "ui stackable one column centered grid container splash_page">
         < SplashHeader />
-        < br/>
-        < Stream streamIssues={this.state.streamIssues} />
       </div>
       )
   }

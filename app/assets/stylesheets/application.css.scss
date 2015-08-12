@@ -24,14 +24,20 @@ body{
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
   -webkit-font-smoothing: antialiased;
   font-weight: 200;
+}
+
+.container{
+  position: relative;
+  padding-bottom: 170px;
 }
 
 #content{
   padding: 20px;
 }
+
+
 /*--------------------------------------------*/
 
 
@@ -57,11 +63,13 @@ body{
   margin: 40px 40px 0px 40px;
   text-align: center;
 }
+
 #menu{
   max-width: 1024px;
   margin: 0 auto;
   font-size: 1.25em;
 }
+
 #mainImage{
   width: 100%;
   position: absolute;
@@ -112,6 +120,30 @@ body{
 
 
 
+/*---------------SPLASH PAGE----------------*/
+.splash_page {
+  text-align: center;
+/*  height: 700px;*/
+  position: relative;
+  overflow: hidden;
+}
+
+.header_wrapper {
+  /*border: 1px solid skyblue;*/
+}
+
+#splashImage{
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  /*min-height: 100%;*/
+}
+/*--------------------------------------------*/
+
+
+
+
 
 /*-------------------FOOTER----------------*/
 #footer{
@@ -119,13 +151,12 @@ body{
   background: #eee;
   border-top: 1px solid #ddd;
   width: 100%;
-  clear: both;
-  float: left;
-  overflow: hidden;
   padding: 0 20px 20px 20px;
   box-sizing: border-box;
   color: #666;
   font-size: 1.25em;
+  position: absolute;
+  bottom: 0;
 }
 
 #footer a{
@@ -156,20 +187,6 @@ body{
   background-color: #D3D3D3;
   text-align: center;
 }
-/*--------------------------------------------*/
-
-
-
-
-/*---------------SPLASH PAGE----------------*/
-.splash_page {
-  text-align: center;
-}
-
-.header_wrapper {
-  /*border: 1px solid skyblue;*/
-}
-
 /*--------------------------------------------*/
 
 
