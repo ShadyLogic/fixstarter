@@ -13,36 +13,48 @@
 
 <body>
 
+<div class="container">
+
   <!-- HEADER -->
-  <div id="header">
-    <div id="mainHead">
-      <% if user_signed_in? %>
-        <%= react_component('FixedMenuTemplate', {prerender: true}) %>
-      <% end %>
+  <% unless @splash %>
+    <div id="header">
+      <div id="mainHead">
+        <% if user_signed_in? %>
+          <%= react_component('FixedMenuTemplate', {prerender: true}) %>
+        <% end %>
 
-      <div class="ui huge icon header inverted">
-        <i class="circular configure icon inverted"></i> Fix. Shit. Today.
+        <div class="ui huge icon header inverted">
+          <i class="circular configure icon inverted"></i> Fix. Shit. Today.
+        </div>
+
+        <h2 class="ui header inverted">
+          <i class="configure icon inverted"> </i> Fix. Shit. Today.
+        </h2>
+
       </div>
-
-      <h2 class="ui header inverted">
-        <i class="configure icon inverted"> </i> Fix. Shit. Today.
-      <h2>
-
+      <img id="mainImage" src="http://i.imgur.com/L65HE0g.jpg" />
     </div>
-    <img id="mainImage" src="http://i.imgur.com/L65HE0g.jpg" />
-  </div>
-
   <div class="notice"><%= notice %></div>
   <div class="alert"><%= alert %></div>
+  <% end %>
+
   <!-- HEADER -->
 
 
 
   <!-- body content -->
-  <div id="content">
-    <%= yield %>
-  </div>
+  <% if @splash %>
+    <div id="splash_wrapper">
+      <%= yield %>
+    </div>
+
+  <% else %>
+    <div id="content">
+      <%= yield %>
+    </div>
+  <% end %>
   <!-- body content -->
+
 
 
   <!-- FOOTER -->
@@ -94,6 +106,7 @@
     </div>
   </div>
   <!-- FOOTER -->
+</div>
 
 </body>
 

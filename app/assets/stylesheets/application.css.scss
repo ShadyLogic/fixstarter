@@ -24,14 +24,26 @@ body{
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
   -webkit-font-smoothing: antialiased;
   font-weight: 200;
 }
 
+html{
+  padding: 0;
+}
+
+.container{
+  position: relative;
+  /*margin-bottom: 500px;*/
+  height: 100%;
+}
+
 #content{
   padding: 20px;
+  /*margin-bottom: 500px;*/
+  height: 100%;
 }
+
 /*--------------------------------------------*/
 
 
@@ -57,11 +69,13 @@ body{
   margin: 40px 40px 0px 40px;
   text-align: center;
 }
+
 #menu{
   max-width: 1024px;
   margin: 0 auto;
   font-size: 1.25em;
 }
+
 #mainImage{
   width: 100%;
   position: absolute;
@@ -112,20 +126,67 @@ body{
 
 
 
+/*---------------SPLASH PAGE----------------*/
+#splash{
+/*  background-image: url('http://i.imgur.com/hNp8q7C.jpg');
+  background-size: 100%;*/
+  padding-bottom: 20px;
+}
+
+#mainSplash{
+  text-align: center;
+  position: relative;
+}
+
+#splash_wrapper{
+  height: 100%;
+  background: url(http://i.imgur.com/hNp8q7C.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*#splashImage{
+  background-image: url('http://i.imgur.com/hNp8q7C.jpg');
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  min-height: 100%;
+}*/
+
+.splashImage{
+  background-image: url('http://i.imgur.com/hNp8q7C.jpg');
+  height: 500px;
+  /*position: absolute;*/
+  top: 0;
+  /*z-index: -1;*/
+/*  min-height: 100%;*/
+}
+
+.splash_nav_button{
+  margin-right: 1%;
+  margin-left: 1%;
+}
+/*--------------------------------------------*/
+
+
+
+
 
 /*-------------------FOOTER----------------*/
 #footer{
-/*  margin-top: 20px;*/
   background: #eee;
   border-top: 1px solid #ddd;
   width: 100%;
-  clear: both;
-  float: left;
-  overflow: hidden;
   padding: 0 20px 20px 20px;
   box-sizing: border-box;
   color: #666;
   font-size: 1.25em;
+  bottom: 0;
+  position: fixed;
+  z-index: 1000;
 }
 
 #footer a{
@@ -153,20 +214,6 @@ body{
   background-color: #D3D3D3;
   text-align: center;
 }
-/*--------------------------------------------*/
-
-
-
-
-/*---------------SPLASH PAGE----------------*/
-.splash_page {
-  text-align: center;
-}
-
-.header_wrapper {
-  /*border: 1px solid skyblue;*/
-}
-
 /*--------------------------------------------*/
 
 
