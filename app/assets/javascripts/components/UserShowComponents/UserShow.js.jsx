@@ -7,7 +7,7 @@ var UserShow = React.createClass({
 
       <br></br>
 
-      < UserBadges user={this.props.user} />
+      < Badges badges={this.props.badges} />
 
       <br></br>
 
