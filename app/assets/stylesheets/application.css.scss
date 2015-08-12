@@ -125,6 +125,42 @@ html{
 
 
 
+
+/*-------------------FOOTER----------------*/
+#footer{
+  background: #eee;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  box-sizing: border-box;
+  color: #666;
+  font-size: 1.25em;
+  z-index: 1000;
+/*  bottom: 0;
+  position: fixed;*/
+}
+
+#footer a{
+  text-decoration: none;
+  color: #666;
+}
+
+#footer a:hover{
+  color: #ff6e00;
+}
+
+#footer_stream{
+  font-size: 0.75em;
+  margin-left: 20px;
+  overflow: scroll;
+  overflow-x: hidden ;
+  height: 100px;
+}
+/*-------------------------------------------*/
+
+
+
+
 /*---------------SPLASH PAGE----------------*/
 #splash{
   padding-bottom: 20px;
@@ -142,6 +178,7 @@ html{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  text-align: center;
 }
 
 /*#splashImage{
@@ -211,37 +248,25 @@ html{
 
 
 
-/*-------------------FOOTER----------------*/
-#footer{
-  background: #eee;
-  border-top: 1px solid #ddd;
-  width: 100%;
-  padding: 0 20px 20px 20px;
-  box-sizing: border-box;
-  color: #666;
-  font-size: 1.25em;
-  z-index: 1000;
-/*  bottom: 0;
-  position: fixed;*/
+
+/*---------------SIGNUP AND LOGIN PAGES---------------*/
+.signin_and_login_form_wrapper{
+  display: inline-block;
+  color: white;
+  font-weight: bold;
 }
 
-#footer a{
-  text-decoration: none;
-  color: #666;
+.slash_form{
+  color: white;
 }
 
-#footer a:hover{
-  color: #ff6e00;
+.form_field{
+  opacity: 0.5;
 }
+/*---------------------------------------------------*/
 
-#footer_stream{
-  font-size: 0.75em;
-  margin-left: 20px;
-  overflow: scroll;
-  overflow-x: hidden ;
-  height: 100px;
-}
-/*-------------------------------------------*/
+
+
 
 
 
@@ -255,11 +280,12 @@ html{
 
 
 
+
 /*---------------REGISTER/LOGIN PAGE--------------*/
-.register_login_page{
+/*.register_login_page{
   width: 100%;
   text-align: center;
-  /*border: 1px solid black;*/
+  border: 1px solid black;
 }
 
 .register_form{
@@ -267,7 +293,7 @@ html{
   display: inline-block;
   width: 20%;
   font-size: 20px;
-  /*border: 1px solid skyblue;*/
+  border: 1px solid skyblue;
 }
 
 .login_form{
@@ -275,8 +301,8 @@ html{
   display: inline-block;
   width: 20%;
   font-size: 20px;
-  /*border: 1px solid skyblue;*/
-}
+  border: 1px solid skyblue;
+}*/
 /*----------------------------------------------*/
 
 
