@@ -18,7 +18,7 @@ var CommentBox = React.createClass({
             "</div>"+
           "</div>"+
         "</div>"
-        )
+      )
     }
 
     React.findDOMNode(this.refs.comment).value = ''
