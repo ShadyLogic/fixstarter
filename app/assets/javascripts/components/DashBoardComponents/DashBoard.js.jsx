@@ -31,7 +31,7 @@ var Dashboard = React.createClass({
       <div className="ui centered grid container">
 
         <div className="one column row">
-          <h2 className="column"> Dashboard </h2>
+          <h2 className="column">  </h2>
         </div>
 
         <div>
@@ -42,9 +42,9 @@ var Dashboard = React.createClass({
           < DashboardMap allOpenIssues={this.props.allOpenIssues} zip={this.props.zip} environment={this.props.environment} />
         </div>
 
-        <div className="one column row">
+      { /* <div className="one column row">
           < Stream streamIssues={this.state.streamIssues} />
-        </div>
+        </div> */ }
 
       </div>
       )

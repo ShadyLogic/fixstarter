@@ -1,16 +1,15 @@
 class WelcomeController < ApplicationController
-
   def index # splash page (root_path)
+    @stream_issues = Issue.package_stream_issues
     if user_signed_in?
       redirect_to dashboard_path
     end
-    @stream_issues = Issue.package_stream_issues
   end
 
 
   def show  # dashboard
     if current_user
-      @stream_issues = Issue.package_stream_issues
+    @stream_issues = Issue.package_stream_issues
       @all_open_issues = Issue.package_open_issues
       @zip = current_user.zip
       render 'welcome/show'
@@ -41,12 +40,12 @@ class WelcomeController < ApplicationController
 
   # ajax route for discover page
   def search
-    @issue_results = Issue.package_issues_containing(params[:keyword], params[:category])
-    if params[:location] == ""
+    if Geocoder.coordinates(params[:location]) == nil
       location = "San Francisco"
     else
       location = params[:location]
     end
+    @issue_results = Issue.package_issues_containing(params[:keyword], params[:category], location)
     render json: {issues: @issue_results, location: location}
   end
 

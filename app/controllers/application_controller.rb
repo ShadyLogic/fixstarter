@@ -4,5 +4,7 @@ class ApplicationController < ActionController::Base
   include ImageUploadConcern
   include BadgeConcern
 
+  @stream_issues = Issue.package_stream_issues
+
   protect_from_forgery with: :null_session
 end

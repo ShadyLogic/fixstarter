@@ -52,21 +52,22 @@ var DiscoverMap = React.createClass({
 		 },
 
 		 addMarker: function(issue) {
-			 	var marker = L.marker(new L.LatLng(issue.latitude, issue.longitude), {
-		 	    icon: L.mapbox.marker.icon({'marker-symbol': issue.category_icon, 'marker-color': issue.color}),
-		 	    properties: {
-		 	    	title: issue.title,
-		 	    	category: issue.category_name,
-		 	    	points: issue.points,
-		 	    	description: issue.description,
-		 	    	link: issue.link,
+		 		if (issue.category_icon != 'none') {
+				 	var marker = L.marker(new L.LatLng(issue.latitude, issue.longitude), {
+			 	    	icon: L.mapbox.marker.icon({'marker-symbol': issue.category_icon, 'marker-color': issue.color}),
+			 	    properties: {
+			 	    	title: issue.title,
+			 	    	category: issue.category_name,
+			 	    	points: issue.points,
+			 	    	description: issue.description,
+			 	    	link: issue.link,
 			 	  }
-			});
+			 	});
 
 			 	var issuePackage = this.packageIssue(issue)
 			 	marker.bindPopup(issuePackage)
 			 	markers.addLayer(marker);
-
+			}
 
 		 		map.addLayer(markers);
 		 },
