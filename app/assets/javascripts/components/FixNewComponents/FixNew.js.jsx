@@ -13,7 +13,7 @@ var FixNew = React.createClass({
   render: function(){
     return (
       <div className="fix_new_wrapper">
-        <h2 className="ui header"> Submit a Fix! </h2>
+        <h4 className="ui horizontal divider header"> Submit a Fix! </h4>
         <p>Applied to <a href={"/issues/" + this.props.issue.id}>Issue #{this.props.issue.id}: {this.props.issue.title}</a></p>
 
         < FixImage />

@@ -7,6 +7,8 @@ class FixesController < ApplicationController
     if @fix = Fix.find_by(id: params[:id], issue_id: params[:issue_id])
       @issue = @fix.issue
       @comments = @fix.fix_comments.map { |comment| comment.package_info }
+
+      @fix = @fix.package_info
     else
       redirect_to dashboard_path
     end
