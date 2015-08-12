@@ -4,9 +4,23 @@ var CommentBox = React.createClass({
     e.preventDefault();
     var path = this.props.path
     var data = React.findDOMNode(this.refs.comment).value
-    new_comment = App.jacobs_request('POST', path, data)
 
-    $('#added_comments').append('<p>'+this.props.current_user.first_name+': '+data+'</p>')
+
+    if (data != ''){
+      new_comment = App.jacobs_request('POST', path, data)
+      $('.comments').append(
+        "<div class='comment'>"+
+          "<a class='avatar' href='/users/"+ this.props.current_user.id+"'><img src="+this.props.current_user.avatar_url+" /></a>"+
+          "<div class='content'>"+
+            "<a class='author' href='/users/"+ this.props.current_user.id+"'> "+this.props.current_user.first_name+" "+this.props.current_user.last_name+" </a>"+
+            "<div class='text'>"+
+              data+
+            "</div>"+
+          "</div>"+
+        "</div>"
+      )
+    }
+
     React.findDOMNode(this.refs.comment).value = ''
   },
 
