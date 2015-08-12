@@ -35,7 +35,7 @@ var FixForm = React.createClass({
 
         <div className="field">
           <label>Describe the Fix</label>
-          <input ref="description" name="description" type="text" />
+          <textarea rows="3" ref="description" name="description" type="text" />
         </div>
 
         <div className="field">
