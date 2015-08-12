@@ -15,15 +15,15 @@ var FilterBar = React.createClass({
       <div className="filter_bar_wrapper">
 
        <form onSubmit={this.submitSearch} >
-       		<span>keyword:</span>
+       		<span>Keyword:</span>
 	       <input ref="keyword" type="search" name="search[keyword]" placeholder="searchbar"/>
 	       <br/>
-	       <span>location:</span>
+	       <span>Location:</span>
 	       <input ref="location" type="search" name="search[location]" placeholder="searchbar"/>
 	       <br/>
-	       <span>category:</span>
+	       <span>Category:</span>
 	       <select>
-		       <option value="None">None</option>
+		       <option value="None">All</option>
 		       <option value="Heavy">Heavy</option>
 		       <option value="Very Heavy">Very Heavy</option>
 		       <option value="Dirty">Dirty</option>
@@ -31,6 +31,7 @@ var FilterBar = React.createClass({
 		       <option value="Yard Work & Removal">Yard Work & Removal</option>
 		       <option value="General Handyman">General Handyman</option>
 		       <option value="Escalate">Escalate</option>
+		       <option value="Uncategorized">Uncategorized</option>
 	       </select>
 	       <br/>
 	       <input type="submit" value="discover it all" />
