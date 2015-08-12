@@ -22,11 +22,6 @@ class CommentsController < ApplicationController
   end
 
   def fix_create
-    p "*"*100
-    p "SUCCESS!"
-    p "*"*100
-    p params
-    p "*"*100
 
     fix = Fix.find_by(id: params[:fix_id])
     comment = FixComment.create(fix_id: params[:fix_id], user_id: current_user.id, content: params[:content])

@@ -2,7 +2,7 @@ var FixList = React.createClass({
   render: function(){
     var issueID = this.props.issue_id
     var Fixes = this.props.fixes.map(function(fix) {
-      return < FixItem title={fix.title} issue_id={issueID} id={fix.id} key={fix.id} />
+      return < FixItem title={fix.title} issue_id={issueID} id={fix.id} key={fix.id} image_url={fix.image_url}/>
     });
 
     return (
@@ -11,8 +11,12 @@ var FixList = React.createClass({
            Fixes
         </h4>
 
-        <div id="footer_stream" className="ui feed small">
-        {Fixes}
+        <div className="ui feed small">
+          { this.props.fixes.length == 0 ?
+            <p> No fixes posted. Submit a fix! </p>
+          :
+            {Fixes}
+          }
         </div>
 
         { this.props.current_user ?

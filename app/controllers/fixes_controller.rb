@@ -7,6 +7,8 @@ class FixesController < ApplicationController
     if @fix = Fix.find_by(id: params[:id], issue_id: params[:issue_id])
       @issue = @fix.issue
       @comments = @fix.fix_comments.map { |comment| comment.package_info }
+
+      @fix = @fix.package_info
     else
       redirect_to dashboard_path
     end
@@ -19,7 +21,11 @@ class FixesController < ApplicationController
   def create
     issue = Issue.find(params[:issue_id])
     @fix = Fix.new(fix_params)
-    @fix.image_url = upload_image if contains_image?
+    if contains_image?
+      @fix.image_url = upload_image
+    else
+      @fix.image_url = "http://i.imgur.com/xQyE9HC.png"
+    end
     current_user.fixes << @fix
     if @fix.save
       issue.status = "closed"
