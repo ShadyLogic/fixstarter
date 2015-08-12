@@ -2,11 +2,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    @badges = @user.badge_collection
 
     @same_user = false
 
-    if @user.id == current_user.id
-      @same_user = true
+    if user_signed_in?
+      if @user.id == current_user.id
+        @same_user = true
+      end
     end
 
     @issues = @user.issues.map { |issue| issue.package_info}

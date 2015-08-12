@@ -6,14 +6,14 @@ var LoginForm = React.createClass({
 
       <div className="ui stackable one column centered grid container login_form">
         <h3> Login </h3>
-        <form>
-          Email
-          <input type="text" />
-          <br/>
-          Password
-          <input type="password" />
-          <input type="submit" />
+        <form className="ui form">
+            <label>Email</label>
+            <input type="text" />
+            <label>Password</label>
+            <input type="password" />
+          <button className="ui button" type="submit">Submit</ button>
         </form>
+
       </div>
       )
   }
