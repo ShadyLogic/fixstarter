@@ -1,0 +1,124 @@
+var CategoryDescriptions = React.createClass({
+  render: function(){
+    return (
+      <div className="about_team_show_page">
+        <h4 className="ui horizontal divider header"> FixStart Categories </h4>
+        <p>Categories in the FixStart community are self-assigned by the member who created the issue. Issues may require multiple categories and may also need support not listed.</p>
+        <table className="ui very basic doubling celled table">
+          <thead>
+            <tr><th>Category</th>
+            <th></th>
+          </tr></thead>
+          <tbody>
+
+            <tr>
+              <td>
+                <h4 className="ui image header">
+                  <img src="<%= image_url('map_icons/pitch-24.png') %>"  className="ui mini rounded image" />
+                  <div className="content">
+                    General Handywork
+                    <div className="sub header">Basic
+                  </div>
+                </div>
+              </h4></td>
+              <td>
+                Our hero would perform minor repairs
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h4 className="ui image header">
+                  <img src="<%= image_url('map_icons/waste-basket-24.png') %>" className="ui mini rounded image" />
+                  <div className="content">
+                    Dirty
+                    <div className="sub header">Basic
+                  </div>
+                </div>
+              </h4></td>
+              <td>
+                Our hero will will need to clean the item and/or area
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h4 className="ui image header">
+                  <img src="<%= image_url('map_icons/garden-24.png') %>"  className="ui mini rounded image" />
+                  <div className="content">
+                    Yard Work & Removal
+                    <div className="sub header">Basic
+                  </div>
+                </div>
+              </h4></td>
+              <td>
+                Our hero will clean up the community area and remove any yard waste or rubbish
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h4 className="ui image header">
+                  <img src="<%= image_url('map_icons/square-stroked-24.png') %>"  className="ui mini rounded image" />
+                  <div className="content">
+                    Heavy Lifting
+                    <div className="sub header">Strength
+                  </div>
+                </div>
+              </h4></td>
+              <td>
+                Our hero(s) will need to lift >50 lbs
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h4 className="ui image header">
+                  <img src="<%= image_url('map_icons/square-24.png') %>"  className="ui mini rounded image" />
+                  <div className="content">
+                    Very Heavy Lifting
+                    <div className="sub header">Strength
+                  </div>
+                </div>
+              </h4></td>
+              <td>
+                Our hero(s) will need to lift >100 lbs
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h4 className="ui image header">
+                  <img src="<%= image_url('map_icons/logging-24.png') %>"  className="ui mini rounded image" />
+                  <div className="content">
+                    Requires Tools
+                    <div className="sub header">Extra items needed
+                  </div>
+                </div>
+              </h4></td>
+              <td>
+                Our hero will need to bring a tool (.e.g, screwdriver, hammer). See issue description for the submitter opinion for what toolds are required.
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h4 className="ui image header">
+                  <img src="<%= image_url('map_icons/police-24.png') %>"  className="ui mini rounded image" />
+                  <div className="content">
+                    Escalate
+                    <div className="sub header">Report
+                  </div>
+                </div>
+              </h4></td>
+              <td>
+                The issue is bigger than what a civilian in the community can / should solve and needs a hero to alert public officials
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      )
+  }
+})

@@ -17,7 +17,6 @@ var Discover = React.createClass({
       // the hackiest thing ever... ugh. must fix.
       self.setMap(searchResponse)
       self.setMap(searchResponse)
-
     }).fail(function(searchResponse){
       console.log('fail')
     })

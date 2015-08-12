@@ -14,7 +14,7 @@ var FilterBar = React.createClass({
     return (
       <div className="filter_bar_wrapper">
 
-       <form className="ui form" onSubmit={this.submitSearch} >
+       <form className="ui form discover_form" onSubmit={this.submitSearch} >
         <div className="field">
           <label>Keyword</label>
           <input ref="keyword" type="search" name="search[keyword]" placeholder="e.g., an issue description"/>
@@ -40,11 +40,12 @@ var FilterBar = React.createClass({
           <option value="Escalate">Escalate</option>
           <option value="Uncategorized">Uncategorized</option>
           </select>
-	       <br/>
+
+
         </div>
 
-	       <button className="ui primary button" type="submit">Discover it all</button>
-
+          <button className="ui primary button" type="submit">Search</button>
+	       
        </ form>
        <br/>
 
