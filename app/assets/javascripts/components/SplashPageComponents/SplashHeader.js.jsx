@@ -3,14 +3,25 @@ var SplashHeader = React.createClass({
   render: function(){
 
     return (
-      <div className="header_wrapper">
-        <h1> FIXSTART </h1>
-        <h3> Where you can fix all the shits </h3>
-        <a className="ui button" href="/users/sign_in"> Login </a>
-        <br/>
-        <br/>
-        <a className="ui button" href="/users/sign_up"> Sign Up </a>
+      <div id="splash">
+        <div id="mainSplash">
+
+          <div className="ui huge icon header">
+            <div className="ui huge icon header inverted">
+              <i className="circular configure icon "></i> Fix. Shit. Today.
+            </div>
+          </div>
+          <br/>
+          <a className="ui huge inverted button splash_nav_button" href="/users/sign_up"> Sign Up </a>
+          <a className="ui huge inverted button splash_nav_button" href="/users/sign_in"> Sign In</a>
+
+          <h2 className="ui header inverted">
+            <i className="configure icon inverted"> </i> Fix. Shit. Today.
+          </h2>
+
+        </div>
       </div>
     )
   }
 })
+

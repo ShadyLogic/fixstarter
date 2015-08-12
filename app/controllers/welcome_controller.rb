@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
+
   def index # splash page (root_path)
+    @splash = true
     @stream_issues = Issue.package_stream_issues
     if user_signed_in?
       redirect_to dashboard_path
@@ -41,7 +43,7 @@ class WelcomeController < ApplicationController
   # ajax route for discover page
   def search
     if Geocoder.coordinates(params[:location]) == nil
-      location = "San Francisco"
+      location = current_user.zip
     else
       location = params[:location]
     end
