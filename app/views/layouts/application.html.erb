@@ -16,7 +16,7 @@
 <div class="container">
 
   <!-- HEADER -->
-  <% unless @splash %>
+  <% unless @splash_page || @log_in_page  || @sign_up_page %>
     <div id="header">
       <div id="mainHead">
         <% if user_signed_in? %>
@@ -34,8 +34,8 @@
       </div>
       <img id="mainImage" src="http://i.imgur.com/L65HE0g.jpg" />
     </div>
-  <div class="notice"><%= notice %></div>
-  <div class="alert"><%= alert %></div>
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
   <% end %>
 
   <!-- HEADER -->
@@ -43,7 +43,7 @@
 
 
   <!-- body content -->
-  <% if @splash %>
+  <% if @splash_page || @log_in_page || @sign_up_page %>
     <div id="splash_wrapper">
       <%= yield %>
     </div>
