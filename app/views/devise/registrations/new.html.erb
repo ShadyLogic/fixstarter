@@ -13,42 +13,40 @@
 </div>
 
 <div class="signin_and_login_form_wrapper">
-<!--   <h2>Sign up</h2> -->
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+  <div class="signin_and_login_form">
+  <!--   <h2>Sign up</h2> -->
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-    <div class="field ui form">
-      <%= f.label :email %><br />
-      <p class="splash_field"><%= f.email_field :email, autofocus: true %></p>
-    </div>
+      <div class="field ui form">
+        <%= f.label :email %><br />
+        <p class="splash_field"><%= f.email_field :email, autofocus: true %></p>
+      </div>
 
-    <div class="field ui form">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-       <p class="splash_field"><%= f.password_field :password, autocomplete: "off" %></p>
-    </div>
+      <div class="field ui form">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+         <p class="splash_field"><%= f.password_field :password, autocomplete: "off" %></p>
+      </div>
 
-    <div class="field ui form">
-      <%= f.label :password_confirmation %><br />
-       <p class="splash_field"><%= f.password_field :password_confirmation, autocomplete: "off" %></p>
-    </div>
+      <div class="field ui form">
+        <%= f.label :password_confirmation %><br />
+         <p class="splash_field"><%= f.password_field :password_confirmation, autocomplete: "off" %></p>
+      </div>
 
-    <div class="field ui form">
-      <%= f.label :zip %><br />
-      <p class="splash_field"> <%= f.text_field :zip, autocomplete: "off" %></p>
-    </div>
+      <div class="field ui form">
+        <%= f.label :zip %><br />
+        <p class="splash_field"> <%= f.text_field :zip, autocomplete: "off" %></p>
+      </div>
 
-    <div class="actions ui form">
+      <div class="actions ui form">
+        <br />
+      </div>
+  </div>
+      <%= f.submit "Sign up" %>
+    <% end %>
       <br />
-    </div>
+    <%= render "devise/shared/links" %>
 </div>
-    <br />
-    <%= f.submit "Sign up" %>
-  <% end %>
-    <br />
-  <%= render "devise/shared/links" %>
-
-
-

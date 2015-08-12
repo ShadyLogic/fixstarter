@@ -214,11 +214,11 @@ html{
 }
 
 
-@media all and(min-width: 900px){
+/*@media all and(min-width: 900px){
   #mainSplash .header{
     margin-top: 3%;
   }
-}
+}*/
 
 @media all and(max-width: 730px){
   #mainSplash .ui.header.huge{
@@ -258,11 +258,15 @@ html{
 
 
 /*---------------SIGNUP AND LOGIN PAGES---------------*/
+
 .signin_and_login_form_wrapper{
   display: inline-block;
+  margin-bottom: 50px;
+}
+
+.signin_and_login_form{
   color: white;
   font-weight: bold;
-  margin-bottom: 50px;
 }
 
 .slash_form{
