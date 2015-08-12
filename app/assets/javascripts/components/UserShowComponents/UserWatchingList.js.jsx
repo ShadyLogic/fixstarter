@@ -8,9 +8,9 @@ var UserWatchingList = React.createClass({
     return (
       <div className="user_watching_list_wrapper">
 
-        <h3 className="ui header"> Watching </h3>
+        <h3 className="ui horizontal divider header"> Watching </h3>
 
-        <div id="footer_stream" className="ui feed small">
+        <div className="ui feed small">
             { this.props.watches.length == 0 ?
               <p> No issues being watched. </p>
             :

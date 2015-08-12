@@ -128,8 +128,6 @@ html{
 
 /*---------------SPLASH PAGE----------------*/
 #splash{
-/*  background-image: url('http://i.imgur.com/hNp8q7C.jpg');
-  background-size: 100%;*/
   padding-bottom: 20px;
 }
 
@@ -140,7 +138,7 @@ html{
 
 #splash_wrapper{
   height: 100%;
-  background: url(http://i.imgur.com/hNp8q7C.jpg) no-repeat center center fixed;
+  background: url(http://i.imgur.com/ev4zHig.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -177,6 +175,7 @@ html{
 
 /*-------------------FOOTER----------------*/
 #footer{
+  position: absolute;
   background: #eee;
   border-top: 1px solid #ddd;
   width: 100%;
@@ -185,8 +184,8 @@ html{
   color: #666;
   font-size: 1.25em;
   bottom: 0;
-  position: fixed;
   z-index: 1000;
+  display: none;
 }
 
 #footer a{
@@ -295,8 +294,6 @@ html{
   margin-top: 100px;
   /*height: 600px;*/
   width: 65%;
-  border: 1px solid lightgrey;
-  background-color: lightgrey;
   float: left;
 }
 

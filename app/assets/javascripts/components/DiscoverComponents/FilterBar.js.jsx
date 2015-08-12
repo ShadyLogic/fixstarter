@@ -14,27 +14,37 @@ var FilterBar = React.createClass({
     return (
       <div className="filter_bar_wrapper">
 
-       <form onSubmit={this.submitSearch} >
-       		<span>Keyword:</span>
-	       <input ref="keyword" type="search" name="search[keyword]" placeholder="searchbar"/>
+       <form className="ui form" onSubmit={this.submitSearch} >
+        <div className="field">
+          <label>Keyword</label>
+          <input ref="keyword" type="search" name="search[keyword]" placeholder="e.g., an issue description"/>
+          <br/>
+        </div>
+
+        <div className="field">
+          <label>Location</label>
+          <input ref="location" type="search" name="search[location]" placeholder="e.g., a city or zip code"/>
+          <br/>
+        </div>
+
+        <div className="field">
+          <label>Category</label>
+          <select>
+          <option value="None">All</option>
+          <option value="Heavy">Heavy</option>
+          <option value="Very Heavy">Very Heavy</option>
+          <option value="Dirty">Dirty</option>
+          <option value="Tools">Tools</option>
+          <option value="Yard Work & Removal">Yard Work & Removal</option>
+          <option value="General Handyman">General Handyman</option>
+          <option value="Escalate">Escalate</option>
+          <option value="Uncategorized">Uncategorized</option>
+          </select>
 	       <br/>
-	       <span>Location:</span>
-	       <input ref="location" type="search" name="search[location]" placeholder="searchbar"/>
-	       <br/>
-	       <span>Category:</span>
-	       <select>
-		       <option value="None">All</option>
-		       <option value="Heavy">Heavy</option>
-		       <option value="Very Heavy">Very Heavy</option>
-		       <option value="Dirty">Dirty</option>
-		       <option value="Tools">Tools</option>
-		       <option value="Yard Work & Removal">Yard Work & Removal</option>
-		       <option value="General Handyman">General Handyman</option>
-		       <option value="Escalate">Escalate</option>
-		       <option value="Uncategorized">Uncategorized</option>
-	       </select>
-	       <br/>
-	       <input type="submit" value="discover it all" />
+        </div>
+
+	       <button className="ui primary button" type="submit">Discover it all</button>
+
        </ form>
        <br/>
 
