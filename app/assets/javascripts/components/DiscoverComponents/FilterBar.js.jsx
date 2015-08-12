@@ -14,7 +14,7 @@ var FilterBar = React.createClass({
     return (
       <div className="filter_bar_wrapper">
 
-       <form className="ui form" onSubmit={this.submitSearch} >
+       <form className="ui form discover_form" onSubmit={this.submitSearch} >
         <div className="field">
           <label>Keyword</label>
           <input ref="keyword" type="search" name="search[keyword]" placeholder="e.g., an issue description"/>
