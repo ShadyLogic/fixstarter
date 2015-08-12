@@ -30,7 +30,7 @@ var FilterBar = React.createClass({
         <div className="field">
           <label>Category</label>
           <select>
-          <option value="None">None</option>
+          <option value="None">All</option>
           <option value="Heavy">Heavy</option>
           <option value="Very Heavy">Very Heavy</option>
           <option value="Dirty">Dirty</option>
@@ -38,6 +38,7 @@ var FilterBar = React.createClass({
           <option value="Yard Work & Removal">Yard Work & Removal</option>
           <option value="General Handyman">General Handyman</option>
           <option value="Escalate">Escalate</option>
+          <option value="Uncategorized">Uncategorized</option>
           </select>
 	       <br/>
         </div>

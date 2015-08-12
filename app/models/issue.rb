@@ -17,7 +17,8 @@ class Issue < ActiveRecord::Base
     "Tools" => 'logging',
     "Yard Work & Removal" => 'garden',
     "General Handyman" => 'pitch',
-    "Escalate" => 'police'
+    "Escalate" => 'police',
+    "Uncategorized" => 'circle-stroked'
   }
 
   def self.assign_category(issue)
