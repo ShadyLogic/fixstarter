@@ -34,17 +34,17 @@ class Issue < ActiveRecord::Base
     stream_items = []
     self.last(4).each do |issue|
       category = Issue.assign_category(issue)
+      image = Issue.assign_image(issue)
       stream_items << {id: issue.id,
                        title: issue.title,
                        description: issue.description,
                        username: issue.user.full_name,
                        latitude: issue.latitude,
                        longitude: issue.longitude,
-                       imageUrl: issue.image_url,
                        category_icon: CATEGORIES[category],
                        category_name: category,
-                       points: issue.users_votes.size
-                       }
+                       points: issue.users_votes.size,
+                       imageUrl: image }
     end
     # show latest streams first (with reverse)
     stream_items.reverse
@@ -58,6 +58,7 @@ class Issue < ActiveRecord::Base
         issue_items << Issue.packaged_issue(issue)
       else
         category = Issue.assign_category(issue)
+        image = Issue.assign_image(issue)
         issue_items << {  id: issue.id,
                           title: issue.title,
                           description: 'This issue has been fixed!',
@@ -68,8 +69,8 @@ class Issue < ActiveRecord::Base
                           color: '989898',
                           category_icon: CATEGORIES[category],
                           category_name: category,
-                          points: issue.users_votes.size }
-
+                          points: issue.users_votes.size,
+                          image: image }
       end
     end
     issue_items
@@ -84,6 +85,7 @@ class Issue < ActiveRecord::Base
   # THE Below method does NOT return an array, but a hash.
   def package_as_fixed
     category = Issue.assign_category(self)
+    image = Issue.assign_category(self)
     {  id: self.id,
        title: self.title,
        description: 'This issue has been fixed!',
@@ -94,7 +96,8 @@ class Issue < ActiveRecord::Base
        color: '989898',
        category_icon: CATEGORIES[category],
        category_name: category,
-       points: self.users_votes.size  }
+       points: self.users_votes.size,
+       image: image  }
   end
 
 
