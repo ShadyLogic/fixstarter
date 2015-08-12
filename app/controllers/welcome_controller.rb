@@ -1,9 +1,9 @@
 class WelcomeController < ApplicationController
   def index # splash page (root_path)
+    @stream_issues = Issue.package_stream_issues
     if user_signed_in?
       redirect_to dashboard_path
     end
-    @stream_issues = Issue.package_stream_issues
   end
 
 

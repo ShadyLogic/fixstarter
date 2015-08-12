@@ -88,7 +88,7 @@
         <div class="ui horizontal icon divider">
           <i class="circular configure icon"></i>
         </div>
-        <%= react_component('StreamFooter', {streamIssues: @stream_issues, prerender: true}) %>
+        <%= react_component('StreamFooter', {streamIssues: Issue.package_stream_issues, prerender: true}) %>
       </div>
 
     </div>
