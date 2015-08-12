@@ -36,7 +36,6 @@
     </div>
   <% end %>
 
-
   <div class="notice"><%= notice %></div>
   <div class="alert"><%= alert %></div>
   <!-- HEADER -->
@@ -44,10 +43,18 @@
 
 
   <!-- body content -->
-  <div id="content">
-    <%= yield %>
-  </div>
+  <% if @splash %>
+    <div id="splash_wrapper">
+      <%= yield %>
+    </div>
+
+  <% else %>
+    <div id="content">
+      <%= yield %>
+    </div>
+  <% end %>
   <!-- body content -->
+
 
 
   <!-- FOOTER -->
