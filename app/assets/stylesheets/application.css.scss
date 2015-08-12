@@ -144,6 +144,7 @@ html{
   color: #666;
   font-size: 1.25em;
   z-index: 1000;
+  position: relative;
 /*  bottom: 0;
   position: fixed;*/
 }
@@ -258,7 +259,6 @@ html{
 
 
 /*---------------SIGNUP AND LOGIN PAGES---------------*/
-
 .signin_and_login_form_wrapper{
   display: inline-block;
   margin-bottom: 50px;
@@ -275,6 +275,19 @@ html{
 
 .splash_field{
   opacity: 0.5;
+}
+
+@media only screen and (min-device-width: 375px) and (min-device-width: 375px)   and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .signin_and_login_form_wrapper{
+    width: 80%;
+    font-size: 3em
+  }
+  .splash_field{
+    font-size: 3em;
+  }
+  .splash_title{
+    font-size: 3em;
+  }
 }
 /*---------------------------------------------------*/
 

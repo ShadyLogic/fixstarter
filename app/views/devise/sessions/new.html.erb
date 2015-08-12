@@ -17,12 +17,12 @@
   <!--   <h2>Log in</h2> -->
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field ui form">
-        <%= f.label :email %><br />
+        <p class="splash_title"><%= f.label :email %></p>
         <p class="splash_field"><%= f.email_field :email, autofocus: true %></p>
       </div>
 
       <div class="field ui form">
-        <%= f.label :password %><br />
+        <p class="splash_title"><%= f.label :password %></p>
         <p class="splash_field"><%= f.password_field :password, autocomplete: "off" %></p>
       </div>
 
@@ -38,8 +38,9 @@
         <br />
       </div>
   </div>
-      <%= f.submit "Log in" %>
+      <p class="splash_button"><%= f.submit "Log in" %></p>
     <% end %>
+      </br>
       </br>
     <%= render "devise/shared/links" %>
 </div>

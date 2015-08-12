@@ -19,12 +19,12 @@
       <%= devise_error_messages! %>
 
       <div class="field ui form">
-        <%= f.label :email %><br />
+        <p class="splash_title"><%= f.label :email %></p>
         <p class="splash_field"><%= f.email_field :email, autofocus: true %></p>
       </div>
 
       <div class="field ui form">
-        <%= f.label :password %>
+        <p class="splash_title"><%= f.label :password %></p>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
@@ -32,12 +32,12 @@
       </div>
 
       <div class="field ui form">
-        <%= f.label :password_confirmation %><br />
+        <p class="splash_title"><%= f.label :password_confirmation %></p>
          <p class="splash_field"><%= f.password_field :password_confirmation, autocomplete: "off" %></p>
       </div>
 
       <div class="field ui form">
-        <%= f.label :zip %><br />
+        <p class="splash_title"><%= f.label :zip %></p>
         <p class="splash_field"> <%= f.text_field :zip, autocomplete: "off" %></p>
       </div>
 
@@ -47,6 +47,7 @@
   </div>
       <%= f.submit "Sign up" %>
     <% end %>
+      <br />
       <br />
     <%= render "devise/shared/links" %>
 </div>
