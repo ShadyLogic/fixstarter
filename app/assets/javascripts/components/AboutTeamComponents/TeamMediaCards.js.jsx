@@ -2,7 +2,7 @@ var TeamMediaCards = React.createClass({
   render: function(){
     return (
       <div className="about_team_show_page">
-        <p> Here is our team media cards </p>
+        <h4 className="ui horizontal divider header"> About Us </h4>
       </div>
       )
   }
