@@ -3,5 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   include ImageUploadConcern
 
+  @stream_issues = Issue.package_stream_issues
+
   protect_from_forgery with: :null_session
 end
