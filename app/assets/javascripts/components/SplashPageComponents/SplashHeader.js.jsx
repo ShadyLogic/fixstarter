@@ -4,8 +4,6 @@ var SplashHeader = React.createClass({
 
     return (
       <div className="header_wrapper">
-        <h1> FIXSTART </h1>
-        <h3> Where you can fix all the shits </h3>
         <a className="ui button" href="/users/sign_in"> Login </a>
         <br/>
         <br/>
