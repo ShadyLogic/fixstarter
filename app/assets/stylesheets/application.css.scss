@@ -131,14 +131,18 @@ html{
   }
 }
 
-/*when mobile*/
-@media only screen and (min-device-width: 375px) and (min-device-width: 375px)   and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait){
+/*when iphone5 and iphone6*/
+@media all and(max-width: 630px){
   /*hide the normal menu*/
   #menu{display: none;}
 
   /*display the mobile menu button*/
   #m_btn{
     display: inline-block;
+    /*font-size: 3em;*/
+  }
+  #m_menu{
+/*    font-size: 3em;*/
   }
   body.pushed{
     overflow: hidden;
