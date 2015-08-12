@@ -13,7 +13,9 @@ var FixNew = React.createClass({
   render: function(){
     return (
       <div className="fix_new_wrapper">
-        <h3> Submit a Fix! </h3>
+        <h2 className="ui header"> Submit a Fix! </h2>
+        <p>Applied to <a href={"/issues/" + this.props.issue.id}>Issue #{this.props.issue.id}: {this.props.issue.title}</a></p>
+
         < FixImage />
         <br/>
         < FixForm issue={this.props.issue} /* onFixSubmit={this.handleFixSubmit} */ />

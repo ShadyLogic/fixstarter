@@ -26,16 +26,25 @@ var FixForm = React.createClass({
   render: function(){
     return (
       <div className="fix_form_wrapper">
-        <form action={'/issues/' + this.props.issue.id + '/fixes'} method="post"  /* onSubmit={this.handleSubmit} */  ref="form" encType="multipart/form-data">
-          Name The Fix:
+        <form className="ui form" action={'/issues/' + this.props.issue.id + '/fixes'} method="post"  /* onSubmit={this.handleSubmit} */  ref="form" encType="multipart/form-data">
+
+        <div className="field">
+          <label>Name The Fix</label>
           <input ref="title" name="title" type="text" />
-          <br/>
-          Describe the Fix:
+        </div>
+
+        <div className="field">
+          <label>Describe the Fix</label>
           <input ref="description" name="description" type="text" />
-          <br/>
-          Upload an Image of Showing the Fix:
+        </div>
+
+        <div className="field">
+          <label>Upload an Image of your Fix</label>
           <ImageUploadForm />
-          <input type="submit" />
+        </div>
+        <br/>
+
+          <button className="ui button primary" type="submit">Submit my fix </button>
         </form>
       </div>
       )

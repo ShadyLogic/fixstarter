@@ -18,7 +18,7 @@ var SplashHeader = React.createClass({
           </div>
 
           <div className="splash_nav_button">
-          <a className="ui huge inverted button" href="/users/sign_in"> Sign In</a>
+          <a className="ui huge inverted button" href="/users/sign_in"> Log In</a>
           </div>
 
         </div>
