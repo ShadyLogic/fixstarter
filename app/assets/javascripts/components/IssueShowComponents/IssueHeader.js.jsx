@@ -47,9 +47,6 @@ var IssueHeader = React.createClass({
               null
             }
 
-
-
-            < SubmitFixButton issueID={this.props.issue.id} />
           </div>
         :
           < IssueStatus status={this.props.issue.status} />
