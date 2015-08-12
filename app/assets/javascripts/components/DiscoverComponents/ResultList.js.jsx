@@ -8,7 +8,15 @@ var ResultList = React.createClass({
         });
       return (
         <div className="result_list_wrapper">
-          {resultNodes}
+          <h3 className="ui header"> Search results </h3>
+
+          <div className="ui feed">
+            { this.props.results.length == 0 ?
+              <p> Enter something in the search bar! </p>
+            :
+              {resultNodes}
+            }
+          </div>
         </div>
     );
   }

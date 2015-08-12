@@ -23,7 +23,7 @@ var FilterBar = React.createClass({
 
         <div className="field">
           <label>Location</label>
-          <input ref="location" type="search" name="search[location]" placeholder="e.g., San Francisco or 94122"/>
+          <input ref="location" type="search" name="search[location]" placeholder="e.g., a city or zip code"/>
           <br/>
         </div>
 
