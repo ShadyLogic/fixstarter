@@ -11,7 +11,11 @@ var UserWatchingList = React.createClass({
         <h3 className="ui header"> Watching </h3>
 
         <div id="footer_stream" className="ui feed small">
-        {Watches}
+            { this.props.watches.length == 0 ?
+              <p> No issues being watched. </p>
+            :
+              {Watches}
+            }
         </div>
 
       </div>

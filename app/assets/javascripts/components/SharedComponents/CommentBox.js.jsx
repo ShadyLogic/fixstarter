@@ -15,10 +15,9 @@ var CommentBox = React.createClass({
       <div id="comment_box" className="comment_box" ref="wrapper">
         <div id="added_comments">
         </div>
-        <h5> Add A Comment: </h5>
         <form onSubmit={this.handleSubmit}>
           <textarea rows="5" cols="40" ref="comment"></textarea><br/>
-          <input type="submit" value="Submit" />
+          <button className="ui primary button" type="submit">Post a reply</button>
         </form>
       </div>
     )

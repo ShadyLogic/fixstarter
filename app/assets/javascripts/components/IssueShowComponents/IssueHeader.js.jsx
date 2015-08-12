@@ -26,7 +26,7 @@ var IssueHeader = React.createClass({
       <h4 className="ui horizontal divider header">
          Description
       </h4>
-        <p> {this.props.issue.description} </p>
+        < MediaCard image_url={this.props.issue.image_url} description={this.props.issue.description} />
 
       <h4 className="ui horizontal divider header">
         Categories
