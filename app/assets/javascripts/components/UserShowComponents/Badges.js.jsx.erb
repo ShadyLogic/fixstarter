@@ -1,0 +1,70 @@
+var Badges = React.createClass({
+  render: function(){
+    return (
+      <div className="profile_pic_wrapper">
+
+      <div className="user_badges_wrapper">
+        <div className="ui cards">
+          <div className="card">
+            <div className="content">
+              <h4 className="ui header"> Badges </h4>
+
+                {this.props.badges.first_issue ?
+                  <img className="first_issue badge" src='/assets/badges/first_issue.png' title="First Issue" />
+                :
+                  null
+                }
+                {this.props.badges.first_fix ?
+                  <img className="first_fix badge" src='/assets/badges/first_fix.png' title="First Fix" />
+                :
+                  null
+                }
+                {this.props.badges.issue_comment ?
+                  <img className="issue_comment badge" src='/assets/badges/issue_comment.png' title="Issue Comment" />
+                :
+                  null
+                }
+                {this.props.badges.fix_comment ?
+                  <img className="fix_comment badge" src='/assets/badges/fix_comment.png' title="Fix Comment" />
+                :
+                  null
+                }
+                {this.props.badges.unanonymous ?
+                  <img className="unanonymous badge" src='/assets/badges/unanonymous.png' title="Unanonymous" />
+                :
+                  null
+                }
+                {this.props.badges.issue_fixed ?
+                  <img className="issue_fixed badge" src='/assets/badges/issue_fixed.png' title="Issue Fixed" />
+                :
+                  null
+                }
+                {this.props.badges.five_point_issue ?
+                  <img className="five_point_issue badge" src='/assets/badges/five_point_issue.png' title="Five Point Issue" />
+                :
+                  null
+                }
+                {this.props.badges.five_issues ?
+                  <img className="five_issues badge" src='/assets/badges/five_issues.png' title="Five Issues" />
+                :
+                  null
+                }
+                {this.props.badges.five_fixes ?
+                  <img className="five_fixes badge" src='/assets/badges/five_fixes.png' title="Five Fixes" />
+                :
+                  null
+                }
+                {this.props.badges.category_king ?
+                  <img className="category_king badge" src='/assets/badges/category_king.png' title="Category King" />
+                :
+                  null
+                }
+
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      )
+  }
+})

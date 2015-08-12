@@ -7,8 +7,13 @@ var UserWatchingList = React.createClass({
 
     return (
       <div className="user_watching_list_wrapper">
-      <h2> Watching </h2>
-      {Watches}
+
+        <h3 className="ui header"> Watching </h3>
+
+        <div id="footer_stream" className="ui feed small">
+        {Watches}
+        </div>
+
       </div>
       )
   }

@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809235504) do
+ActiveRecord::Schema.define(version: 20150811225611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "badge_collections", force: :cascade do |t|
+    t.integer  "user_id"
+    t.boolean  "first_issue",      default: false
+    t.boolean  "first_fix",        default: false
+    t.boolean  "five_issues",      default: false
+    t.boolean  "five_fixes",       default: false
+    t.boolean  "issue_fixed",      default: false
+    t.boolean  "five_point_issue", default: false
+    t.boolean  "category_king",    default: false
+    t.boolean  "issue_comment",    default: false
+    t.boolean  "fix_comment",      default: false
+    t.boolean  "unanonymous",      default: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "badge_collections", ["user_id"], name: "index_badge_collections_on_user_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -114,4 +132,5 @@ ActiveRecord::Schema.define(version: 20150809235504) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "badge_collections", "users"
 end
