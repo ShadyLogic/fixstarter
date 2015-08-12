@@ -7,22 +7,22 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # User.create()
 
-marshall = User.new(email: "marshall@trash.org", first_name: "Mash", last_name: "Hannersly", bio: "I live in a trash can. Life. I live for derelict (my balls). I'm a derelict vagabond.", avatar_url: "https://avatars2.githubusercontent.com/u/9030453?v=3&s=460", zip: '94122')
+marshall = User.new(email: "marshall@fixstart.io", first_name: "Marshall", last_name: "Hattersly", bio: "I live in a trash can. Life. I live for derelict (my balls). I'm a derelict vagabond.", avatar_url: "http://i.imgur.com/hZ3fiKE.jpg", zip: '94122')
 marshall.password = "trashcan"
 marshall.badge_collection = BadgeCollection.new
 marshall.save!
 
-tim = User.new(email: "tim@trash.org", first_name: "Smash", last_name: "Canada", zip: '94110')
+tim = User.new(email: "tim@fixstart.io", first_name: "Tim", last_name: "Cannady", bio: "I live in a trash can. Life. I live for derelict (my balls). I'm a derelict vagabond.", avatar_url: "http://i.imgur.com/iPtlfAt.jpg", zip: '94110')
 tim.password = "trashcan"
 tim.badge_collection = BadgeCollection.new
 tim.save!
 
-jacob = User.new(email: "jacob@trash.org", first_name: "Fist", last_name: "Punchersly", zip: '94121')
+jacob = User.new(email: "jacob@fixstart.io", first_name: "Jacob", last_name: "Rogers", bio: "I live in a trash can. Life. I live for derelict (my balls). I'm a derelict vagabond.", avatar_url: "http://i.imgur.com/l56y9kj.jpg", zip: '94121')
 jacob.password = "trashcan"
 jacob.badge_collection = BadgeCollection.new
 jacob.save!
 
-andrea = User.new(email: "andrea@trash.org", first_name: "Doctor", last_name: "Draaay", zip: '94110')
+andrea = User.new(email: "andrea@fixstart.io", first_name: "Andrea", last_name: "Coravos", bio: "I live in a trash can. Life. I live for derelict (my balls). I'm a derelict vagabond.", avatar_url: "http://i.imgur.com/bXVEy5u.jpg", zip: '94110')
 andrea.password = "trashcan"
 andrea.badge_collection = BadgeCollection.new
 andrea.save!
@@ -37,14 +37,14 @@ global = Community.create(title: "global")
 
 
 #-------------------------------- ISSUES -------------------------------------------#
-trashcan = Issue.create(user_id: 2, community_id: 1, title: "Trashcan fell down at 633 Folsom St", description: "It was a ghastly sight. Please help.", image_url: "http://dogcare.dailypuppy.com/DM-Resize/photos.demandstudios.com/getty/article/178/251/87794711.jpg?w=600&h=600&keep_ratio=1&webp=1", latitude: "37.753276150711926", longitude: "-122.41456031799316", status: "closed" )
-smashcan = Issue.create(user_id: 1, community_id: 1, title: "Marshall got smashed", description: "Trashcan had a long night. Someone needs to press his clothes.", image_url: "https://s-media-cache-ak0.pinimg.com/736x/af/70/d0/af70d0c1d52a1c60016b46a6207c0b30.jpg", latitude: "37.779805600955584", longitude: "-122.47713088989258", status: "open" )
-screwloose = Issue.create(user_id: 1, community_id: 1, title: "Marshall unscrewed the cookie jarlette", description: "He was hungry. It needs to be refilled and re-screwed", image_url: "http://2.bp.blogspot.com/-97Vou7CtPVI/TZxkaclKLTI/AAAAAAAAAO4/Mk6NaGRtamg/s1600/cute%2Bpuppy%2Bin%2Bjar%2Bvase%2Bbucket%2Bfunny%2Blol.jpg", latitude: "37.78821704497665", longitude: "-122.43327140808104", status: "open" )
-spilt_dirt = Issue.create(user_id: 1, community_id: 1, title: "Someone spilled dirt", description: "There's dirt all over", image_url: "https://mattalltrades.files.wordpress.com/2010/07/dirt1.jpg", latitude: "37.78414711095678", longitude: "-122.46348381042479", status: "open" )
-lawn_fix = Issue.create(user_id: 1, community_id: 1, title: "Fix The Lawn", description: "DOG DID IT", image_url: "http://cdn2.caninejournal.com/wp-content/uploads/dog-digging-hole.jpg", latitude: "37.77464972662077", longitude: "-122.45438575744627", status: "open" )
-manatee = Issue.create(user_id: 1, community_id: 1, title: "Move this Huge Manatee", description: "someone put a manatee where it shouldnt be", image_url: "http://media.treehugger.com/assets/images/2012/03/orphaned-manatee.jpg", latitude: "37.71383757727602", longitude: "-122.45412826538086", status: "open" )
-wood = Issue.create(user_id: 1, community_id: 1, title: "Pile of Wood", description: "Come de-wood this stuff", image_url: "http://i.ytimg.com/vi/AlwnReWZQ7w/maxresdefault.jpg", latitude: "37.745267951150964", longitude: "-122.47421264648439", status: "open" )
-dumb_cat = Issue.create(user_id: 1, community_id: 1, title: "HHELP", description: "IZ STUK N BAGg", image_url: "http://40.media.tumblr.com/tumblr_lpkjwr7ITo1r09ghoo1_500.jpg", latitude: "37.75504055274351", longitude: "-122.41601943969727", status: "open" )
+trashcan = Issue.create(user_id: 2, community_id: 1, title: "Trash cans knocked over", description: "The wind knocked down all the trashcans. Garbage is scattered all over the street and it looks awful. Should only take about 10 minutes to pick it all up.", image_url: "http://i.imgur.com/EL8I4re.jpg", latitude: "37.753276150711926", longitude: "-122.41456031799316", status: "closed" )
+fence = Issue.create(user_id: 1, community_id: 1, title: "Busted fence", description: "This fence has been broken for a long time. It would be great if somebody could fix it up. Most of the lumber is still there, it probably just needs some nails. Bring a hammer.", image_url: "http://i.imgur.com/MDgWvxy.jpg", latitude: "37.779805600955584", longitude: "-122.47713088989258", status: "open" )
+graffiti = Issue.create(user_id: 3, community_id: 1, title: "Graffiti on the wall", description: "Some dumb punks tagged up this wall a couple weeks ago and I'm tired of looking at it.", image_url: "http://i.imgur.com/QGndXZr.jpg", latitude: "37.78821704497665", longitude: "-122.43327140808104", status: "closed" )
+abandoned_seat = Issue.create(user_id: 4, community_id: 1, title: "Abandoned car seat", description: "This car seat has been here for a month. You'll probably need a truck to move it. Please get it out of here, it's an eyesore.", image_url: "http://i.imgur.com/PlxnYfH.jpg", latitude: "37.78414711095678", longitude: "-122.46348381042479", status: "open" )
+lawn = Issue.create(user_id: 1, community_id: 1, title: "Old, rundown lawn", description: "Mr. Brewster's lawn is old and looks bad, but he's too old to fix it himself. I know he'd appreciate it if a couple of Good Sameritans helped him out.", image_url: "http://i.imgur.com/1y58BFq.jpg", latitude: "37.77464972662077", longitude: "-122.45438575744627", status: "open" )
+power_line = Issue.create(user_id: 2, community_id: 1, title: "Downed power line", description: "The storm knocked this power line down! Super dangerous, I've contacted the city of SF about it.", image_url: "http://i.imgur.com/aLznpvJ.jpg", latitude: "37.71383757727602", longitude: "-122.45412826538086", status: "open" )
+tree = Issue.create(user_id: 3, community_id: 1, title: "Tree fell over", description: "Storm knocked down a tree! The thing is huge, you'll definitely need a chainsaw to cut it up and haul it out of here. Bring help.", image_url: "http://i.imgur.com/Hmjr16m.jpg", latitude: "37.745267951150964", longitude: "-122.47421264648439", status: "open" )
+door = Issue.create(user_id: 4, community_id: 1, title: "Door off hinges", description: "This door came off its hinges. The screws don't seem to be anywhere around here, probably needs new ones anyway. Screwdriver / drill required.", image_url: "http://i.imgur.com/dCig2ZL.jpg", latitude: "37.75504055274351", longitude: "-122.41601943969727", status: "open" )
 #---------------------------------------------------------------------------------#
 
 
@@ -53,10 +53,10 @@ dumb_cat = Issue.create(user_id: 1, community_id: 1, title: "HHELP", description
 
 
 #-------------------------------- FIXES ------------------------------------------#
-trashcanfix = Fix.create(user_id: 2, issue_id: trashcan.id, title: "Picked up trashcan", description: "Pulled him up and sent him off", image_url: "http://puppypicsonline.com/wp-content/uploads/2012/12/image.jpg")
-trashcanfix2 = Fix.create(user_id: 3, issue_id: trashcan.id, title: "Marshall was still dirty", description: "Cleaned him off.", image_url: "http://www.effectivecreations.com/tattarga/images/labrador-puppy8.jpg")
-smashcanfix = Fix.create(user_id: 2, issue_id: smashcan.id, title: "Ironed the Marshall", description: "Needed at least 30 minutes to iron properly. But he's good to go now.", image_url: "https://s-media-cache-ak0.pinimg.com/736x/a5/b9/c2/a5b9c26880b0213c1c967f4da56a94e6.jpg")
-screwloosefix = Fix.create(user_id: 1, issue_id: screwloose.id, title: "I rescrewed the jarlette", description: "After I ate all the cookies, I was able to close my own issue", image_url: "http://2.bp.blogspot.com/-97Vou7CtPVI/TZxkaclKLTI/AAAAAAAAAO4/Mk6NaGRtamg/s1600/cute%2Bpuppy%2Bin%2Bjar%2Bvase%2Bbucket%2Bfunny%2Blol.jpg")
+trashcanfix = Fix.create(user_id: 4, issue_id: trashcan.id, title: "Picked up trashcan", description: "Got most of the trash, but the can keeps falling over.", image_url: "http://i.imgur.com/VnowEZ2.jpg")
+trashcanfix2 = Fix.create(user_id: 3, issue_id: trashcan.id, title: "Fixed it!", description: "It took a litte bit of industrial adhesive, but I got the can to stay again.", image_url: "http://i.imgur.com/aYluzcZ.jpg")
+graffitifix = Fix.create(user_id: 1, issue_id: graffiti.id, title: "Graffiti gone now", description: "Got my friends together and we scrubbed the wall. It's looking pretty good now!", image_url: "http://i.imgur.com/TE2OAXt.jpg")
+lawnfix = Fix.create(user_id: 2, issue_id: lawn.id, title: "Fixed up the lawn", description: "I had some sod leftover from my lawn reno. I knocked on Mr. Brewsters door and asked him if I could fix up his lawn. He was really great, sweet man he is.", image_url: "http://imgur.com/Iu2pQN3")
 #----------------------------------------------------------------------------------#
 
 
@@ -64,8 +64,8 @@ screwloosefix = Fix.create(user_id: 1, issue_id: screwloose.id, title: "I rescre
 
 
 #-------------------------------- FIX COMMENTS ---------------------------------------#
-trashcanfixcomment = FixComment.create(fix_id: trashcanfix.id, user_id: 1, content: "Yay! You did a nice job cleaning me up. Thanks yo.")
-trashcanfixcomment2 = FixComment.create(fix_id: trashcanfix.id, user_id: 2, content: "Yo. MARSHALL. Did you post your own issue?!")
+trashcanfixcomment = FixComment.create(fix_id: trashcanfix.id, user_id: 3, content: "Thanks for getting the trash, I'll come by with some adhesive to stick the can back down.")
+trashcanfixcomment2 = FixComment.create(fix_id: trashcanfix.id, user_id: 4, content: "Cool, thanks a lot!")
 #-------------------------------------------------------------------------------------#
 
 
@@ -73,8 +73,8 @@ trashcanfixcomment2 = FixComment.create(fix_id: trashcanfix.id, user_id: 2, cont
 
 
 #-------------------------------- ISSUE COMMENTS -------------------------------------#
-trancancomment = IssueComment.create(issue_id: trashcan.id, user_id: 3, content: "Oh the huge manatee!")
-smashcancomment = IssueComment.create(issue_id: smashcan.id, user_id: 4, content: "He so wrinkly.")
+trancancomment = IssueComment.create(issue_id: trashcan.id, user_id: 1, content: "What an eyesore, somebody get on this.")
+smashcancomment = IssueComment.create(issue_id: trashcan.id, user_id: 2, content: "Looks like it's all fixed now!")
 #-------------------------------------------------------------------------------------#
 
 
@@ -85,8 +85,13 @@ smashcancomment = IssueComment.create(issue_id: smashcan.id, user_id: 4, content
 vote1 = UsersVote.create(user_id: 1, issue_id: 1)
 vote2 = UsersVote.create(user_id: 1, issue_id: 2)
 vote3 = UsersVote.create(user_id: 1, issue_id: 3)
-vote4 = UsersVote.create(user_id: 2, issue_id: 1)
-vote5 = UsersVote.create(user_id: 2, issue_id: 2)
+vote4 = UsersVote.create(user_id: 2, issue_id: 4)
+vote5 = UsersVote.create(user_id: 2, issue_id: 5)
+vote6 = UsersVote.create(user_id: 3, issue_id: 1)
+vote7 = UsersVote.create(user_id: 3, issue_id: 2)
+vote8 = UsersVote.create(user_id: 3, issue_id: 3)
+vote9 = UsersVote.create(user_id: 4, issue_id: 1)
+vote10 = UsersVote.create(user_id: 4, issue_id: 2)
 #------------------------------------------------------------------------------------#
 
 
@@ -97,8 +102,13 @@ vote5 = UsersVote.create(user_id: 2, issue_id: 2)
 watch1 = IssuesWatch.create(user_id: 1, issue_id: 1)
 watch1 = IssuesWatch.create(user_id: 1, issue_id: 2)
 watch1 = IssuesWatch.create(user_id: 1, issue_id: 3)
-watch4 = IssuesWatch.create(user_id: 2, issue_id: 1)
-watch5 = IssuesWatch.create(user_id: 2, issue_id: 2)
+watch4 = IssuesWatch.create(user_id: 2, issue_id: 4)
+watch5 = IssuesWatch.create(user_id: 2, issue_id: 5)
+watch6 = IssuesWatch.create(user_id: 3, issue_id: 6)
+watch7 = IssuesWatch.create(user_id: 3, issue_id: 7)
+watch8 = IssuesWatch.create(user_id: 3, issue_id: 8)
+watch9 = IssuesWatch.create(user_id: 4, issue_id: 1)
+watch10 = IssuesWatch.create(user_id: 4, issue_id: 2)
 #-------------------------------------------------------------------------------------#
 
 
@@ -122,13 +132,15 @@ uncategorized = Category.create(name: "Uncategorized", description: "A home for 
 
 #-------------------------------- CATEGORIES-ISSUES ----------------------------------#
 heavy.issues << trashcan
-very_heavy.issues << manatee
-dirty.issues << spilt_dirt
-tools.issues << spilt_dirt
-tools.issues << wood
-yard_work.issues << wood
-yard_work.issues << lawn_fix
-handyman.issues << screwloose
-escalate.issues << smashcan
-escalate.issues << dumb_cat
+heavy.issues << abandoned_seat
+very_heavy.issues << tree
+dirty.issues << trashcan
+dirty.issues << graffiti
+tools.issues << fence
+tools.issues << door
+yard_work.issues << tree
+yard_work.issues << lawn
+handyman.issues << door
+escalate.issues << power_line
+escalate.issues << tree
 #-------------------------------------------------------------------------------------#
