@@ -12,16 +12,31 @@ var IssueHeader = React.createClass({
 
       { this.props.current_user ?
         <div>
+              <p> {this.props.upvotes} FixStart community members have up-voted this issue </p>
 
-          < IssueVotes upvotes={this.props.upvotes} current_user_upvoted={this.props.current_user_upvoted} current_user_id={this.props.current_user_id} issue={this.props.issue} current_user = {this.props.current_user} />
+                  < IssueVotes upvotes={this.props.upvotes} current_user_upvoted={this.props.current_user_upvoted} current_user_id={this.props.current_user_id} issue={this.props.issue} current_user = {this.props.current_user} />
 
-          <br></br> <p> {this.props.upvotes} FixStart community members have up-voted this issue </p>
+
+                  < IssueCheckbox current_user_watching={this.props.current_user_watching} current_user_id={this.props.current_user_id} issue={this.props.issue} />
 
         </div>
       :
         <p> {this.props.upvotes} FixStart community members have up-voted this issue </p>
       }
 
+        { this.props.current_user ?
+          <div>
+
+            { this.props.current_user_created_issue ?
+              < IssueOpenClose issue={this.props.issue} />
+            :
+              null
+            }
+
+          </div>
+        :
+          < IssueStatus status={this.props.issue.status} />
+        }
 
       <h4 className="ui horizontal divider header">
          Description
@@ -34,23 +49,6 @@ var IssueHeader = React.createClass({
         <p> {categories} </p>
 
 
-        { this.props.current_user ?
-          <div>
-            <h4 className="ui horizontal divider header">
-               Your stats
-            </h4>
-              < IssueCheckbox current_user_watching={this.props.current_user_watching} current_user_id={this.props.current_user_id} issue={this.props.issue} />
-
-            { this.props.current_user_created_issue ?
-              < IssueOpenClose issue={this.props.issue} />
-            :
-              null
-            }
-
-          </div>
-        :
-          < IssueStatus status={this.props.issue.status} />
-        }
 
 
 
