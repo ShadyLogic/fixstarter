@@ -121,13 +121,21 @@ class Issue < ActiveRecord::Base
     found_issues = []
     issues.each do |issue|
       if issue.status != 'closed'
-        if Geocoder::Calculations.distance_between(location_coords, [issue.latitude, issue.longitude]) < 50
+        if Geocoder::Calculations.distance_between(location_coords, [issue.latitude, issue.longitude]) < 10
           found_issues << Issue.packaged_issue(issue)
         end
       end
     end
     if found_issues.empty?
-      found_issues << { title: "No issues found", description: "Try another search!", latitude: location_coords[0], longitude: location_coords[1], category_icon: 'n/a', fix_text: "Return to Dashboard", link: '/dashboard', points: "no", image: 'http://images.clipartpanda.com/residency-clipart-black-and-white-sad-face-md.png'}
+      found_issues << { title: "No issues found",
+                        description: "Try another search!",
+                        latitude: location_coords[0],
+                        longitude: location_coords[1],
+                        category_icon: 'none',
+                        fix_text: "Return to Dashboard",
+                        link: '/dashboard',
+                        points: "n/a",
+                        image: 'http://images.clipartpanda.com/residency-clipart-black-and-white-sad-face-md.png'}
     end
     found_issues
   end

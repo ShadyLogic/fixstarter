@@ -46,6 +46,14 @@ html{
 /*--------------------------------------------*/
 
 
+/*-------------------MAP----------------*/
+
+#map {
+  height: 100%;
+  border: 1px solid black;
+}
+
+/*--------------------------------------------*/
 
 
 /*-------------------SEMANTIC----------------*/
@@ -323,6 +331,7 @@ html{
   /*background-image: url(http://i.imgur.com/ziM5W14.png);*/
   /*display: inline-block;*/
   width: 100%;
+  height: 600px;
   /*background-size: 100%;*/
   /*border: 3px solid lightgrey;*/
 }
@@ -356,7 +365,7 @@ html{
 .result_list_wrapper{
   margin-top: 100px;
   /*height: 600px;*/
-  width: 65%;
+  width: 50%;
   float: left;
 }
 
@@ -367,7 +376,7 @@ html{
 .discover_map_wrapper{
   margin-top: 100px;
   height: 600px;
-  width: 30%;
+  width: 50%;
   float: right;
   background-image: url(http://i.imgur.com/ziM5W14.png);
   background-size: 100%;
@@ -462,7 +471,14 @@ html{
 /*----------------------------------------------*/
 
 
+/*---------------ISSUE SHOW MAP --------------*/
 
+.issue_show_map_wrapper {
+  height: 600px;
+  width: 100%;
+}
+
+/*----------------------------------------------*/
 
 
 /*---------------ISSUE NEW FORM --------------*/
@@ -473,13 +489,8 @@ html{
 
 .issue_map_wrapper{
   display: inline-block;
-  width: 60%;
-}
-
-#map {
-  /*width: 100%;*/
   height: 600px;
-  border: 1px solid black;
+  width: 60%;
 }
 
 .issue_image_wrapper{
