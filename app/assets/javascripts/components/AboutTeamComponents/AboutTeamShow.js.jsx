@@ -3,14 +3,14 @@ var AboutTeamShow = React.createClass({
     return (
       <div className="about_team_show_page">
 
-        <div className="ui stackable two column grid">
-            <div className="column">
-              < TeamMediaCards />
-            </div>
-
-            <div className="column">
+        <div className="ui stackable three column centered grid">
+            <div className=" column">
               < CommunityStandards />
               < CategoryDescriptions />
+            </div>
+
+            <div className=" column">
+              < TeamMediaCards />
             </div>
         </div>
 
