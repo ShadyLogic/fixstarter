@@ -8,8 +8,6 @@ class IssuesController < ApplicationController
 
       @categories = @issue.categories
 
-      p @categories
-
       if @categories.empty?
 
         @category_name = "Uncategorized"
@@ -72,7 +70,11 @@ class IssuesController < ApplicationController
     end
 
     @issue = Issue.new(issue_params)
-    @issue.image_url = upload_image if contains_image?
+    if contains_image?
+      @issue.image_url = upload_image
+    else
+      @issue.image_url = "http://i.imgur.com/xQyE9HC.png"
+    end
 
     if @issue.save
       unless category_id_array.empty?

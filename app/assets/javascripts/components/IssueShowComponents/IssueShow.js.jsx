@@ -3,6 +3,8 @@ var IssueShow = React.createClass({
     return (
       <div className="issue_show">
 
+        <h4 className="ui horizontal divider header"> FixStart Issue </h4>
+
         < IssueHeader issue={this.props.issue} categories={this.props.categories} current_user_watching={this.props.current_user_watching} current_user_id={this.props.current_user_id} upvotes={this.props.upvotes} current_user_upvoted={this.props.current_user_upvoted} current_user_created_issue={this.props.current_user_created_issue} current_user={this.props.current_user} />
 
         < FixList fixes={this.props.fixes} issue={this.props.issue} issue_id={this.props.issue.id} current_user={this.props.current_user} />
