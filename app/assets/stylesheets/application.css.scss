@@ -61,6 +61,10 @@ html{
 @import "semantic-ui";
 @import "semantic-ui/collections/menu";
 @import "semantic-ui/collections/grid";
+/*@import "semantic-ui/collections/breadcrumb";
+@import "semantic-ui/collections/message";
+@import "semantic-ui/collections/table";
+@import "semantic-ui/collections/table";*/
 /*--------------------------------------------*/
 
 
@@ -94,11 +98,6 @@ html{
 
 #m_btn{
   display: none;
-}
-
-#sidebar{
-  color: black;
-  background-color: black;
 }
 
 /*Main Head has slight margin when at full screen*/
