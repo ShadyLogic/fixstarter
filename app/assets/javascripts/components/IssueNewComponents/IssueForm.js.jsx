@@ -28,7 +28,7 @@ var IssueForm = React.createClass({
           <h2>Submit an issue </h2>
 
           <div className="field">
-            <label> Issue title</label>
+            <label>Issue title</label>
             <input ref="title" name="issue[title]" type="text" required />
           </div>
 
