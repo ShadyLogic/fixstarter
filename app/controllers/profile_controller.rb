@@ -4,6 +4,10 @@ class ProfileController < ApplicationController
 
   def show
     if user_signed_in?
+
+      #Badge Assignment
+      check_misc_badges
+
       redirect_to "/users/#{current_user.id}"
     else
       redirect_to root_path
@@ -22,6 +26,9 @@ class ProfileController < ApplicationController
       user.avatar_url = upload_image
       user.save
     end
+
+    #Badge Assignment
+    check_profile_badges
 
     redirect_to "/users/#{current_user.id}"
   end

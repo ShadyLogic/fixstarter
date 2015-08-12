@@ -24,8 +24,11 @@ class FixesController < ApplicationController
     if @fix.save
       issue.status = "closed"
       issue.save
+      Redis.current.publish 'fix-created', issue.package_as_fixed.to_json
+
+      #Badge Assignment
+      check_fix_badges
     end
-    Redis.current.publish 'fix-created', issue.package_as_fixed.to_json
     redirect_to issue_path(id: issue.id)
   end
 

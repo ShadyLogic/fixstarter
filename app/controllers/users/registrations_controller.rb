@@ -33,6 +33,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     new_user.first_name = "Good"
     new_user.last_name = "Samaritan"
     new_user.zip = params[:user][:zip]
+    new_user.badge_collection = BadgeCollection.new
     new_user.save
   end
 
