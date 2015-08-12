@@ -123,7 +123,7 @@ class Issue < ActiveRecord::Base
       end
     end
     if found_issues.empty?
-      found_issues << { title: "No issues found", description: "Try another search!", fix_text: "Return to Dashboard", link: '/dashboard', points: "no", image: 'http://images.clipartpanda.com/residency-clipart-black-and-white-sad-face-md.png'}
+      found_issues << { title: "No issues found", description: "Try another search!", latitude: location_coords[0], longitude: location_coords[1], category_icon: 'none', fix_text: "Return to Dashboard", link: '/dashboard', points: "no", image: 'http://images.clipartpanda.com/residency-clipart-black-and-white-sad-face-md.png'}
     end
     found_issues
   end

@@ -31,7 +31,7 @@ var Dashboard = React.createClass({
       <div className="ui centered grid container">
 
         <div className="one column row">
-          <h2 className="column"> Dashboard </h2>
+          <h2 className="column">  </h2>
         </div>
 
         <div>
