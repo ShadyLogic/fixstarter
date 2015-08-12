@@ -134,7 +134,7 @@ class Issue < ActiveRecord::Base
                         category_icon: 'n/a',
                         fix_text: "Return to Dashboard",
                         link: '/dashboard',
-                        points: "no",
+                        points: "n/a",
                         image: 'http://images.clipartpanda.com/residency-clipart-black-and-white-sad-face-md.png'}
     end
     found_issues
