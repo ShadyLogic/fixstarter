@@ -12,8 +12,8 @@ var SplashHeader = React.createClass({
             </div>
           </div>
           <br/>
-          <a className="ui huge inverted button splash_nav_button" href="#"> Sign Up </a>
-          <a className="ui huge inverted button splash_nav_button" href="#"> Sign In</a>
+          <a className="ui huge inverted button splash_nav_button" href="/users/sign_up"> Sign Up </a>
+          <a className="ui huge inverted button splash_nav_button" href="/users/sign_in"> Sign In</a>
 
           <h2 className="ui header inverted">
             <i className="configure icon inverted"> </i> Fix. Shit. Today.
