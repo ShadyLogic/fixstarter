@@ -18,7 +18,7 @@ var IssueMap = React.createClass({
 		 map.on('click', function(e) {
 				if (latestMarker === undefined) {} else {
 					this.removeLayer(latestMarker) }
-				
+
 		    latestMarker = self.addMarker(e.latlng.lat, e.latlng.lng)
 		    latestMarker.addTo(map);
 
@@ -50,8 +50,8 @@ var IssueMap = React.createClass({
     if (data.lbounds) {
         map.fitBounds(data.lbounds);
     } else if (data.latlng) {
-        map.setView([data.latlng[0], data.latlng[1]], 13); 
-    } 
+        map.setView([data.latlng[0], data.latlng[1]], 13);
+    }
 	},
 
 	// --------------- CURRENT LOCATION RENDERING ------------------ //
@@ -86,7 +86,8 @@ var IssueMap = React.createClass({
     return (
       <div className="issue_map_wrapper">
         <div id='map'></div>
-        <button id='geoLocate'>Find current location</button>
+        <br/>
+        <button className="ui button" id='geoLocate'>Find current location</button>
       </div>
     )
   }

@@ -23,22 +23,33 @@ var IssueForm = React.createClass({
         <IssueMap ref='latlon' zip={this.props.zip} latValue={this.props.latValue} lonValue={this.props.lonValue} />
         <span className='error'></span>
 
-        <form className="issue_new_form" ref="form" action="/issues" method="post" encType="multipart/form-data" onSubmit={this.handleSubmit} >
-          <p>Title</p>
-          <input ref="title" name="issue[title]" type="text" required />
+        <form className="issue_new_form ui form" ref="form" action="/issues" method="post" encType="multipart/form-data" onSubmit={this.handleSubmit} >
 
-          <p>Description</p>
-          <input ref="description" name="issue[description]" type="text" required />
+          <h2>Submit an issue </h2>
 
-          <p>Category</p>
-          < CategoryDropdown categories={this.props.categories} />
+          <div className="field">
+            <label> Issue title</label>
+            <input ref="title" name="issue[title]" type="text" required />
+          </div>
 
-          <p>Upload an Image:</p>
-          <ImageUploadForm />
+          <div className="field">
+            <label>Description</label>
+            <textarea rows="3" ref="description" name="issue[description]" type="text" required />
+          </div>
+
+          <div className="field">
+            <label>Category</label>
+            < CategoryDropdown categories={this.props.categories} />
+          </div>
+
+          <div className="field">
+            <label>Upload an Image</label>
+            <ImageUploadForm />
+          </div>
 
           <input id="lat" ref="lat" name="issue[latitude]" type="hidden" />
           <input id="lon" ref="lon" name="issue[longitude]" type="hidden" />
-          <input type="submit" />
+          <button className="ui primary button" type="submit"> Submit </button>
         </form>
 
       </div>
