@@ -4,18 +4,19 @@ var IssueShowMap = React.createClass({
 	},
 
 	renderMap: function() {
+
 		L.mapbox.accessToken = 'pk.eyJ1IjoibXdoYXR0ZXJzIiwiYSI6ImM5YjljNGE4MzcwZmRlOTJlOTNmMTczMTY4N2FkMDNiIn0.mYeJTMzrCEY8XMUqqTp6tg';
 		var geocoder 		 = L.mapbox.geocoder('mapbox.places'),
 		    latestMarker = undefined,
 		    self 				 = this
 
 		map = L.mapbox.map('map', 'mapbox.streets')
-		geocoder.reverseQuery({	lat: this.props.issue.latitude, 
+		geocoder.reverseQuery({	lat: this.props.issue.latitude,
 													 	lon: this.props.issue.longitude }, self.showMap)
 	},
 
 	showMap: function(err, data) {
-    map.setView([data.query[1], data.query[0]], 15); 
+    map.setView([data.query[1], data.query[0]], 15);
     this.addMarker(data.query[1], data.query[0]);
 	},
 
@@ -30,7 +31,7 @@ var IssueShowMap = React.createClass({
 	render: function(){
 	  return (
 	    <div className="issue_show_map_wrapper">
-	    	<div id='map'></div>	
+	    	<div id='map'></div>
 	    </div>
 	    )
 	}

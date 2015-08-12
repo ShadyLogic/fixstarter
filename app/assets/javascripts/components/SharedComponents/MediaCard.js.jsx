@@ -2,10 +2,18 @@ var MediaCard = React.createClass({
   render: function(){
     return (
       <div className="media_card">
-        <h4> Media Card </h4>
-        < MediaImage image_url={this.props.image_url} />
-        < MediaText description={this.props.description} />
+        <div className="ui card">
+          <div className="image">
+            <img src={this.props.image_url}></img>
+          </div>
+          <div className="content">
+            <div className="description">
+              <b>Description:</b> {this.props.description}
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
 })
+

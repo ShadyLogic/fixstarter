@@ -12,7 +12,11 @@ var UserIssuesList = React.createClass({
           <h3 className="ui header"> Issues Submitted </h3>
 
           <div id="footer_stream" className="ui feed small">
-          {Issues}
+            { this.props.issues.length == 0 ?
+              <p> No issues posted. </p>
+            :
+              {Issues}
+            }
           </div>
 
 

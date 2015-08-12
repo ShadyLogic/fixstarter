@@ -13,7 +13,13 @@ var UserFixedList = React.createClass({
         <h3 className="ui header"> Issues Fixed</h3>
 
         <div id="footer_stream" className="ui feed small">
-        {Fixes}
+
+        { this.props.fixes.length == 0 ?
+          <p> No fixes posted. </p>
+        :
+          {Fixes}
+        }
+
         </div>
 
       </div>

@@ -7,9 +7,23 @@ var FixList = React.createClass({
 
     return (
       <div className="fix_list">
-        <h3>Fixes</h3>
+        <h4 className="ui horizontal divider header">
+           Fixes
+        </h4>
+
+        <div id="footer_stream" className="ui feed small">
         {Fixes}
+        </div>
+
+        { this.props.current_user ?
+          < SubmitFixButton issue_id={this.props.issue.id} />
+        :
+          null
+        }
+
       </div>
       )
   }
 })
+
+
