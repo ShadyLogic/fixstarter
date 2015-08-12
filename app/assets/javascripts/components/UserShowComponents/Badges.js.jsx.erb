@@ -30,7 +30,7 @@ var Badges = React.createClass({
                   null
                 }
                 {this.props.badges.unanonymous ?
-                  <img src="<%= image_url('badges/unanonymous.png')%>" title="Unanonymous" />
+                  <img className="unanonymous badge" src="<%= image_url('badges/unanonymous.png')%>" title="Unanonymous" />
                 :
                   null
                 }
