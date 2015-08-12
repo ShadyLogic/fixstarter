@@ -55,7 +55,7 @@ door = Issue.create(user_id: 4, community_id: 1, title: "Door off hinges", descr
 #-------------------------------- FIXES ------------------------------------------#
 trashcanfix = Fix.create(user_id: 4, issue_id: trashcan.id, title: "Picked up trashcan", description: "Got most of the trash, but the can keeps falling over.", image_url: "http://i.imgur.com/VnowEZ2.jpg")
 trashcanfix2 = Fix.create(user_id: 3, issue_id: trashcan.id, title: "Fixed it!", description: "It took a litte bit of industrial adhesive, but I got the can to stay again.", image_url: "http://i.imgur.com/aYluzcZ.jpg")
-graffitifix = Fix.create(user_id: 1, issue_id: graffit.id, title: "Graffiti gone now", description: "Got my friends together and we scrubbed the wall. It's looking pretty good now!", image_url: "http://i.imgur.com/TE2OAXt.jpg")
+graffitifix = Fix.create(user_id: 1, issue_id: graffiti.id, title: "Graffiti gone now", description: "Got my friends together and we scrubbed the wall. It's looking pretty good now!", image_url: "http://i.imgur.com/TE2OAXt.jpg")
 lawnfix = Fix.create(user_id: 2, issue_id: lawn.id, title: "Fixed up the lawn", description: "I had some sod leftover from my lawn reno. I knocked on Mr. Brewsters door and asked him if I could fix up his lawn. He was really great, sweet man he is.", image_url: "http://imgur.com/Iu2pQN3")
 #----------------------------------------------------------------------------------#
 
@@ -74,7 +74,7 @@ trashcanfixcomment2 = FixComment.create(fix_id: trashcanfix.id, user_id: 4, cont
 
 #-------------------------------- ISSUE COMMENTS -------------------------------------#
 trancancomment = IssueComment.create(issue_id: trashcan.id, user_id: 1, content: "What an eyesore, somebody get on this.")
-smashcancomment = IssueComment.create(issue_id: smashcan.id, user_id: 2, content: "Looks like it's all fixed now!")
+smashcancomment = IssueComment.create(issue_id: trashcan.id, user_id: 2, content: "Looks like it's all fixed now!")
 #-------------------------------------------------------------------------------------#
 
 
@@ -138,7 +138,7 @@ dirty.issues << trashcan
 dirty.issues << graffiti
 tools.issues << fence
 tools.issues << door
-yard_work.issues << wood
+yard_work.issues << tree
 yard_work.issues << lawn
 handyman.issues << door
 escalate.issues << power_line
