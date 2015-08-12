@@ -8,11 +8,13 @@ var UserIssuesList = React.createClass({
 
     return (
       <div className="user_fixed_list_wrapper">
-        <h3 className="ui header"> Issues Submitted </h3>
 
-        <div id="footer_stream" className="ui feed small">
-        {Issues}
-        </div>
+          <h3 className="ui header"> Issues Submitted </h3>
+
+          <div id="footer_stream" className="ui feed small">
+          {Issues}
+          </div>
+
 
       </div>
       )
