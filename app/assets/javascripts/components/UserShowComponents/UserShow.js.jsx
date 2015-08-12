@@ -3,6 +3,9 @@ var UserShow = React.createClass({
     return (
       <div className="user_show_wrapper">
 
+
+      <h3 className="ui horizontal divider header"> About Me </h3>
+
       < UserProfileCard user={this.props.user} same_user={this.props.same_user} />
 
       <br></br>
