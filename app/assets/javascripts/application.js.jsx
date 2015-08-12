@@ -28,8 +28,6 @@ $(function(){
   })
 })
 
-
-
 //  require semantic-ui/accordion
 //  require semantic-ui/checkbox
 //  require semantic-ui/dimmer
