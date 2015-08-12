@@ -3,6 +3,7 @@ var AboutTeamShow = React.createClass({
     return (
       <div className="about_team_show_page">
         < CommunityStandards />
+        < CategoryDescriptions />
         < TeamMediaCards />
       </div>
       )
