@@ -14,6 +14,8 @@
  *= require_self
  */
 
+
+/*-------------------BODY STUFF----------------*/
  * {
   /*border: 1px dashed black;*/
  }
@@ -26,6 +28,13 @@ body{
   -webkit-font-smoothing: antialiased;
   font-weight: 200;
 }
+
+#content{
+  padding: 20px;
+}
+/*--------------------------------------------*/
+
+
 
 
 /*-------------------SEMANTIC----------------*/
@@ -57,6 +66,7 @@ body{
   position: absolute;
   z-index: -1;
   top: 0;
+  min-height: 100%;
 }
 
 @media all and(min-width: 900px){
@@ -104,7 +114,7 @@ body{
 
 /*-------------------FOOTER----------------*/
 #footer{
-  margin-top: 20px;
+/*  margin-top: 20px;*/
   background: #eee;
   border-top: 1px solid #ddd;
   width: 100%;
@@ -117,7 +127,6 @@ body{
   font-size: 1.25em;
 }
 
-
 #footer a{
   text-decoration: none;
   color: #666;
@@ -128,8 +137,12 @@ body{
 }
 
 #footer_stream{
+  font-size: 0.75em;
   margin-left: 20px;
   overflow: scroll;
+  overflow-x: hidden ;
+  height: 100px;
+  seamless:"seamless";
 }
 /*-------------------------------------------*/
 
