@@ -175,6 +175,7 @@ html{
 
 /*-------------------FOOTER----------------*/
 #footer{
+  position: absolute;
   background: #eee;
   border-top: 1px solid #ddd;
   width: 100%;
@@ -183,8 +184,8 @@ html{
   color: #666;
   font-size: 1.25em;
   bottom: 0;
-  position: fixed;
   z-index: 1000;
+  display: none;
 }
 
 #footer a{
@@ -293,8 +294,6 @@ html{
   margin-top: 100px;
   /*height: 600px;*/
   width: 65%;
-  border: 1px solid lightgrey;
-  background-color: lightgrey;
   float: left;
 }
 

@@ -10,9 +10,9 @@ var UserFixedList = React.createClass({
     return (
       <div className="user_issues_list_wrapper">
 
-        <h3 className="ui header"> Issues Fixed</h3>
+        <h3 className="ui horizontal divider header"> Issues Fixed</h3>
 
-        <div id="footer_stream" className="ui feed small">
+        <div className="ui feed small">
 
         { this.props.fixes.length == 0 ?
           <p> No fixes posted. </p>
