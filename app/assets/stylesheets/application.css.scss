@@ -164,8 +164,47 @@ html{
 }
 
 .splash_nav_button{
-  margin-right: 1%;
+  display: inline-block;
   margin-left: 1%;
+  margin-right: 1%;
+}
+
+
+@media all and(min-width: 900px){
+  #mainSplash .header{
+    margin-top: 3%;
+  }
+}
+
+@media all and(max-width: 730px){
+  #mainSplash .ui.header.huge{
+    font-size: 1.5em;
+  }
+}
+
+@media all and(min-width: 631px){
+  html body.pushed{
+    margin-left: 0 !important;
+  }
+  #m_menu.active{
+    display: none;
+  }
+  #mainSplash h2{
+    display: none;
+  }
+}
+
+@media all and(max-width: 630px){
+  #menu{display: none;}
+  #m_btn{
+    display: inline-block;
+  }
+  body.pushed{
+    overflow: hidden;
+  }
+  #mainHead .ui.icon.header.huge{
+    display: none;
+  }
 }
 /*--------------------------------------------*/
 
