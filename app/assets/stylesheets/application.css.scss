@@ -132,7 +132,7 @@ html{
 }
 
 /*when mobile*/
-@media only screen and (min-device-width: 375px) and (min-device-width: 375px)   and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media only screen and (min-device-width: 375px) and (min-device-width: 375px)   and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait){
   /*hide the normal menu*/
   #menu{display: none;}
 
@@ -364,7 +364,7 @@ html{
   /*background-image: url(http://i.imgur.com/ziM5W14.png);*/
   /*display: inline-block;*/
   width: 100%;
-  height: 600px;
+  height: 900px;
   /*background-size: 100%;*/
   /*border: 3px solid lightgrey;*/
 }
@@ -373,6 +373,17 @@ html{
   /*display: inline-block;*/
   font-size: 24px;
   margin: 2%;
+}
+
+@media all and(max-width: 750px){
+  .dashboard_map_wrapper{
+    height: 600px;
+  }
+
+  .discover_button{
+    display: block;
+    width: 100%;
+  }
 }
 
 /*----------------------------------------------*/

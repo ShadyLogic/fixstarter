@@ -9,7 +9,7 @@ var Dashboard = React.createClass({
 
         <div className="one column row">
           <h2 className="column">  </h2>
-          <h4 className="ui horizontal divider header"> Dashboard </h4>
+          <h2 className="ui horizontal divider header"> Dashboard </h2>
         </div>
 
         <div>
@@ -18,7 +18,7 @@ var Dashboard = React.createClass({
         </div>
 
         <div className="one column row">
-          <h4 className="ui horizontal divider header"> FixStart Issue Map </h4>
+          
           < DashboardMap allOpenIssues={this.props.allOpenIssues} zip={this.props.zip} environment={this.props.environment} />
         </div>
 
@@ -30,3 +30,6 @@ var Dashboard = React.createClass({
       )
   }
 })
+
+
+// <h4 className="ui horizontal divider header"> FixStart Issue Map </h4>
