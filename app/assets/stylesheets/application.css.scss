@@ -146,8 +146,6 @@ html{
   font-size: 1.25em;
   z-index: 1000;
   position: relative;
-/*  bottom: 0;
-  position: fixed;*/
 }
 
 #footer a{
@@ -254,24 +252,6 @@ html{
   }
 }
 /*--------------------------------------------*/
-
-
-
-
-/*-------------------FOOTER----------------*/
-#footer{
-  position: fixed;
-  background: #eee;
-  border-top: 1px solid #ddd;
-  width: 100%;
-  padding: 0 20px 20px 20px;
-  box-sizing: border-box;
-  color: #666;
-  font-size: 1.25em;
-  bottom: 0;
-  z-index: 1000;
-}
-
 
 /*---------------SIGNUP AND LOGIN PAGES---------------*/
 .signin_and_login_form_wrapper{
