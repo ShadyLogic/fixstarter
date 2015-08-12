@@ -18,6 +18,34 @@
     <!-- HEADER -->
     <% unless @splash_page || @log_in_page  || @sign_up_page %>
       <div id="header">
+
+        <div id="sidebar" class="ui floating sidebar vertical menu inverted active">
+          <a href="/issues/new" class="item">
+            <i class="plus icon"></i>
+            Submit an Issue
+          </a>
+
+          <a href="/dashboard" class="item">
+            <i class="home icon"></i>
+            Dashboard
+          </a>
+
+          <a href="/discover" class="item">
+            <i class="plus icon"></i>
+            Discover
+          </a>
+
+          <a href="/profile" class="item">
+            <i class="plus icon"></i>
+            Profile
+          </a>
+
+          <a href="/users/sign_out" class="item">
+            <i class="plus icon"></i>
+            Logout
+          </a>
+        </div>
+
         <div id="mainHead">
           <% if user_signed_in? %>
             <%= react_component('FixedMenuTemplate', {prerender: true}) %>
@@ -31,9 +59,10 @@
           <h2 class="ui header inverted">
             <i class="configure icon inverted"> </i> Fix. Shit. Today.
           </h2>
-
         </div>
+
         <img id="mainImage" src="http://i.imgur.com/L65HE0g.jpg" />
+
       </div>
       <div class="notice"><%= notice %></div>
       <div class="alert"><%= alert %></div>
