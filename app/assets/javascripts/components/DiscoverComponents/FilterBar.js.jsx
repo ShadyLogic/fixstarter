@@ -40,11 +40,12 @@ var FilterBar = React.createClass({
           <option value="Escalate">Escalate</option>
           <option value="Uncategorized">Uncategorized</option>
           </select>
-	       <br/>
+
+
         </div>
 
-	       <button className="ui primary button" type="submit">Discover it all</button>
-
+          <button className="ui primary button" type="submit">Search</button>
+	       
        </ form>
        <br/>
 
