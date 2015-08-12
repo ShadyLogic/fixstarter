@@ -13,7 +13,7 @@ var FixList = React.createClass({
 
         <div className="ui feed small">
           { this.props.fixes.length == 0 ?
-            <p> No fixes posted. </p>
+            <p> No fixes posted. Submit a fix! </p>
           :
             {Fixes}
           }
