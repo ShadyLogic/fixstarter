@@ -476,6 +476,10 @@ html{
 
 }
 
+.issue_form_wrapper #geoLocate {
+  margin-bottom: 1em;
+}
+
 .issue_votes{
 
 }
@@ -486,6 +490,7 @@ html{
 
 .issue_new_form{
   font-size: 20px;
+  margin-top: 1em;
   margin-left: 1%;
   display: inline-block;
   text-align: left;
