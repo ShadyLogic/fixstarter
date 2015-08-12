@@ -15,7 +15,7 @@
 //= require react
 //= require react_ujs
 //= require semantic-ui
-//= require semantic-ui/sidebar
+// = require semantic-ui/sidebar
 //= require semantic-ui/modal
 //= require semantic-ui/dropdown
 //= require components
@@ -24,7 +24,7 @@
 
 $(function(){
   $('#m_btn').on('click',function(){
-    $('.ui.sidebar').sidebar('show')
+    $('#m_menu').sidebar('toggle')
   })
 })
 

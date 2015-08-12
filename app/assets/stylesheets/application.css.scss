@@ -132,7 +132,7 @@ html{
 }
 
 /*when mobile*/
-@media all and(max-width: 630px){
+@media only screen and (min-device-width: 375px) and (min-device-width: 375px)   and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   /*hide the normal menu*/
   #menu{display: none;}
 
