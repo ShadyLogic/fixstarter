@@ -21,6 +21,7 @@
         <div id="mainHead">
           <% if user_signed_in? %>
             <%= react_component('FixedMenuTemplate', {prerender: true}) %>
+            <%= react_component('MobileMenu', {prerender: true}) %>
           <% end %>
 
           <div class="ui huge icon header inverted">
