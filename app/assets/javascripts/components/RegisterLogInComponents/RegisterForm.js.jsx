@@ -3,7 +3,7 @@ var RegisterForm = React.createClass({
   render: function(){
 
     return (
-      <div className ="register_form">
+      <div className ="ui form">
         <h3> Register </h3>
         <form>
           Email
