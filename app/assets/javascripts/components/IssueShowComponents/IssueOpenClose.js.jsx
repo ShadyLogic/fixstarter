@@ -3,7 +3,7 @@ var IssueOpenClose = React.createClass({
     return (
       <div className="issue_open_close">
 
-      <h3 className="ui horizontal divider header"> My Stats </h3>
+      <h4 className="ui horizontal divider header"> My Stats </h4>
 
       <p> {this.props.issue.status == "closed" ?
           <p> You created this issue, and someone has submitted a fix, which auto-closed your issue. Would you like to re-open the issue?
