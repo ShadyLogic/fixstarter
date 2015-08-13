@@ -4,11 +4,8 @@ var IssueHeader = React.createClass({
 
     return (
       <div className="issue_header">
-      { this.props.status == "open" ?
-      <h2 className="ui header">{this.props.issue.title} <span className="c-green l-7 pos-r">[{this.props.issue.status.toUpperCase()}]</span> </h2>
-      :
+
       <h2 className="ui header">{this.props.issue.title} <span className="c-grey l-7 pos-r">[{this.props.issue.status.toUpperCase()}]</span> </h2>
-      }
 
       { this.props.current_user ?
         <div>
