@@ -11,7 +11,7 @@ var IssueOpenClose = React.createClass({
       var path= "/issues/"+this.props.issue.id+"/close"
       var button = " red"
       var button_text = "Close Issue"
-      var message = "You created this issue, but no one has submitted fixes yet, would you like to close your issue?"
+      var message = "You created this issue, but no one has submitted fixes yet. Would you like to close your issue?"
       var status = "open"
     }
     return {
@@ -34,7 +34,7 @@ var IssueOpenClose = React.createClass({
       this.state.status = "open"
       this.state.button = " red"
       this.state.button_text = "Close Issue"
-      this.state.message = "You created this issue, but no one has submitted fixes yet, would you like to close your issue?"
+      this.state.message = "You created this issue, but no one has submitted fixes yet. Would you like to close your issue?"
     }else{
       this.state.path= "/issues/"+this.props.issue.id+"/reopen"
       this.state.status = "closed"
