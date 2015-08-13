@@ -101,6 +101,11 @@ html{
   display: none;
 }
 
+.header_text{
+  text-shadow: 1px 1px 1px #000,
+                 3px 3px 5px black;
+}
+
 /*Main Head has slight margin when at full screen*/
 @media all and(min-width: 900px){
   #mainHead .header{
@@ -595,7 +600,7 @@ html{
 }
 
 .issue_form_wrapper{
-  
+
 }
 
 .issue_form_wrapper #geoLocate {
