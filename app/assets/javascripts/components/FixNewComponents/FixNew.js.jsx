@@ -10,6 +10,10 @@ var FixNew = React.createClass({
 
   }, */
 
+  componentWillMount: function() {
+    document.title = "FixStart | Submit a Fix";
+  },
+
   render: function(){
     return (
       <div className="fix_new_wrapper">

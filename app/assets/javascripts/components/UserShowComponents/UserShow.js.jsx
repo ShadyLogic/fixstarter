@@ -1,4 +1,9 @@
 var UserShow = React.createClass({
+
+  componentWillMount: function() {
+    document.title ="FixStart | "+ this.props.user.first_name +" "+ this.props.user.last_name;
+  },
+
   render: function(){
     return (
       <div className="user_show_wrapper">

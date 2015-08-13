@@ -1,4 +1,8 @@
 var AboutTeamShow = React.createClass({
+  componentWillMount: function() {
+    document.title = "FixStart | About Us";
+  },
+
   render: function(){
     return (
       <div className="about_team_show_page">
