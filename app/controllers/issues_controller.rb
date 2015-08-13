@@ -104,14 +104,14 @@ class IssuesController < ApplicationController
     @issue = Issue.find_by(id: params[:id])
     @issue.status = "closed"
     @issue.save
-    redirect_to issue_path(@issue)
+    render "issues/show"
   end
 
   def reopen_issue
     @issue = Issue.find_by(id: params[:id])
     @issue.status = "open"
     @issue.save
-    redirect_to issue_path(@issue)
+    render "issues/show"
   end
 
 
