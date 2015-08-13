@@ -654,12 +654,13 @@ html{
 
 .issue_votes{
   text-align: center;
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 .issue_checkbox {
   display: inline-block;
   margin-bottom: 15px;
+  right: 30px;
 }
 
 .issue_header{
