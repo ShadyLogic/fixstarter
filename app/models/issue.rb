@@ -44,7 +44,8 @@ class Issue < ActiveRecord::Base
                        category_icon: CATEGORIES[category],
                        category_name: category,
                        points: issue.users_votes.size,
-                       imageUrl: image }
+                       imageUrl: image,
+                       address: Geocoder.address("#{issue.latitude}, #{issue.longitude}") }
     end
     # show latest streams first (with reverse)
     stream_items.reverse
@@ -70,7 +71,8 @@ class Issue < ActiveRecord::Base
                           category_icon: CATEGORIES[category],
                           category_name: category,
                           points: issue.users_votes.size,
-                          image: image }
+                          image: image,
+                          address: Geocoder.address("#{issue.latitude}, #{issue.longitude}") }
       end
     end
     issue_items
@@ -97,7 +99,8 @@ class Issue < ActiveRecord::Base
        category_icon: CATEGORIES[category],
        category_name: category,
        points: self.users_votes.size,
-       image: image  }
+       image: image,
+       address: Geocoder.address("#{self.latitude}, #{self.longitude}")  }
   end
 
 
@@ -135,8 +138,11 @@ class Issue < ActiveRecord::Base
                         fix_text: "Return to Dashboard",
                         link: '/dashboard',
                         points: "n/a",
-                        image: 'http://images.clipartpanda.com/residency-clipart-black-and-white-sad-face-md.png'}
+                        image: 'http://images.clipartpanda.com/residency-clipart-black-and-white-sad-face-md.png',
+                        address: Geocoder.address("#{location_coords[0]}, #{location_coords[1]}")
+                      }
     end
+    p found_issues
     found_issues
   end
 
@@ -173,7 +179,8 @@ class Issue < ActiveRecord::Base
       category_icon: CATEGORIES[category],
       category_name: category,
       points: issue.users_votes.size,
-      image: image }
+      image: image,
+      address: Geocoder.address("#{issue.latitude}, #{issue.longitude}") }
   end
 
   def package_info

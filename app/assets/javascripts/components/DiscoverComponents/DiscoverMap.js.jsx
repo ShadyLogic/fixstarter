@@ -50,6 +50,9 @@ var DiscoverMap = React.createClass({
 			var self = this
 	    for (var i = 0; i < issues.length; i++) {
 	      var issue = issues[i];
+		      if (issue.address === null) {
+		      	issue.address = "No Address Found"
+		      }
 	      self.addMarker(issue)
 	    	}
 		 },
@@ -61,6 +64,7 @@ var DiscoverMap = React.createClass({
 			 	    properties: {
 			 	    	title: issue.title,
 			 	    	category: issue.category_name,
+			 	    	address: issue.address,
 			 	    	points: issue.points,
 			 	    	description: issue.description,
 			 	    	link: issue.link,
@@ -86,7 +90,7 @@ var DiscoverMap = React.createClass({
 		},
 
 		packageIssue: function(issue) {
-			return ("<p><b>"+issue.title+" </b><em>("+issue.category_name+")</em></p><p>"+issue.description+"</p><img src="+issue.image+" width='50' height='50'><span> "+issue.points+" point(s) | </span><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
+			return ("<span style='font-size: 1em;'><b>"+issue.title+" </b><em>("+issue.category_name+")</em></span></br><p><em style='font-size: 0.9em;'>"+issue.address+"</em></p><p>"+issue.description+"</p><img src="+issue.image+" width='50' height='50'><span> "+issue.points+" point(s) | </span><a href='"+issue.link+"'>"+issue.fix_text+"</a>")
 		},
 
 	  render: function(){

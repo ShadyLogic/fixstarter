@@ -5,6 +5,7 @@ class IssuesController < ApplicationController
 
   def show
     if @issue = Issue.find_by(id: params[:id])
+      @address = Geocoder.address("#{@issue.latitude}, #{@issue.longitude}")
 
       @categories = @issue.categories
 
