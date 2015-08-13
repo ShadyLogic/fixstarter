@@ -2,7 +2,7 @@ var IssueDescription = React.createClass({
   render: function(){
 
     var categories = this.props.categories.map(function(category){
-      return <li>{category.name}</li>
+      return <li key={category.id}>{category.name}</li>
     })
 
     return (
