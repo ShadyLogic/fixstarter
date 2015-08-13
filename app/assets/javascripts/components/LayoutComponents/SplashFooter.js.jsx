@@ -6,7 +6,7 @@ var SplashFooter = React.createClass({
 
           <a className="one wide centered  column splash_footer_text" href="/team">About</a>
 
-          <a className="one wide centered  column splash_footer_text" href="">Contact</a>
+          <a className="one wide centered  column splash_footer_text" href="mailto:fixstart@gmail.com.com">Contact</a>
 
           <a className="one wide centered  column splash_footer_text" href="">Twitter</a>
 
