@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # User.create()
 
-marshall = User.new(email: "marshall@fixstart.io", first_name: "Marshall", last_name: "Hattersly", bio: "I live in a trash can. Life. I live for derelict (my balls). I'm a derelict vagabond.", avatar_url: "http://i.imgur.com/hZ3fiKE.jpg", zip: '94122')
+marshall = User.new(email: "marshall@fixstart.io", first_name: "Marshall", last_name: "Hattersly", bio: "I am a handyman with musical talent. If I can't fix it, I'll provide a backing track for those who can. I really enjoy creative stuff, and anytime I get to use my creative energy to solve a problem, my life is made better. FixStart FTW!", avatar_url: "http://i.imgur.com/hZ3fiKE.jpg", zip: '94122')
 marshall.password = "trashcan"
 marshall.badge_collection = BadgeCollection.new
 marshall.save!
