@@ -17,7 +17,7 @@ tim.password = "trashcan"
 tim.badge_collection = BadgeCollection.new
 tim.save!
 
-jacob = User.new(email: "jacob@fixstart.io", first_name: "Jacob", last_name: "Rogers", bio: "I live in a trash can. Life. I live for derelict (my balls). I'm a derelict vagabond.", avatar_url: "http://i.imgur.com/l56y9kj.jpg", zip: '94121')
+jacob = User.new(email: "jacob@fixstart.io", first_name: "Jacob", last_name: "Rogers", bio: "I carry a multitool with me everywhere I go so I can fix on the fly. If it's broken I will take it apart and put it back together. FixStart is my battlestation for conquering broken crap. ", avatar_url: "http://i.imgur.com/l56y9kj.jpg", zip: '94121')
 jacob.password = "trashcan"
 jacob.badge_collection = BadgeCollection.new
 jacob.save!
