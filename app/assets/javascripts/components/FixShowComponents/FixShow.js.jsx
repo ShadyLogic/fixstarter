@@ -1,7 +1,7 @@
 var FixShow = React.createClass({
 
   componentWillMount: function() {
-    document.title = "FixStart | Fix Profile";
+    document.title ="FixStart | "+ this.props.fix.title;
   },
 
 
