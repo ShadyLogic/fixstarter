@@ -91,7 +91,7 @@ var DiscoverMap = React.createClass({
 
 	  render: function(){
 	    return (
-	      <div className="discover_map_wrapper">
+	      <div id='scroll' className="discover_map_wrapper">
 	      	<div id='map'></div>
 	      </div>
 	      )

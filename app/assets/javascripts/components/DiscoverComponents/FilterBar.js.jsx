@@ -44,7 +44,7 @@ var FilterBar = React.createClass({
 
         </div>
 
-          <button className="ui primary button" type="submit">Search</button>
+          <button className="ui primary button" type="submit"><a id="search_button">Search</a></button>
 	       
        </ form>
        <br/>

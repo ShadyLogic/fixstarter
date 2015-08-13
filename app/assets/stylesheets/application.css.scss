@@ -368,7 +368,7 @@ html{
   /*background-image: url(http://i.imgur.com/ziM5W14.png);*/
   /*display: inline-block;*/
   width: 100%;
-  height: 900px;
+  height: 800px;
   /*background-size: 100%;*/
   /*border: 3px solid lightgrey;*/
 }
@@ -381,7 +381,7 @@ html{
 
 @media all and(max-width: 750px){
   .dashboard_map_wrapper{
-    height: 600px;
+    height: 400px;
   }
 
   .discover_button{
@@ -408,6 +408,10 @@ html{
 
 .filter_bar_wrapper{
 
+}
+
+#search_button{
+  color: white;
 }
 
 .result_list_wrapper{
@@ -464,6 +468,7 @@ html{
   .discover_map_wrapper{
     float:none;
     width: 100%;
+    height:400px;
   }
 
   .discover_form{
