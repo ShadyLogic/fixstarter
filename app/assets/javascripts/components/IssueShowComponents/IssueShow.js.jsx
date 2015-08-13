@@ -1,4 +1,9 @@
 var IssueShow = React.createClass({
+
+  componentWillMount: function() {
+    document.title = "FixStart | Issue Show";
+  },
+
   render: function(){
     return (
       <div className="issue_show">
