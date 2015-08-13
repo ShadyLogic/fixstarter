@@ -23,7 +23,7 @@ var Sidebar = React.createClass({
       </a>
 
 
-      <a href="/team" className="item m_item">
+      <a href="/aboutus" className="item m_item">
         <i className="ellipsis vertical icon"></i>
         About Us
       </a>
