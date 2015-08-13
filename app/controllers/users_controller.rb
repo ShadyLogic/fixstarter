@@ -18,14 +18,16 @@ class UsersController < ApplicationController
   end
 
   def create_watch
-    new_watch = IssuesWatch.create(user_id: params[:user_id], issue_id: params[:issue_id])
-    redirect_to issue_path(id: params[:issue_id])
+    new_watch = IssuesWatch.create(user_id: params["content"]["user_id"], issue_id: params["content"]["issue_id"])
+
+    redirect_to issue_path(id: params["content"]["issue_id"])
   end
 
   def delete_watch
-    watch_to_delete = IssuesWatch.find_by(user_id: params[:user_id], issue_id: params[:issue_id])
+    watch_to_delete = IssuesWatch.find_by(user_id: params["content"]["user_id"], issue_id: params["content"]["issue_id"])
     watch_to_delete.destroy
-    redirect_to issue_path(id: params[:issue_id])
+
+    render "issues/show"
   end
 
   def create_vote
@@ -34,14 +36,7 @@ class UsersController < ApplicationController
   end
 
   def delete_vote
-    p "*"*100
-    p "DESTROY:"
-    p params
-    p "*"*100
     vote_to_delete = UsersVote.find_by(user_id: params["content"]["user_id"].to_i, issue_id: params["content"]["issue_id"].to_i)
-    p "*"*100
-    p vote_to_delete
-    p "*"*100
     vote_to_delete.destroy
 
     render "issues/show"
