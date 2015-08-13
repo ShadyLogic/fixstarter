@@ -22,7 +22,7 @@ jacob.password = "trashcan"
 jacob.badge_collection = BadgeCollection.new
 jacob.save!
 
-andrea = User.new(email: "andrea@fixstart.io", first_name: "Andrea", last_name: "Coravos", bio: "I live in a trash can. Life. I live for derelict (my balls). I'm a derelict vagabond.", avatar_url: "http://i.imgur.com/bXVEy5u.jpg", zip: '94110')
+andrea = User.new(email: "andrea@fixstart.io", first_name: "Andrea", last_name: "Coravos", bio: "I'm infamous with my friends and family for my 'fix-it' box. If something is broken I want to figure out a way to fix it. The FixStart site is my treasure trove.", avatar_url: "http://i.imgur.com/29yZRlU.jpg", zip: '94110')
 andrea.password = "trashcan"
 andrea.badge_collection = BadgeCollection.new
 andrea.save!
