@@ -13,17 +13,23 @@ var Sidebar = React.createClass({
       </a>
 
       <a href="/discover" className="item">
-        <i className="plus icon"></i>
+        <i className="search icon"></i>
         Discover
       </a>
 
       <a href="/profile" className="item">
-        <i className="plus icon"></i>
-        Profile
+        <i className="user icon"></i>
+        My Profile
+      </a>
+
+
+      <a href="/team" className="item">
+        <i className="ellipsis vertical icon"></i>
+        About Us
       </a>
 
       <a href="/users/sign_out" className="item">
-        <i className="plus icon"></i>
+        <i className="sign out icon"></i>
         Logout
       </a>
     </div>

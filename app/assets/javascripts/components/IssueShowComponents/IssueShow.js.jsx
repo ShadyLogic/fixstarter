@@ -3,20 +3,31 @@ var IssueShow = React.createClass({
     return (
       <div className="issue_show">
 
-        <h4 className="ui horizontal divider header"> FixStart Issue </h4>
+      <h2 className="ui horizontal divider header"> FixStart Issue </h2>
+      <br/>
 
-        < IssueHeader issue={this.props.issue} categories={this.props.categories} current_user_watching={this.props.current_user_watching} current_user_id={this.props.current_user_id} upvotes={this.props.upvotes} current_user_upvoted={this.props.current_user_upvoted} current_user_created_issue={this.props.current_user_created_issue} current_user={this.props.current_user} />
+      <div className="ui stackable three column centered grid">
+          <div className=" column">
+            < IssueHeader issue={this.props.issue} current_user_watching={this.props.current_user_watching} current_user_id={this.props.current_user_id} upvotes={this.props.upvotes} current_user_upvoted={this.props.current_user_upvoted} current_user_created_issue={this.props.current_user_created_issue} current_user={this.props.current_user} />
 
-        < FixList fixes={this.props.fixes} issue={this.props.issue} issue_id={this.props.issue.id} current_user={this.props.current_user} />
-        <br/>
+            <br/>
 
-        < CommentsList comments={this.props.comments} path={'/issues/' + this.props.issue.id + '/comments'} current_user={this.props.current_user} />
+            < IssueDescription issue={this.props.issue} categories={this.props.categories}  />
 
-        <h4 className="ui horizontal divider header">
-           Location
-        </h4>
-        < IssueShowMap issue={this.props.issue} />
+            <br/>
 
+          </div>
+
+
+          <div className=" column">
+            <h4 className="ui horizontal divider header">Location</h4>
+            < IssueShowMap issue={this.props.issue} />
+
+            <br/>
+            < FixList fixes={this.props.fixes} issue={this.props.issue} issue_id={this.props.issue.id} current_user={this.props.current_user} />
+          </div>
+
+          </div>
       </div>
     )
   }

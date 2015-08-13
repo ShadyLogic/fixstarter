@@ -30,7 +30,7 @@ var Discover = React.createClass({
     console.log(this.props.openIssues)
     return (
       <div className="discover_page">
-        <h2 className="ui header"> Discover Page </h2>
+        <h2 className="ui horizontal divider header"> Discover </h2>
         < FilterBar onSearchSubmit={this.handleSearchSubmit} />
         < DiscoverMap openIssues={this.state.openIssues} location={this.state.location} />
         < ResultList results={this.state.openIssues} />
