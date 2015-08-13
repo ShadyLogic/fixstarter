@@ -14,7 +14,7 @@ var ResultList = React.createClass({
             { this.props.results.length == 0 ?
               <p> Enter something in the search bar! </p>
             :
-              {resultNodes}
+              React.addons.createFragment({resultNodes})
             }
           </div>
         </div>

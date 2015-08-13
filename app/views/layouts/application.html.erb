@@ -40,8 +40,10 @@
     <!-- BODY CONTENT -->
 
     <!-- FOOTER -->
-    <% unless @splash_page || @log_in_page  || @sign_up_page %>
-    <%= react_component("Footer",{streamIssues: Issue.package_stream_issues, environment: Rails.env, prerender: true}) %>
+    <% if @splash_page || @log_in_page  || @sign_up_page %>
+      <%= react_component("SplashFooter", {prerender: true}) %>
+    <% else %>
+      <%= react_component("Footer",{streamIssues: Issue.package_stream_issues, environment: Rails.env, prerender: true}) %>
     <% end %>
     <!-- FOOTER -->
   </div>
