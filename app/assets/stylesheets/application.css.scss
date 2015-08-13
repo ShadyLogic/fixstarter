@@ -17,7 +17,7 @@
 
 /*-------------------BODY STUFF----------------*/
  * {
-  /*border: 1px dashed black;*/
+  /*border: 1px dashed white;*/
  }
 
 body{
@@ -191,7 +191,7 @@ label {
 
 
 
-/*-------------------FOOTER----------------*/
+/*-------------------MAIN FOOTER----------------*/
 #footer{
   background: #eee;
   border-top: 1px solid #ddd;
@@ -286,6 +286,32 @@ label {
   margin-right: 1%;
 }
 
+#splash_footer{
+  width: 100%;
+  /*box-sizing: border-box;*/
+  /*height: 20px;*/
+  font-size: 1.25em;
+  z-index: 1000;
+  /*position: relative;*/
+  position: absolute;
+  bottom: 0;
+  color: red;
+  /*border: 1px solid yellow;*/
+}
+
+#splash_footer_content{
+  padding-bottom: 20px;
+}
+
+.splash_footer_text{
+  color: white;
+  opacity: 0.55;
+  text-decoration: none;
+}
+
+.copyright{
+  font-size: 0.75em;
+}
 
 /*@media all and(min-width: 900px){
   #mainSplash .header{
@@ -296,6 +322,12 @@ label {
 @media all and(max-width: 730px){
   #mainSplash .ui.header.huge{
     font-size: 1.5em;
+  }
+  .splash_footer_text{
+    font-size: 1.25em;
+  }
+  #splash_footer_content{
+    margin: auto;
   }
 }
 
@@ -309,8 +341,8 @@ label {
   #mainSplash h2{
     display: none;
   }
-}
 
+}
 /*@media all and(max-width: 630px){
   #menu{display: none;}
   #m_btn{
@@ -369,6 +401,7 @@ input[name=commit]:hover {
   .splash_title{
     font-size: 3em;
   }
+
 }
 
 /*---------------------------------------------------*/

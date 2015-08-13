@@ -12,7 +12,7 @@ var Header = React.createClass({
             <MobileMenu />
 
           <div className="ui huge icon header inverted">
-            <i className="circular configure icon inverted"></i> <span className="header_text">FixStart</span>
+            <a href="/dashboard"> <i className="circular configure icon inverted"></i></a> <span className="header_text">FixStart</span>
           </div>
 
           <h2 className="ui header inverted">
