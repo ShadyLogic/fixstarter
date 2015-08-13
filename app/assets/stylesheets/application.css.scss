@@ -87,7 +87,7 @@ html{
 #menu{
   max-width: 1024px;
   margin: 0 auto;
-  font-size: 1.25em;
+  /*font-size: 1.25em;*/
 }
 
 #mainImage{
@@ -106,9 +106,10 @@ html{
    text-shadow: 0.5px 0.5px 0.5px #000;
 }
 
-.item{
+.m_item{
   height: 5em;
 }
+
 
 /*Main Head has slight margin when at full screen*/
 @media all and(min-width: 900px){
