@@ -45,6 +45,16 @@ html{
   min-height: 100%;
   overflow: hidden;
 }
+
+.notice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #1B1C1D;
+  color: #E9E9E9;
+  border-bottom-right-radius: 10px;
+}
+
 /*--------------------------------------------*/
 
 
@@ -309,6 +319,20 @@ html{
     display: none;
   }
 }*/
+
+input[name=commit] {
+  border-radius: 3px;
+  border: none;
+  padding: 10px;
+  width: 84.4531px;
+  height: 36px;
+  background-color: #E0E1E2;
+}
+
+input[name=commit]:hover {
+  background-color: #CACBCD;
+}
+
 /*--------------------------------------------*/
 
 /*---------------SIGNUP AND LOGIN PAGES---------------*/
@@ -342,6 +366,7 @@ html{
     font-size: 3em;
   }
 }
+
 /*---------------------------------------------------*/
 
 
