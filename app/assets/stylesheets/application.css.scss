@@ -102,8 +102,7 @@ html{
 }
 
 .header_text{
-  text-shadow: 1px 1px 1px #000,
-                 3px 3px 5px black;
+   text-shadow: 1px 1px 1px #000;
 }
 
 /*Main Head has slight margin when at full screen*/
@@ -218,6 +217,18 @@ html{
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
+}
+
+.splash_title{
+  /*text-shadow: 1px 1px 1px #000;*/
+}
+
+.splash_slogan{
+  font-family: helvetica;
+  letter-spacing: 5px;
+  font-weight: 100;
+  font-size: 0.50em;
+  opacity: 0.8;
 }
 
 /*#splashImage{
