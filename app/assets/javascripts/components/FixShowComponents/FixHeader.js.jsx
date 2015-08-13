@@ -2,8 +2,6 @@ var FixHeader = React.createClass({
   render: function(){
     return (
       <div className="fix_header">
-        <h4 className="ui horizontal divider header"> Fix Submited by
-        the FixStart Community </h4>
 
         <h2 className="ui header">{this.props.title}</h2>
 

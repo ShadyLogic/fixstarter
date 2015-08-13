@@ -18,10 +18,13 @@
 <body>
 
   <div class="container">
+
     <!-- HEADER -->
     <% unless @splash_page || @log_in_page  || @sign_up_page %>
       <%= react_component("Header", {prerender: true}) %>
     <% end %>
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
     <!-- HEADER -->
 
     <!-- BODY CONTENT -->
