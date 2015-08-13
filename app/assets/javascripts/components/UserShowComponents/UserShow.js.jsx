@@ -5,15 +5,14 @@ var UserShow = React.createClass({
 
       <br/>
 
-        <div className="ui stackable three column center aligned grid">
+        <div className="ui stackable three column centered grid">
           <div className="column">
-          <h3 className="ui horizontal divider header"> About Me </h3>
+            <h3 className="ui horizontal divider header"> About Me </h3>
+            < UserProfileCard user={this.props.user} same_user={this.props.same_user} />
 
-          < UserProfileCard user={this.props.user} same_user={this.props.same_user} />
+            <br></br>
 
-          <br></br>
-
-          < Badges badges={this.props.badges} />
+            < Badges badges={this.props.badges} />
           </div>
 
           <div className=" column">
