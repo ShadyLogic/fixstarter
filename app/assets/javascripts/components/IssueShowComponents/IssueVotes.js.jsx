@@ -54,7 +54,7 @@ var IssueVotes = React.createClass({
       { this.props.current_user ?
         <div>
                 <p> {this.state.upvotes} FixStart community members have up-voted this issue </p>
-                <form onSubmit={this.handleSubmit}>
+                <form className="issue_votes_form" onSubmit={this.handleSubmit}>
                   <button className={"ui icon" + this.state.button + "button"} type= "Submit"> <i className="thumbs up icon"  /> </button>
                 </form>
         </div>

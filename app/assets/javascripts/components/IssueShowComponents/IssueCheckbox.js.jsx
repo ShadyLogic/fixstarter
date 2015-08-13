@@ -49,7 +49,7 @@ var IssueCheckbox = React.createClass({
       <div className="issue_checkbox">
         <p>
             <p>
-              <form onSubmit={this.handleSubmit}>
+              <form className="issue_following_form" onSubmit={this.handleSubmit}>
               <button className={"ui button" + this.state.button} type= "Submit"> Following </button>
               </form>
              </p>
