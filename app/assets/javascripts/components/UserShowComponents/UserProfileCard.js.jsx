@@ -3,7 +3,7 @@ var UserProfileCard = React.createClass({
     return (
       <div className="user_profile_card_wrapper">
 
-        <div className="ui card">
+        <div className="ui card centered">
           <div className="image">
             <img src={this.props.user.avatar_url}></img>
           </div>

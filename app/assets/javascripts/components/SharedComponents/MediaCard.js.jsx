@@ -2,7 +2,7 @@ var MediaCard = React.createClass({
   render: function(){
     return (
       <div className="media_card">
-        <div className="ui card">
+        <div className="ui card centered">
           <div className="image">
             <img src={this.props.image_url}></img>
           </div>
