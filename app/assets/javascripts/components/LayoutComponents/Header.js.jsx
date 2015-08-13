@@ -16,10 +16,11 @@ var Header = React.createClass({
           </div>
 
           <h2 className="ui header inverted">
-            <i className="configure icon inverted"> </i> <span className="header_text">FixStart</span>
+            <span className="header_text">FixStart</span>
           </h2>
         </div>
 
+}
         <img id="mainImage" src="http://i.imgur.com/LnTYPZ2.jpg" />
 
       </div>

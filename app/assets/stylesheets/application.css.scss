@@ -105,6 +105,10 @@ html{
    text-shadow: 1px 1px 1px #000;
 }
 
+.item{
+  height: 5em;
+}
+
 /*Main Head has slight margin when at full screen*/
 @media all and(min-width: 900px){
   #mainHead .header{
@@ -113,11 +117,11 @@ html{
 }
 
 /*main head font is smaller when screen size is smaller*/
-@media all and(max-width: 730px){
+/*@media all and(max-width: 730px){
   #mainHead .ui.header.huge{
     font-size: 1.5em;
   }
-}
+}*/
 
 /*when larger than mobile*/
 @media all and(min-width: 631px){
@@ -138,23 +142,30 @@ html{
 
 /*when iphone5 and iphone6*/
 @media all and(max-width: 630px){
+
   /*hide the normal menu*/
   #menu{display: none;}
 
   /*display the mobile menu button*/
   #m_btn{
     display: inline-block;
-    /*font-size: 3em;*/
+    position: absolute;
+    top: 0;
+    right: 0;
   }
-  #m_menu{
-/*    font-size: 3em;*/
-  }
+
   body.pushed{
     overflow: hidden;
   }
+
   /*hide the main header*/
   #mainHead .ui.icon.header.huge{
     display: none;
+  }
+
+  #mainHead h2{
+    font-size: 4em;
+    font-weight: 700;
   }
 }
 /*--------------------------------------------*/
