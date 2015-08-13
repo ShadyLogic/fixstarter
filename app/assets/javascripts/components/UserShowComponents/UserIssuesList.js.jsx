@@ -15,7 +15,7 @@ var UserIssuesList = React.createClass({
             { this.props.issues.length == 0 ?
               <p> No issues posted. </p>
             :
-              {Issues}
+              React.addons.createFragment({Issues})
             }
           </div>
 
