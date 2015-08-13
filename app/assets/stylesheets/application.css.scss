@@ -581,6 +581,12 @@ html{
   width: 100%;
 }
 
+@media all and(max-width: 767px){
+  .issue_show_map_wrapper{
+    height: 400px;
+  }
+}
+
 /*----------------------------------------------*/
 
 
