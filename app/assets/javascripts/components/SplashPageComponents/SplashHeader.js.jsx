@@ -8,7 +8,9 @@ var SplashHeader = React.createClass({
 
           <div className="ui huge icon header">
             <div className="ui huge icon header inverted">
-              <i className="circular configure icon "></i> Start Fixing. Today.
+              <span className="splash_title"> <i className="circular configure icon "></i> FixStart </span>
+              <br/>
+              <span className="splash_slogan"> crowdsourced community upkeep </span>
             </div>
           </div>
           <br/>

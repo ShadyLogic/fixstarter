@@ -12,14 +12,15 @@ var Header = React.createClass({
             <MobileMenu />
 
           <div className="ui huge icon header inverted">
-            <i className="circular configure icon inverted"></i> FixStart
+            <i className="circular configure icon inverted"></i> <span className="header_text">FixStart</span>
           </div>
 
           <h2 className="ui header inverted">
-            <i className="configure icon inverted"> </i> FixStart
+            <span className="header_text">FixStart</span>
           </h2>
         </div>
 
+}
         <img id="mainImage" src="http://i.imgur.com/LnTYPZ2.jpg" />
 
       </div>
