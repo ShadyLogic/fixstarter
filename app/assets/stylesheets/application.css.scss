@@ -50,6 +50,7 @@ html{
 /*-------------------MAP----------------*/
 
 #map {
+  cursor: crosshair;
   height: 100%;
   border: 1px solid black;
 }
@@ -185,7 +186,7 @@ html{
   font-size: 0.75em;
   margin-left: 20px;
   overflow: scroll;
-  overflow-x: hidden ;
+  overflow-x: hidden;
   height: 100px;
 }
 /*-------------------------------------------*/
@@ -368,7 +369,7 @@ html{
   /*background-image: url(http://i.imgur.com/ziM5W14.png);*/
   /*display: inline-block;*/
   width: 100%;
-  height: 900px;
+  height: 800px;
   /*background-size: 100%;*/
   /*border: 3px solid lightgrey;*/
 }
@@ -381,7 +382,7 @@ html{
 
 @media all and(max-width: 750px){
   .dashboard_map_wrapper{
-    height: 600px;
+    height: 400px;
   }
 
   .discover_button{
@@ -408,6 +409,10 @@ html{
 
 .filter_bar_wrapper{
 
+}
+
+#search_button{
+  color: white;
 }
 
 .result_list_wrapper{
@@ -464,6 +469,7 @@ html{
   .discover_map_wrapper{
     float:none;
     width: 100%;
+    height:400px;
   }
 
   .discover_form{
@@ -543,6 +549,12 @@ html{
 }
 
 .user_profile_card_wrapper{
+  margin: 0 auto;
+
+}
+
+.user_profile_column_wrapper{
+  margin: 0 auto;
 
 }
 
@@ -575,14 +587,14 @@ html{
 /*---------------ISSUE NEW FORM --------------*/
 .issue_new_wrapper{
   text-align: center
-  /*border: 1px solid skyblue;*/
 }
 
 .issue_map_wrapper{
-  display: inline-block;
+  float: right;
   height: 600px;
   width: 60%;
 }
+
 
 .issue_image_wrapper{
 
@@ -606,9 +618,8 @@ html{
 
 .issue_new_form{
   font-size: 20px;
-  margin-top: 1em;
-  margin-left: 1%;
-  display: inline-block;
+  width: 35%;
+  float: left;
   text-align: left;
 }
 
@@ -621,6 +632,18 @@ html{
   .issue_map_wrapper {
     width: 100%;
     height: 400px;
+    float: none;
+    margin-bottom: 5em;
+  }
+
+  .issue_new_form{
+    width: 100%;
+    float: none;
+  }
+
+  .issue_new_categories{
+    font-size: 1em;
+    line-height: 1.5em;
   }
 }
 
@@ -673,7 +696,10 @@ html{
 }
 /*----------------------------------------------*/
 
-/*-----ATOMIC STYLING-------*/
+
+
+
+/*----------------ATOMIC STYLING----------------*/
 .c-grey {
   color: #C0C0C0;
 }
@@ -685,4 +711,5 @@ html{
 .pos-r {
   position: relative;
 }
+/*----------------------------------------------*/
 

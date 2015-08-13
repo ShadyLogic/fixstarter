@@ -21,124 +21,26 @@
 
     <!-- HEADER -->
     <% unless @splash_page || @log_in_page  || @sign_up_page %>
-      <div id="header">
-
-        <div id="m_menu" class="ui floating sidebar vertical menu inverted">
-
-          <a href="/issues/new" class="item">
-            <i class="plus icon"></i>
-            Submit an Issue
-          </a>
-
-          <a href="/dashboard" class="item">
-            <i class="home icon"></i>
-            Dashboard
-          </a>
-
-          <a href="/discover" class="item">
-            <i class="plus icon"></i>
-            Discover
-          </a>
-
-          <a href="/profile" class="item">
-            <i class="plus icon"></i>
-            Profile
-          </a>
-
-          <a href="/users/sign_out" class="item">
-            <i class="plus icon"></i>
-            Logout
-          </a>
-        </div>
-
-        <div id="mainHead">
-          <% if user_signed_in? %>
-            <%= react_component('FixedMenuTemplate', {prerender: true}) %>
-            <%= react_component('MobileMenu', {prerender: true}) %>
-          <% end %>
-
-          <div class="ui huge icon header inverted">
-            <i class="circular configure icon inverted"></i> FixStart
-          </div>
-
-          <h2 class="ui header inverted">
-            <i class="configure icon inverted"> </i> FixStart
-          </h2>
-        </div>
-
-        <img id="mainImage" src="http://i.imgur.com/L65HE0g.jpg" />
-
-      </div>
-      <div class="notice"><%= notice %></div>
-      <div class="alert"><%= alert %></div>
+      <%= react_component("Header", {prerender: true}) %>
     <% end %>
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
     <!-- HEADER -->
 
-
-
-    <!-- body content -->
+    <!-- BODY CONTENT -->
     <% if @splash_page || @log_in_page || @sign_up_page %>
       <div id="splash_wrapper">
         <%= yield %>
       </div>
-
     <% else %>
       <div id="content">
         <%= yield %>
       </div>
     <% end %>
-    <!-- body content -->
-
-
+    <!-- BODY CONTENT -->
 
     <!-- FOOTER -->
-    <div id="footer">
-      <div class="ui grid three column stackable">
-
-        <div class="column">
-          <div class="ui horizontal icon divider">
-            <i class="circular list icon"></i>
-          </div>
-
-          <div class="ui list">
-
-            <a href="/issues/new" class="item">
-              <i class="plus icon"></i>
-              Submit an Issue
-            </a>
-
-            <a href="/dashboard" class="item">
-              <i class="home icon"></i>
-              Dashboard
-            </a>
-
-            <a href="/team" class="item">
-              <i class="configure icon"></i>
-              About Us
-            </a>
-
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="ui horizontal icon divider">
-            <i class="circular configure icon"></i>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore mag
-          </p>
-        </div>
-
-        <div class="column">
-          <div class="ui horizontal icon divider">
-            <i class="circular configure icon"></i>
-          </div>
-          <%= react_component('StreamFooter', {streamIssues: Issue.package_stream_issues, environment: Rails.env, prerender: true}) %>
-        </div>
-
-      </div>
-    </div>
+    <%= react_component("Footer",{streamIssues: Issue.package_stream_issues, environment: Rails.env, prerender: true}) %>
     <!-- FOOTER -->
   </div>
 

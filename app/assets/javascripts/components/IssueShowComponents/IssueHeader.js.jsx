@@ -1,9 +1,6 @@
  var IssueHeader = React.createClass({
   render: function(){
 
-    var categories = this.props.categories.map(function(category){
-      return <li>{category.name}</li>
-    })
 
     return (
       <div className="issue_header">
@@ -36,15 +33,7 @@
           < IssueStatus status={this.props.issue.status} />
         }
 
-      <h4 className="ui horizontal divider header">
-         Description
-      </h4>
-        < MediaCard image_url={this.props.issue.image_url} description={this.props.issue.description} />
 
-      <h4 className="ui horizontal divider header">
-        Categories
-      </h4>
-        <p> {categories} </p>
 
 
 

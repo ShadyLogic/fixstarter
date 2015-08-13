@@ -19,7 +19,7 @@ var ResultItem = React.createClass({
                 {this.props.description}
               </div>
               <br/>
-              <button className="medium ui teal button discover_fix_button" href={this.props.link}>Fix it!</button>
+              <a className="medium ui teal button discover_fix_button" id="fix" href={this.props.link}>Fix it!</a>
               <hr/>
         </div>
       </div>

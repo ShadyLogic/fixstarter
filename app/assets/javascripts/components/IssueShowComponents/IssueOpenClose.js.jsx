@@ -51,7 +51,7 @@ var IssueOpenClose = React.createClass({
     return (
       <div className="issue_open_close">
 
-      <h3 className="ui horizontal divider header"> My Stats </h3>
+      <h4 className="ui horizontal divider header"> My Stats </h4>
 
       <p>
           <p> {this.state.message}
