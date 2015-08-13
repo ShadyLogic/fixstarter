@@ -20,7 +20,6 @@ var Header = React.createClass({
           </h2>
         </div>
 
-}
         <img id="mainImage" src="http://i.imgur.com/LnTYPZ2.jpg" />
 
       </div>
