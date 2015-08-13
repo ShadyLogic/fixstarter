@@ -2,7 +2,7 @@ var ResultList = React.createClass({
   render: function() {
         var resultNodes = this.props.results.map(function(result){
           return (
-            <ResultItem title={result.title} description={result.description} link={result.link} points={result.points} categoryName={result.category_name} image={result.image} >
+            <ResultItem title={result.title} description={result.description} link={result.link} points={result.points} categoryName={result.category_name} image={result.image} address={result.address}>
             </ResultItem>
             );
         });
@@ -14,7 +14,7 @@ var ResultList = React.createClass({
             { this.props.results.length == 0 ?
               <p> Enter something in the search bar! </p>
             :
-              {resultNodes}
+              React.addons.createFragment({resultNodes})
             }
           </div>
         </div>

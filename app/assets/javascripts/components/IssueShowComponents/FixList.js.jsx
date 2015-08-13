@@ -15,7 +15,7 @@ var FixList = React.createClass({
           { this.props.fixes.length == 0 ?
             <p> No fixes posted. Submit a fix! </p>
           :
-            {Fixes}
+            React.addons.createFragment({Fixes})
           }
         </div>
 

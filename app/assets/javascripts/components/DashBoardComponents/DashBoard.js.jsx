@@ -1,5 +1,9 @@
 var Dashboard = React.createClass({
 
+  componentWillMount: function() {
+    document.title = "FixStart | Dashboard";
+  },
+
   render: function(){
     return (
 
@@ -17,7 +21,7 @@ var Dashboard = React.createClass({
         </div>
 
         <div className="one column row">
-          
+
           < DashboardMap allOpenIssues={this.props.allOpenIssues} zip={this.props.zip} environment={this.props.environment} />
         </div>
 

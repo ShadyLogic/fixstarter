@@ -5,6 +5,10 @@ var IssueNew = React.createClass({
     console.log(dataObject)
   },
 
+  componentWillMount: function() {
+    document.title = "FixStart | Submit an Issue";
+  },
+
   render: function(){
     return (
       <div className="issue_new_wrapper">

@@ -23,12 +23,12 @@ var Sidebar = React.createClass({
       </a>
 
 
-      <a href="/team" className="item m_item">
+      <a href="/aboutus" className="item m_item">
         <i className="ellipsis vertical icon"></i>
         About Us
       </a>
 
-      <a href="/users/sign_out" className="item m_item">
+      <a href="/users/sign_out" data-method="delete" className="item m_item">
         <i className="sign out icon"></i>
         Logout
       </a>

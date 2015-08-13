@@ -17,7 +17,7 @@ var UserFixedList = React.createClass({
         { this.props.fixes.length == 0 ?
           <p> No fixes posted. </p>
         :
-          {Fixes}
+          React.addons.createFragment({Fixes})
         }
 
         </div>

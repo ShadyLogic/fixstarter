@@ -14,7 +14,7 @@ var UserWatchingList = React.createClass({
             { this.props.watches.length == 0 ?
               <p> No issues being watched. </p>
             :
-              {Watches}
+              React.addons.createFragment({Watches})
             }
         </div>
 

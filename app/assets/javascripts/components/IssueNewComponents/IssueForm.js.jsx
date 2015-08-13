@@ -47,7 +47,7 @@ var IssueForm = React.createClass({
           <input id="lat" ref="lat" name="issue[latitude]" type="hidden" />
           <input id="lon" ref="lon" name="issue[longitude]" type="hidden" />
           <button className="large ui primary button" type="submit"> Submit </button>
-        <span className='error'></span>
+        <b><span className='error'></span></b>
         </form>
 
       </div>

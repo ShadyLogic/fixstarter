@@ -6,6 +6,8 @@
       <div className="issue_header">
 
       <h2 className="ui header">{this.props.issue.title} <span className="c-grey l-7 pos-r">[{this.props.issue.status.toUpperCase()}]</span> </h2>
+      <p><em>{this.props.address}</em></p>
+      <div className="ui divider"></div>
 
       { this.props.current_user ?
         <div>
