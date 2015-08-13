@@ -40,7 +40,7 @@ html{
 
 #content{
   margin-top: 1em;
-  padding: 20px;
+  padding: 40px;
   /*margin-bottom: 500px;*/
   min-height: 100%;
   overflow: hidden;
@@ -102,6 +102,14 @@ html{
   display: none;
 }
 
+.header_text{
+   text-shadow: 0.5px 0.5px 0.5px #000;
+}
+
+.item{
+  height: 5em;
+}
+
 /*Main Head has slight margin when at full screen*/
 @media all and(min-width: 900px){
   #mainHead .header{
@@ -110,11 +118,11 @@ html{
 }
 
 /*main head font is smaller when screen size is smaller*/
-@media all and(max-width: 730px){
+/*@media all and(max-width: 730px){
   #mainHead .ui.header.huge{
     font-size: 1.5em;
   }
-}
+}*/
 
 /*when larger than mobile*/
 @media all and(min-width: 631px){
@@ -135,23 +143,30 @@ html{
 
 /*when iphone5 and iphone6*/
 @media all and(max-width: 630px){
+
   /*hide the normal menu*/
   #menu{display: none;}
 
   /*display the mobile menu button*/
   #m_btn{
     display: inline-block;
-    /*font-size: 3em;*/
+    position: absolute;
+    top: 0;
+    right: 0;
   }
-  #m_menu{
-/*    font-size: 3em;*/
-  }
+
   body.pushed{
     overflow: hidden;
   }
+
   /*hide the main header*/
   #mainHead .ui.icon.header.huge{
     display: none;
+  }
+
+  #mainHead h2{
+    font-size: 4em;
+    font-weight: 700;
   }
 }
 /*--------------------------------------------*/
@@ -166,7 +181,7 @@ html{
   background: #eee;
   border-top: 1px solid #ddd;
   width: 100%;
-  padding: 0 20px 20px 20px;
+  padding: 5 20px 20px 20px;
   box-sizing: border-box;
   color: #666;
   font-size: 1.25em;
@@ -190,6 +205,10 @@ html{
   overflow-x: hidden;
   height: 100px;
 }
+
+.footer_header{
+  color: #666;
+}
 /*-------------------------------------------*/
 
 
@@ -197,7 +216,7 @@ html{
 
 /*---------------SPLASH PAGE----------------*/
 #splash{
-  padding-bottom: 20px;
+  /*padding-bottom: 20px;*/
 }
 
 #mainSplash{
@@ -214,6 +233,18 @@ html{
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
+}
+
+.splash_title{
+  /*text-shadow: 1px 1px 1px #000;*/
+}
+
+.splash_slogan{
+  font-family: helvetica;
+  letter-spacing: 5px;
+  font-weight: 100;
+  font-size: 0.50em;
+  opacity: 0.8;
 }
 
 /*#splashImage{
