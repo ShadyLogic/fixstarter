@@ -9,7 +9,8 @@ var IssueNew = React.createClass({
     return (
       <div className="issue_new_wrapper">
         <br/>
-        <h4 className="ui horizontal divider header"> Submit an Issue</h4>
+        <h2 className="submit_issue_header ui horizontal divider header"> Submit an Issue</h2>
+        <br/>
           < IssueImage />
           < IssueForm zip={this.props.zip} categories={this.props.categories} onIssueSubmit={this.handleIssueSubmit} />
       </div>
