@@ -28,12 +28,12 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-         <p class="splash_field"><%= f.password_field :password, autocomplete: "off" %></p>
+         <p class="splash_field"><%= f.password_field :password, autocomplete: "off", pattern: ".{8,}" %></p>
       </div>
 
       <div class="field ui form">
         <p class="splash_title"><%= f.label :password_confirmation %></p>
-         <p class="splash_field"><%= f.password_field :password_confirmation, autocomplete: "off" %></p>
+         <p class="splash_field"><%= f.password_field :password_confirmation, autocomplete: "off", pattern: ".{8,}" %></p>
       </div>
 
       <div class="field ui form">

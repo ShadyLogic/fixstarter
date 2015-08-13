@@ -30,13 +30,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
       respond_with resource
     end
 
-    new_user = User.find_by(email: params[:user][:email])
-    new_user.first_name = "Good"
-    new_user.last_name = "Samaritan"
-    new_user.zip = params[:user][:zip]
-    new_user.avatar_url = "http://i.imgur.com/6zLn8he.gif"
-    new_user.badge_collection = BadgeCollection.new
-    new_user.save
+    if new_user = User.find_by(email: params[:user][:email])
+      new_user.first_name = "Good"
+      new_user.last_name = "Samaritan"
+      new_user.zip = params[:user][:zip]
+      new_user.avatar_url = "http://i.imgur.com/6zLn8he.gif"
+      new_user.badge_collection = BadgeCollection.new
+      new_user.save
+    end
   end
 
   def after_sign_in_path_for(resource_or_scope)
