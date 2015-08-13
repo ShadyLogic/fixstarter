@@ -14,7 +14,7 @@ var IssueShow = React.createClass({
 
       <div className="ui stackable three column centered grid">
           <div className=" column">
-            < IssueHeader issue={this.props.issue} current_user_watching={this.props.current_user_watching} current_user_id={this.props.current_user_id} upvotes={this.props.upvotes} current_user_upvoted={this.props.current_user_upvoted} current_user_created_issue={this.props.current_user_created_issue} current_user={this.props.current_user} />
+            < IssueHeader issue={this.props.issue} address={this.props.address} current_user_watching={this.props.current_user_watching} current_user_id={this.props.current_user_id} upvotes={this.props.upvotes} current_user_upvoted={this.props.current_user_upvoted} current_user_created_issue={this.props.current_user_created_issue} current_user={this.props.current_user} />
 
             <br/>
 

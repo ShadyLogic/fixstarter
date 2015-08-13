@@ -16,6 +16,7 @@ var ResultItem = React.createClass({
           </div>
               <div className="extra text">
                 <em className="result_item_category">{this.props.categoryName}</em><br/>
+                <em className="result_item_category">{this.props.address}</em><br/>
                 {this.props.description}
               </div>
               <br/>
