@@ -39,7 +39,7 @@ html{
 }
 
 #content{
-  padding: 20px;
+  padding: 40px;
   /*margin-bottom: 500px;*/
   min-height: 100%;
   overflow: hidden;
@@ -169,7 +169,7 @@ html{
   background: #eee;
   border-top: 1px solid #ddd;
   width: 100%;
-  padding: 0 20px 20px 20px;
+  padding: 5 20px 20px 20px;
   box-sizing: border-box;
   color: #666;
   font-size: 1.25em;
@@ -192,6 +192,10 @@ html{
   overflow: scroll;
   overflow-x: hidden;
   height: 100px;
+}
+
+.footer_header{
+  color: #666;
 }
 /*-------------------------------------------*/
 
