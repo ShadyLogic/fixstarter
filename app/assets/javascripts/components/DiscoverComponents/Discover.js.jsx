@@ -26,6 +26,10 @@ var Discover = React.createClass({
     this.setState({openIssues: data.issues, location: data.location})
   },
 
+  componentWillMount: function() {
+    document.title = "FixStart | Discover";
+  },
+
   render: function(){
     console.log(this.props.openIssues)
     return (

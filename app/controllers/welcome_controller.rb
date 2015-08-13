@@ -51,8 +51,8 @@ class WelcomeController < ApplicationController
     render json: {issues: @issue_results, location: location}
   end
 
-  def about
-    render 'welcome/about'
+  def aboutus
+    render 'welcome/aboutus'
   end
 
 end

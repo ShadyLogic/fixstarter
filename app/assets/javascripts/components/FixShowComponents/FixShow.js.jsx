@@ -1,4 +1,10 @@
 var FixShow = React.createClass({
+
+  componentWillMount: function() {
+    document.title ="FixStart | "+ this.props.fix.title;
+  },
+
+
   render: function(){
     return (
       <div className="fix_show_page">

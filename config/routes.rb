@@ -41,7 +41,7 @@ Rails.application.routes.draw do
 
   post '/search', to: 'welcome#search'
 
-  get '/team', to: 'welcome#about', as: :team
+  get '/aboutus', to: 'welcome#aboutus', as: :aboutus
 
   match '*path' => 'welcome#show', via: [:get]
 
