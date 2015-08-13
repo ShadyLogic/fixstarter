@@ -609,11 +609,20 @@ html{
 }
 
 .issue_votes{
+  text-align: center;
+  display: inline-block;
+}
 
+.issue_checkbox {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.issue_header{
+  text-align: center;
 }
 
 .issue_open_close{
-
 }
 
 .issue_new_form{
@@ -700,6 +709,11 @@ html{
 
 
 /*----------------ATOMIC STYLING----------------*/
+.c-green {
+  color: green;
+  opacity: .5;
+}
+
 .c-grey {
   color: #C0C0C0;
 }
