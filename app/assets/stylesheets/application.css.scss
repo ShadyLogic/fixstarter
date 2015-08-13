@@ -307,6 +307,7 @@ label {
   color: white;
   opacity: 0.55;
   text-decoration: none;
+  text-shadow: 0.5px 0.5px 0.5px #000;
 }
 
 .copyright{
@@ -323,11 +324,8 @@ label {
   #mainSplash .ui.header.huge{
     font-size: 1.5em;
   }
-  .splash_footer_text{
-    font-size: 1.25em;
-  }
-  #splash_footer_content{
-    margin: auto;
+  #splash_footer{
+    display: none;
   }
 }
 
@@ -341,8 +339,8 @@ label {
   #mainSplash h2{
     display: none;
   }
-
 }
+
 /*@media all and(max-width: 630px){
   #menu{display: none;}
   #m_btn{
