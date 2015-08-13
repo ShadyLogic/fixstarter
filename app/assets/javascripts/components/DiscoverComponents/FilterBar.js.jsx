@@ -17,13 +17,13 @@ var FilterBar = React.createClass({
        <form className="ui form discover_form" onSubmit={this.submitSearch} >
         <div className="field">
           <label>Keyword</label>
-          <input ref="keyword" type="search" name="search[keyword]" placeholder="e.g., hammer, lawn, broken"/>
+          <input ref="keyword" type="search" name="search[keyword]" placeholder="e.g. hammer, lawn, broken"/>
           <br/>
         </div>
 
         <div className="field">
           <label>Location</label>
-          <input ref="location" type="search" name="search[location]" placeholder="e.g., San Francisco, CA, 94122, Alabama"/>
+          <input ref="location" type="search" name="search[location]" placeholder="e.g. San Francisco, CA; 94122; Alabama"/>
           <br/>
         </div>
 
