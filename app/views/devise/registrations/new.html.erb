@@ -27,8 +27,8 @@
         <p class="splash_title"><%= f.label :password %></p>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-         <p class="splash_field"><%= f.password_field :password, autocomplete: "off", pattern: ".{8,}" %></p>
+        <% end %>
+         <p class="splash_field"><%= f.password_field :password, autocomplete: "off" %></p>
       </div>
 
       <div class="field ui form">
