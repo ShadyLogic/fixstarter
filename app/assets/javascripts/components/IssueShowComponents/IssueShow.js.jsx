@@ -5,6 +5,7 @@ var IssueShow = React.createClass({
 
       <h2 className="ui horizontal divider header"> FixStart Issue </h2>
       <br/>
+      <br/>
 
       <div className="ui stackable three column centered grid">
           <div className=" column">

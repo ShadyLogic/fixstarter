@@ -3,12 +3,11 @@ var Dashboard = React.createClass({
   render: function(){
     return (
 
-      <div className="ui centered grid container">
+      <div className="ui centered grid container dashboard_main_wrapper">
 
 
 
         <div className="one column row">
-          <h2 className="column">  </h2>
           <h2 className="ui horizontal divider header"> Dashboard </h2>
         </div>
 

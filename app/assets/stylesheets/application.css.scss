@@ -39,6 +39,7 @@ html{
 }
 
 #content{
+  margin-top: 1em;
   padding: 20px;
   /*margin-bottom: 500px;*/
   min-height: 100%;
@@ -360,6 +361,7 @@ html{
   /*border: 1px solid black;*/
 }
 
+
 .dashboard_nav_wrapper{
 /*  height: 200px;*/
   /*border: 1px solid skyblue;*/
@@ -576,9 +578,19 @@ html{
 
 /*---------------ISSUE SHOW MAP --------------*/
 
+.issue_show {
+  margin-top: 1em;
+}
+
 .issue_show_map_wrapper {
   height: 600px;
   width: 100%;
+}
+
+@media all and(max-width: 767px){
+  .issue_show_map_wrapper{
+    height: 400px;
+  }
 }
 
 /*----------------------------------------------*/
@@ -586,7 +598,7 @@ html{
 
 /*---------------ISSUE NEW FORM --------------*/
 .issue_new_wrapper{
-  text-align: center
+  text-align: center;
 }
 
 .issue_map_wrapper{
@@ -609,11 +621,20 @@ html{
 }
 
 .issue_votes{
+  text-align: center;
+  display: inline-block;
+}
 
+.issue_checkbox {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.issue_header{
+  text-align: center;
 }
 
 .issue_open_close{
-
 }
 
 .issue_new_form{
@@ -700,6 +721,11 @@ html{
 
 
 /*----------------ATOMIC STYLING----------------*/
+.c-green {
+  color: green;
+  opacity: .5;
+}
+
 .c-grey {
   color: #C0C0C0;
 }

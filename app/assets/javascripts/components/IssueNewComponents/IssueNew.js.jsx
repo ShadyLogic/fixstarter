@@ -8,7 +8,6 @@ var IssueNew = React.createClass({
   render: function(){
     return (
       <div className="issue_new_wrapper">
-        <br/>
         <h2 className="submit_issue_header ui horizontal divider header"> Submit an Issue</h2>
         <br/>
           < IssueImage />
