@@ -16,7 +16,7 @@ var UserShow = React.createClass({
           </div>
 
           <div className=" column">
-          < UserActivity user={this.props.user} issues={this.props.issues} fixes={this.props.fixes} watches={this.props.watches} same_user={this.props.same_user} />
+            < UserActivity user={this.props.user} issues={this.props.issues} fixes={this.props.fixes} watches={this.props.watches} same_user={this.props.same_user} />
           </div>
         </div>
 
