@@ -1,4 +1,4 @@
-var IssueHeader = React.createClass({
+ var IssueHeader = React.createClass({
   render: function(){
 
 
@@ -9,8 +9,6 @@ var IssueHeader = React.createClass({
 
       { this.props.current_user ?
         <div>
-              <p> {this.props.upvotes} FixStart community members have up-voted this issue </p>
-
                   < IssueVotes upvotes={this.props.upvotes} current_user_upvoted={this.props.current_user_upvoted} current_user_id={this.props.current_user_id} issue={this.props.issue} current_user = {this.props.current_user} />
 
 
