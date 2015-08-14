@@ -5,14 +5,17 @@ var IssueCheckbox = React.createClass({
       var path = "/issues_watches/*"
       var method = "DELETE"
       var button = " primary"
+      var following = "Following"
     }else{
       var path= "/issues_watches"
       var method = "POST"
       var button = ""
+      var following = "Follow"
     }
     return {
       button: button,
       watching: this.props.current_user_watching,
+      following: following,
       path: path,
       method: method,
       data: {
@@ -32,11 +35,13 @@ var IssueCheckbox = React.createClass({
       this.state.path= "/issues_watches"
       this.state.method = "POST"
       this.state.watching = false;
+      this.state.following = "Follow"
       this.state.button = ""
     }else{
       this.state.path= "/issues_watches/*"
       this.state.method = "DELETE"
       this.state.watching = true;
+      this.state.following = "Following"
       this.state.button = " primary"
     }
 
@@ -50,7 +55,7 @@ var IssueCheckbox = React.createClass({
         <p>
             <p>
               <form className="issue_following_form" onSubmit={this.handleSubmit}>
-              <button className={"ui button" + this.state.button} type= "Submit"> Following </button>
+              <button className={"ui button" + this.state.button} type= "Submit"> {this.state.following} </button>
               </form>
              </p>
          </p>

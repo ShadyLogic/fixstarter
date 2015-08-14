@@ -12,12 +12,12 @@ marshall.password = "trashcan"
 marshall.badge_collection = BadgeCollection.new
 marshall.save!
 
-tim = User.new(email: "tim@fixstart.io", first_name: "Tim", last_name: "Cannady", bio: "I live in a trash can. Life. I live for derelict (my balls). I'm a derelict vagabond.", avatar_url: "http://i.imgur.com/iPtlfAt.jpg", zip: '94110')
+tim = User.new(email: "tim@fixstart.io", first_name: "Tim", last_name: "Cannady", bio: "I'm passionate about building meaningful products. I have a passion for community and fixing things. If it ain't broke, break it so I can fix it please!", avatar_url: "http://i.imgur.com/iPtlfAt.jpg", zip: '94110')
 tim.password = "trashcan"
 tim.badge_collection = BadgeCollection.new
 tim.save!
 
-jacob = User.new(email: "jacob@fixstart.io", first_name: "Jacob", last_name: "Rogers", bio: "I carry a multitool with me everywhere I go so I can fix on the fly. If it's broken I will take it apart and put it back together. FixStart is my battlestation for conquering broken crap. ", avatar_url: "http://i.imgur.com/l56y9kj.jpg", zip: '94121')
+jacob = User.new(email: "jacob@fixstart.io", first_name: "Jacob", last_name: "Rogers", bio: "I carry a multitool with me everywhere I go so I can fix on the fly. If it's broken I will take it apart and put it back together. FixStart is my battlestation for conquering broken crap. ", avatar_url: "http://i.imgur.com/9E5LhP9.png", zip: '94107')
 jacob.password = "trashcan"
 jacob.badge_collection = BadgeCollection.new
 jacob.save!
