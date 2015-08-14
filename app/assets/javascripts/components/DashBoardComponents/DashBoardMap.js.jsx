@@ -16,6 +16,7 @@ var DashboardMap = React.createClass({
 		var self = this
 		socket.on('issue-created', function(data) {
 			console.log('issue-created')
+      console.log('data')
 			self.addIssues(data)
 		})
 
@@ -76,6 +77,7 @@ var DashboardMap = React.createClass({
 	 	    	category: issue.category_name,
 	 	    	points: issue.points,
 	 	    	address: issue.address,
+          image: issue.image,
 	 	    	description: issue.description,
 	 	    	link: issue.link,
 		 	  }
