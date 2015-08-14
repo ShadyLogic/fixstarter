@@ -76,6 +76,7 @@ var DashboardMap = React.createClass({
 	 	    	category: issue.category_name,
 	 	    	points: issue.points,
 	 	    	address: issue.address,
+          image: issue.image,
 	 	    	description: issue.description,
 	 	    	link: issue.link,
 		 	  }

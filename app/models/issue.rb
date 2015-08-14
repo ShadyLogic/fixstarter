@@ -87,7 +87,7 @@ class Issue < ActiveRecord::Base
   # THE Below method does NOT return an array, but a hash.
   def package_as_fixed
     category = Issue.assign_category(self)
-    image = Issue.assign_category(self)
+    image = Issue.assign_image(self)
     {  id: self.id,
        title: self.title,
        description: 'This issue has been fixed!',
